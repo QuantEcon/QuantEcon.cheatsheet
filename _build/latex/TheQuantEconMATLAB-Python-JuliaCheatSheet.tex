@@ -213,21 +213,6 @@ of k points
 \PYG{n}{A} \PYG{o}{=} \PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{k}\PYG{p}{)}
 \end{OriginalVerbatim}
 \\
-\hline
-Vector dot product
- & 
-\begin{OriginalVerbatim}[commandchars=\\\{\}]
-\PYG{n+nb}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
-\end{OriginalVerbatim}
- & 
-\begin{OriginalVerbatim}[commandchars=\\\{\}]
-
-\end{OriginalVerbatim}
- & 
-\begin{OriginalVerbatim}[commandchars=\\\{\}]
-\PYG{n}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
-\end{OriginalVerbatim}
-\\
 \hline\end{tabular}
 
 
@@ -359,6 +344,8 @@ Concatenate horizontally
 \PYG{n}{A} \PYG{p}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{]}
 \end{OriginalVerbatim}
 
+or
+
 \begin{OriginalVerbatim}[commandchars=\\\{\}]
 \PYG{n}{A} \PYG{p}{=} \PYG{n}{horzcat}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{)}
 \end{OriginalVerbatim}
@@ -375,6 +362,8 @@ Concatenate horizontally
 \PYG{n}{A} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{]}
 \end{OriginalVerbatim}
 
+or
+
 \begin{OriginalVerbatim}[commandchars=\\\{\}]
 \PYG{n}{A} \PYG{o}{=} \PYG{n}{hcat}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{)}
 \end{OriginalVerbatim}
@@ -385,6 +374,8 @@ Concatenate vertically
 \begin{OriginalVerbatim}[commandchars=\\\{\}]
 \PYG{n}{A} \PYG{p}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{;} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{]}
 \end{OriginalVerbatim}
+
+or
 
 \begin{OriginalVerbatim}[commandchars=\\\{\}]
 \PYG{n}{A} \PYG{p}{=} \PYG{n}{vertcat}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{)}
@@ -402,8 +393,465 @@ Concatenate vertically
 \PYG{n}{A} \PYG{o}{=} \PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{;} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{]}
 \end{OriginalVerbatim}
 
+or
+
 \begin{OriginalVerbatim}[commandchars=\\\{\}]
 \PYG{n}{A} \PYG{o}{=} \PYG{n}{vcat}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Reshape (to 5 rows, 2 columns)
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A} \PYG{p}{=} \PYG{n+nb}{reshape}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A} \PYG{o}{=} \PYG{n}{reshape}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Convert matrix to vector
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{[}\PYG{p}{:}\PYG{p}{]}
+\end{OriginalVerbatim}
+\\
+\hline
+Flip left/right
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{fliplr}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{flipdim}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Flip up/down
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{flipud}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{flipdim}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Repeat matrix (3 times in the
+row dimension, 4 times in the
+column dimension)
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{repmat}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{repmat}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline\end{tabular}
+
+
+
+\chapter{Accessing vector/matrix elements}
+\label{cheatsheet:accessing-vector-matrix-elements}
+\begin{tabular}{|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|}
+\hline
+\textsf{\relax 
+Operation
+} & \textsf{\relax 
+MATLAB
+} & \textsf{\relax 
+Python
+} & \textsf{\relax 
+Julia
+}\\
+\hline
+Access one element
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{]}
+\end{OriginalVerbatim}
+\\
+\hline
+Access specific rows
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{p}{:}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}
+\end{OriginalVerbatim}
+\\
+\hline
+Access specific columns
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{(}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{4}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+m+mi}{4}\PYG{p}{]}
+\end{OriginalVerbatim}
+\\
+\hline
+Remove a row
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{1} \PYG{l+m+mi}{2} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,} \PYG{p}{:}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{p}{[}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,} \PYG{p}{:}\PYG{p}{]}
+\end{OriginalVerbatim}
+\\
+\hline
+Diagonals of matrix
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{diag}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{diag}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline\end{tabular}
+
+
+
+\chapter{Mathematical Operations}
+\label{cheatsheet:mathematical-operations}
+\begin{tabular}{|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|}
+\hline
+\textsf{\relax 
+Operation
+} & \textsf{\relax 
+MATLAB
+} & \textsf{\relax 
+Python
+} & \textsf{\relax 
+Julia
+}\\
+\hline
+Vector dot product
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{dot}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{B}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Matrix multiplication
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{*}\PYG{n}{B}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{*}\PYG{n}{B}
+\end{OriginalVerbatim}
+\\
+\hline
+Element-wise matrix
+multiplication
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{.*}\PYG{n}{B}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{.}\PYG{o}{*}\PYG{n}{B}
+\end{OriginalVerbatim}
+\\
+\hline
+Matrix to a power
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYGZca{}\PYG{l+m+mi}{2}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+\end{OriginalVerbatim}
+\\
+\hline
+Matrix to a power, elementwise
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{.}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+\end{OriginalVerbatim}
+\\
+\hline
+Inverse of a matrix
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{inv}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+
+or
+
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYGZca{}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{inv}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+
+or
+
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{A}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Determinant of a matrix
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{det}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{det}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Eigenvalues and eigenvectors
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n}{vec}\PYG{p}{,} \PYG{n}{val}\PYG{p}{]} \PYG{p}{=} \PYG{n}{eig}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{val}\PYG{p}{,} \PYG{n}{vec} \PYG{o}{=} \PYG{n}{eig}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Euclidean norm
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{norm}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{norm}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline\end{tabular}
+
+
+
+\chapter{Sum/Maximum/Minimum}
+\label{cheatsheet:sum-maximum-minimum}
+\begin{tabular}{|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|p{0.237\linewidth}|}
+\hline
+\textsf{\relax 
+Operation
+} & \textsf{\relax 
+MATLAB
+} & \textsf{\relax 
+Python
+} & \textsf{\relax 
+Julia
+}\\
+\hline
+Sum/maximum/minimum of
+each column
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{max}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{min}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{minimum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Sum/maximum/minimum of
+each row
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{max}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{min}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{minimum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Sum/maximum/minimum of
+entire matrix
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{max}\PYG{p}{(}\PYG{n}{A}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{min}\PYG{p}{(}\PYG{n}{A}\PYG{p}{(}\PYG{p}{:}\PYG{p}{)}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{sum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\PYG{n}{maximum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\PYG{n}{minimum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Cumulative sum/maximum/minimum
+by row
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{cumsum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{cummax}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{cummin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{cumsum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{cummax}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{cummin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{OriginalVerbatim}
+\\
+\hline
+Cumulative sum/maximum/minimum
+by column
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{cumsum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{cummax}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{cummin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+
+\end{OriginalVerbatim}
+ & 
+\begin{OriginalVerbatim}[commandchars=\\\{\}]
+\PYG{n}{cumsum}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{cummax}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{cummin}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
 \end{OriginalVerbatim}
 \\
 \hline\end{tabular}

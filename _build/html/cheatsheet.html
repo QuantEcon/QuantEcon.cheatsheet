@@ -115,20 +115,6 @@ of k points</td>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td>Vector dot product</td>
-<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</td>
-<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -228,7 +214,7 @@ of k points</td>
 <colgroup>
 <col width="28%" />
 <col width="27%" />
-<col width="23%" />
+<col width="22%" />
 <col width="23%" />
 </colgroup>
 <thead valign="bottom">
@@ -257,6 +243,7 @@ of k points</td>
 <td><div class="first highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
+<p>or</p>
 <div class="last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">horzcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -271,6 +258,7 @@ of k points</td>
 <td><div class="first highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
+<p>or</p>
 <div class="last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">hcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -280,6 +268,7 @@ of k points</td>
 <td><div class="first highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
+<p>or</p>
 <div class="last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">vertcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -294,7 +283,443 @@ of k points</td>
 <td><div class="first highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
+<p>or</p>
 <div class="last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Reshape (to 5 rows, 2 columns)</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Convert matrix to vector</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Flip left/right</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">fliplr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Flip up/down</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">flipud</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Repeat matrix (3 times in the
+row dimension, 4 times in the
+column dimension)</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">repmat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">repmat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="accessing-vector-matrix-elements">
+<h2>Accessing vector/matrix elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="27%" />
+<col width="22%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">MATLAB</th>
+<th class="head">Python</th>
+<th class="head">Julia</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Access one element</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Access specific rows</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Access specific columns</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Remove a row</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">],</span> <span class="p">:)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">:]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Diagonals of matrix</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mathematical-operations">
+<h2>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="27%" />
+<col width="22%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">MATLAB</th>
+<th class="head">Python</th>
+<th class="head">Julia</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Vector dot product</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="nb">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Matrix multiplication</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Element-wise matrix
+multiplication</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.*</span><span class="n">B</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.*</span><span class="n">B</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Matrix to a power</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Matrix to a power, elementwise</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Inverse of a matrix</td>
+<td><div class="first highlight-matlab"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first highlight-julia"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Determinant of a matrix</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Eigenvalues and eigenvectors</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">vec</span><span class="p">,</span> <span class="n">val</span><span class="p">]</span> <span class="p">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Euclidean norm</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sum-maximum-minimum">
+<h2>Sum/Maximum/Minimum<a class="headerlink" href="#sum-maximum-minimum" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="27%" />
+<col width="22%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">MATLAB</th>
+<th class="head">Python</th>
+<th class="head">Julia</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Sum/maximum/minimum of
+each column</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">maximum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">minimum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Sum/maximum/minimum of
+each row</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">maximum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">minimum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Sum/maximum/minimum of
+entire matrix</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
+<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
+<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">maximum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">minimum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Cumulative sum/maximum/minimum
+by row</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Cumulative sum/maximum/minimum
+by column</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -355,6 +780,9 @@ border="0" alt="OpenMDAO Home"/>
 <li><a class="reference internal" href="#creating-vectors">Creating Vectors</a></li>
 <li><a class="reference internal" href="#creating-matrices">Creating Matrices</a></li>
 <li><a class="reference internal" href="#manipulating-vectors-and-matrices">Manipulating Vectors and Matrices</a></li>
+<li><a class="reference internal" href="#accessing-vector-matrix-elements">Accessing vector/matrix elements</a></li>
+<li><a class="reference internal" href="#mathematical-operations">Mathematical Operations</a></li>
+<li><a class="reference internal" href="#sum-maximum-minimum">Sum/Maximum/Minimum</a></li>
 <li><a class="reference internal" href="#input-and-output">Input and Output</a></li>
 </ul>
 </li>
