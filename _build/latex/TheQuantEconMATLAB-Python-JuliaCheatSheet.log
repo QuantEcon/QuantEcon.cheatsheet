@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 SEP 2016 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 SEP 2016 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,7 +912,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--133
 
  []
 
-<quantecon_logo_2.jpg, id=13, 98.3675pt x 80.3pt>
+<quantecon_logo_2.jpg, id=21, 98.3675pt x 80.3pt>
 File: quantecon_logo_2.jpg Graphic file (type jpg)
  <use quantecon_logo_2.jpg>
 Package pdftex.def Info: quantecon_logo_2.jpg used on input line 133.
@@ -989,51 +989,77 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 156.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (25.57175pt too wide) in paragraph at lines 142--169
+Overfull \hbox (25.57175pt too wide) in paragraph at lines 142--232
 [] 
  []
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 172.
+less on input line 235.
 
 [2
 
 ]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 189.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-)
-Overfull \hbox (25.57175pt too wide) in paragraph at lines 174--201
+Overfull \hbox (25.57175pt too wide) in paragraph at lines 237--324
 [] 
  []
 
-(./TheQuantEconMATLAB-Python-JuliaCheatSheet.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
-
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 207.
+less on input line 327.
 
 [3
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
+Chapter 3.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 344.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+Overfull \hbox (25.57175pt too wide) in paragraph at lines 329--410
+[] 
+ []
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 413.
+
+[4
+
+]
+Chapter 4.
+
+Overfull \hbox (25.57175pt too wide) in paragraph at lines 415--442
+[] 
+ []
+
+(./TheQuantEconMATLAB-Python-JuliaCheatSheet.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 448.
+
+[5
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
  (./TheQuantEconMATLAB-Python-JuliaCheatSheet.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 448.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
 Package rerunfilecheck Info: File `TheQuantEconMATLAB-Python-JuliaCheatSheet.ou
 t' has not changed.
-(rerunfilecheck)             Checksum: B8D8105FBF71EE5DEAB778ABE3FF48E2;105.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
+(rerunfilecheck)             Checksum: 4BFE2328361B293E3906B201D1FC5D45;222.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
  ) 
 Here is how much of TeX's memory you used:
- 9335 strings out of 493117
- 132436 string characters out of 6135433
- 229959 words of memory out of 5000000
- 12520 multiletter control sequences out of 15000+600000
+ 9343 strings out of 493117
+ 132561 string characters out of 6135433
+ 233049 words of memory out of 5000000
+ 12524 multiletter control sequences out of 15000+600000
  47174 words of font info for 54 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,45p,283b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1043,11 +1069,11 @@ exlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
 mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2014/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb>
-Output written on TheQuantEconMATLAB-Python-JuliaCheatSheet.pdf (5 pages, 93991
- bytes).
+Output written on TheQuantEconMATLAB-Python-JuliaCheatSheet.pdf (7 pages, 10277
+1 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
