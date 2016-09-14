@@ -6,7 +6,7 @@
 The QuantEcon MATLAB-Python-Julia Cheat Sheet
 =========================================================================
 
-This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia
+This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia.
 
 
 
@@ -63,6 +63,16 @@ Creating Matrices
 |                                | .. code-block:: matlab   | .. code-block:: python  | .. code-block:: julia    |
 |                                |                          |                         |                          |
 | Create a diagonal matrix       |     A = diag([1 2 3])    |                         |     A = diagm([1; 2; 3]) |
++--------------------------------+--------------------------+-------------------------+--------------------------+
+|                                | .. code-block:: matlab   | .. code-block:: python  | .. code-block:: julia    |
+|                                |                          |                         |                          |
+| Matrix of uniformly distributed|     A = rand(2, 2)       |                         |     A = rand(2, 2)       |
+| random numbers                 |                          |                         |                          |
++--------------------------------+--------------------------+-------------------------+--------------------------+
+|                                | .. code-block:: matlab   | .. code-block:: python  | .. code-block:: julia    |
+|                                |                          |                         |                          |
+| Matrix of random numbers drawn |     A = randn(2, 2)      |                         |     A = randn(2, 2)      |
+| a standard normal              |                          |                         |                          |
 +--------------------------------+--------------------------+-------------------------+--------------------------+
 
 
@@ -122,7 +132,7 @@ Manipulating Vectors and Matrices
 
 
 
-Accessing vector/matrix elements
+Accessing Vector/Matrix Elements
 --------------------------------
 
 +--------------------------------+-------------------------------+--------------------------+---------------------------+
@@ -147,6 +157,10 @@ Accessing vector/matrix elements
 |                                | .. code-block:: matlab        | .. code-block:: python   | .. code-block:: julia     |
 |                                |                               |                          |                           |
 | Diagonals of matrix            |    diag(A)                    |                          |    diag(A)                |
++--------------------------------+-------------------------------+--------------------------+---------------------------+
+|                                | .. code-block:: matlab        | .. code-block:: python   | .. code-block:: julia     |
+|                                |                               |                          |                           |
+| Get dimensions of matrix       |    [nrow ncol] = size(A)      |                          |    nrow, ncol = size(A)   |
 +--------------------------------+-------------------------------+--------------------------+---------------------------+
 
 
@@ -200,6 +214,11 @@ Mathematical Operations
 |                                |                               |                          |                           |
 | Euclidean norm                 |     norm(A)                   |                          |     norm(A)               |
 +--------------------------------+-------------------------------+--------------------------+---------------------------+
+|                                | .. code-block:: matlab        | .. code-block:: python   | .. code-block:: julia     |
+|                                |                               |                          |                           |
+| Solve linear system            |     A\b                       |                          |     A\b                   |
+| :math:`Ax=b`                   |                               |                          |                           |
++--------------------------------+-------------------------------+--------------------------+---------------------------+
 
 
 
@@ -242,14 +261,66 @@ Sum/Maximum/Minimum
 
 
 
+Programming
+-----------
 
-Input and Output
-----------------
++------------------------+----------------------------+------------------------+-------------------------------+
+| Operation              |         MATLAB             | Python                 | Julia                         |
++========================+============================+========================+===============================+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| Comment one line       |     % This is a comment    |                        |     # This is a comment       |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| Comment block          |     %{                     |                        |     #=                        |
+|                        |     Comment block          |                        |     Comment block             |
+|                        |     %}                     |                        |     =#                        |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| For loop               |     for i = 1:N            |                        |     for i = 1:N               |
+|                        |        % do something      |                        |        # do something         |
+|                        |     end                    |                        |     end                       |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| While loop             |     while i <= N           |                        |     while i <= N              |
+|                        |        % do something      |                        |        # do something         |
+|                        |     end                    |                        |     end                       |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| If statement           |     if i <= N              |                        |     if i <= N                 |
+|                        |        % do something      |                        |        # do something         |
+|                        |     end                    |                        |     end                       |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| If/else statement      |     if i <= N              |                        |    if i <= N                  |
+|                        |        % do something      |                        |       # do something          |
+|                        |     else                   |                        |    else                       |
+|                        |        % do something else |                        |       # do something else     |
+|                        |     end                    |                        |    end                        |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| Print text and variable|     x = 10                 |                        |    x = 10                     |
+| to screen              |     fprintf('The value of  |                        |    println("The value of      |
+|                        |     x is %d. \n', x)       |                        |    x is $(x).")               |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| Function: one line/    |     fun = @(x) x^2         |                        |     fun(x) = x^2              |
+| anonymous              |                            |                        |                               |
++------------------------+----------------------------+------------------------+-------------------------------+
+|                        | .. code-block:: matlab     | .. code-block:: python | .. code-block:: julia         |
+|                        |                            |                        |                               |
+| Function: multiple     |     function out  = fun(x) |                        |     function fun(x)           |
+| lines                  |        out = x^2           |                        |        return x^2             |
+|                        |     end                    |                        |     end                       |
++------------------------+----------------------------+------------------------+-------------------------------+
 
-+------------------------+------------------------+------------------------+-----------------------+
-| Operation              |         MATLAB         | Python                 | Julia                 |
-+========================+========================+========================+=======================+
-|                        | .. code-block:: matlab | .. code-block:: python | .. code-block:: julia |
-|                        |                        |                        |                       |
-| Opening a file         |     fopen('file')      |    open('file')        |     open('file')      |
-+------------------------+------------------------+------------------------+-----------------------+
+
+
+

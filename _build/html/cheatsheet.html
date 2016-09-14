@@ -23,6 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="The QuantEcon MATLAB-Python-Julia Cheat Sheet  documentation" href="#" />
    
   
@@ -38,7 +39,7 @@
             
   <div class="section" id="the-quantecon-matlab-python-julia-cheat-sheet">
 <h1>The QuantEcon MATLAB-Python-Julia Cheat Sheet<a class="headerlink" href="#the-quantecon-matlab-python-julia-cheat-sheet" title="Permalink to this headline">¶</a></h1>
-<p>This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia</p>
+<p>This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia.</p>
 <div class="section" id="creating-vectors">
 <h2>Creating Vectors<a class="headerlink" href="#creating-vectors" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -205,6 +206,36 @@ of k points</td>
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td>Matrix of uniformly distributed
+random numbers</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Matrix of random numbers drawn
+a standard normal</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -365,7 +396,7 @@ column dimension)</td>
 </table>
 </div>
 <div class="section" id="accessing-vector-matrix-elements">
-<h2>Accessing vector/matrix elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this headline">¶</a></h2>
+<h2>Accessing Vector/Matrix Elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="28%" />
@@ -447,6 +478,20 @@ column dimension)</td>
 </div>
 </td>
 <td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Get dimensions of matrix</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nrow</span> <span class="n">ncol</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -609,6 +654,21 @@ multiplication</td>
 </div>
 </td>
 </tr>
+<tr class="row-odd"><td>Solve linear system
+<span class="math">\(Ax=b\)</span></td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">\</span><span class="n">b</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">A</span>\<span class="n">b</span>
+</pre></div>
+</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -727,14 +787,14 @@ by column</td>
 </tbody>
 </table>
 </div>
-<div class="section" id="input-and-output">
-<h2>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="24%" />
+<col width="22%" />
+<col width="26%" />
+<col width="22%" />
+<col width="29%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -744,16 +804,163 @@ by column</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Opening a file</td>
-<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">fopen</span><span class="p">(</span><span class="s">&#39;file&#39;</span><span class="p">)</span>
+<tr class="row-even"><td>Comment one line</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% This is a comment</span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">)</span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span>open(&#39;file&#39;)
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="c"># This is a comment</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Comment block</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="cm">%{</span>
+<span class="cm">Comment block</span>
+<span class="cm">%}</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="cm">#=</span>
+<span class="cm">Comment block</span>
+<span class="cm">=#</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>For loop</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
+   <span class="c">% do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>While loop</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
+   <span class="c">% do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>If statement</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
+   <span class="c">% do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>If/else statement</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
+   <span class="c">% do something</span>
+<span class="k">else</span>
+   <span class="c">% do something else</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">else</span>
+   <span class="c"># do something else</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Print text and variable
+to screen</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;The value of</span>
+<span class="s">x is %d. \n&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of</span>
+<span class="s">x is </span><span class="si">$(x)</span><span class="s">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Function: one line/
+anonymous</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span>^<span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Function: multiple
+lines</td>
+<td><div class="first last highlight-matlab"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>out  <span class="p">=</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="n">out</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">2</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-julia"><div class="highlight"><pre><span></span><span class="k">function</span><span class="nf"> fun</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 </td>
@@ -780,10 +987,10 @@ border="0" alt="OpenMDAO Home"/>
 <li><a class="reference internal" href="#creating-vectors">Creating Vectors</a></li>
 <li><a class="reference internal" href="#creating-matrices">Creating Matrices</a></li>
 <li><a class="reference internal" href="#manipulating-vectors-and-matrices">Manipulating Vectors and Matrices</a></li>
-<li><a class="reference internal" href="#accessing-vector-matrix-elements">Accessing vector/matrix elements</a></li>
+<li><a class="reference internal" href="#accessing-vector-matrix-elements">Accessing Vector/Matrix Elements</a></li>
 <li><a class="reference internal" href="#mathematical-operations">Mathematical Operations</a></li>
 <li><a class="reference internal" href="#sum-maximum-minimum">Sum/Maximum/Minimum</a></li>
-<li><a class="reference internal" href="#input-and-output">Input and Output</a></li>
+<li><a class="reference internal" href="#programming">Programming</a></li>
 </ul>
 </li>
 </ul>
