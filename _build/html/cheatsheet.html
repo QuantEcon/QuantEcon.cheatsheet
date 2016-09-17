@@ -26,11 +26,13 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="The QuantEcon MATLAB-Python-Julia Cheat Sheet  documentation" href="#" />
    
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">  
+  <body role="document">
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -44,10 +46,10 @@
 <h2>Creating Vectors<a class="headerlink" href="#creating-vectors" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="27%" />
-<col width="25%" />
 <col width="24%" />
-<col width="25%" />
+<col width="22%" />
+<col width="33%" />
+<col width="22%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -62,7 +64,7 @@
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">])</span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
@@ -76,7 +78,7 @@
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -92,7 +94,7 @@ difference k between points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -107,7 +109,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -123,10 +125,10 @@ of k points</td>
 <h2>Creating Matrices<a class="headerlink" href="#creating-matrices" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
+<col width="27%" />
+<col width="22%" />
 <col width="29%" />
-<col width="24%" />
-<col width="23%" />
-<col width="24%" />
+<col width="22%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -141,7 +143,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 </pre></div>
 </div>
 </td>
@@ -155,7 +157,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
@@ -169,7 +171,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
@@ -183,7 +185,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -197,7 +199,7 @@ of k points</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
@@ -212,7 +214,7 @@ random numbers</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -227,7 +229,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -243,9 +245,9 @@ a standard normal</td>
 <h2>Manipulating Vectors and Matrices<a class="headerlink" href="#manipulating-vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
 <col width="27%" />
-<col width="22%" />
+<col width="26%" />
+<col width="23%" />
 <col width="23%" />
 </colgroup>
 <thead valign="bottom">
@@ -261,7 +263,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
 </td>
@@ -279,10 +281,8 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first highlight-python"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">B</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
@@ -304,10 +304,8 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first highlight-python"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">B</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
@@ -325,7 +323,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -339,7 +337,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </pre></div>
 </div>
 </td>
@@ -353,7 +351,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -367,7 +365,7 @@ a standard normal</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -383,7 +381,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </td>
@@ -399,10 +397,10 @@ column dimension)</td>
 <h2>Accessing Vector/Matrix Elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
-<col width="27%" />
+<col width="26%" />
+<col width="26%" />
+<col width="26%" />
 <col width="22%" />
-<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -417,7 +415,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </td>
@@ -431,7 +429,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </td>
@@ -445,7 +443,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </td>
@@ -459,7 +457,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">:]</span>
 </pre></div>
 </div>
 </td>
@@ -473,7 +471,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -487,7 +485,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -503,10 +501,10 @@ column dimension)</td>
 <h2>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
-<col width="27%" />
+<col width="26%" />
+<col width="25%" />
+<col width="26%" />
 <col width="22%" />
-<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -521,7 +519,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="ow">or</span> <span class="n">A</span><span class="nd">@B</span>
 </pre></div>
 </div>
 </td>
@@ -535,7 +533,7 @@ column dimension)</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="ow">or</span> <span class="n">A</span><span class="nd">@B</span>
 </pre></div>
 </div>
 </td>
@@ -550,7 +548,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
 </pre></div>
 </div>
 </td>
@@ -564,7 +562,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">matrix_power</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -578,7 +576,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
 </td>
@@ -596,10 +594,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first highlight-python"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -617,7 +612,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -631,7 +626,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -645,7 +640,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -660,7 +655,7 @@ multiplication</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -676,10 +671,10 @@ multiplication</td>
 <h2>Sum/Maximum/Minimum<a class="headerlink" href="#sum-maximum-minimum" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="28%" />
+<col width="26%" />
+<col width="25%" />
 <col width="27%" />
 <col width="22%" />
-<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -697,7 +692,9 @@ each column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -716,7 +713,9 @@ each row</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -735,7 +734,9 @@ entire matrix</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -754,7 +755,9 @@ by row</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -773,7 +776,9 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -792,9 +797,9 @@ by column</td>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
-<col width="26%" />
-<col width="22%" />
-<col width="29%" />
+<col width="25%" />
+<col width="25%" />
+<col width="28%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Operation</th>
@@ -809,7 +814,7 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="c1"># This is a comment</span>
 </pre></div>
 </div>
 </td>
@@ -825,7 +830,9 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Block</span>
+<span class="c1"># comment</span>
+<span class="c1"># following PEP8</span>
 </pre></div>
 </div>
 </td>
@@ -843,7 +850,8 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># do something</span>
 </pre></div>
 </div>
 </td>
@@ -861,7 +869,8 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+    <span class="c1"># do something</span>
 </pre></div>
 </div>
 </td>
@@ -879,7 +888,8 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+   <span class="c1"># do something</span>
 </pre></div>
 </div>
 </td>
@@ -899,7 +909,10 @@ by column</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
+    <span class="c1"># do something</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># so something else</span>
 </pre></div>
 </div>
 </td>
@@ -920,7 +933,9 @@ to screen</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The value of</span>
+<span class="n">x</span> <span class="ow">is</span> <span class="p">{}</span><span class="o">.</span><span class="s1">&#39;.format(x))</span>
 </pre></div>
 </div>
 </td>
@@ -937,7 +952,7 @@ anonymous</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
 </td>
@@ -954,7 +969,8 @@ lines</td>
 </pre></div>
 </div>
 </td>
-<td><div class="first last highlight-python"><div class="highlight"><pre><span></span>
+<td><div class="first last highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
 </td>
@@ -976,11 +992,9 @@ lines</td>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<a href="http://quantecon.org">
- <img src="_static/quantecon_logo_2.jpg"
-border="0" alt="OpenMDAO Home"/>
-</a>
-
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/quantecon_logo_2.jpg" alt="Logo"/>
+            </a></p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">The QuantEcon MATLAB-Python-Julia Cheat Sheet</a><ul>
@@ -1009,9 +1023,6 @@ border="0" alt="OpenMDAO Home"/>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1022,8 +1033,8 @@ border="0" alt="OpenMDAO Home"/>
       &copy;2016, Victoria Gregory.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
     </div>
 
