@@ -216,7 +216,7 @@ Mathematical Operations
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Solve linear system            |     A\b                       |    np.linalg.solve(a, b)       |     A\b                   |
+| Solve linear system            |     A\b                       |    np.linalg.solve(A, b)       |     A\b                   |
 | :math:`Ax=b`                   |                               |                                |                           |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 
