@@ -114,6 +114,7 @@ html_theme = 'alabaster'
 # documentation.
 html_theme_options = {
 	'code_font_size': '0.8em',
+	'sidebar_width': '150px'
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -220,6 +221,7 @@ latex_elements = {
 
 'classoptions': ',openany,oneside',
 'babel': '\\usepackage[english]{babel}',
+#'preamble': '\\usepackage[landscape]{geometry}',
 'releasename': ''
 }
 
@@ -232,8 +234,7 @@ latex_documents = [
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
-# the title page.
-latex_logo = 'quantecon_logo_2.jpg'
+# the title page.latex_logo = 'quantecon_logo_2.jpg'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
