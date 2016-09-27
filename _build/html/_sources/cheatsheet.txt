@@ -216,14 +216,14 @@ Mathematical Operations
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Solve linear system            |     A\b                       |    np.linalg.solve(a, b)       |     A\b                   |
+| Solve linear system            |     A\b                       |    np.linalg.solve(A, b)       |     A\b                   |
 | :math:`Ax=b`                   |                               |                                |                           |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 
 
 
-Sum/Maximum/Minimum
--------------------
+Sum, Maximum, Minimum
+---------------------
 
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
 | Operation                      |         MATLAB                | Python                          | Julia                     |
@@ -300,7 +300,7 @@ Programming
 | If/else statement      |     if i <= N              |   if i <= N:               |    if i <= N                  |
 |                        |        % do something      |       # do something       |       # do something          |
 |                        |     else                   |   else:                    |    else                       |
-|                        |        % do something else |       # so something else  |       # do something else     |
+|                        |        % do something else |       # do something else  |       # do something else     |
 |                        |     end                    |                            |    end                        |
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
