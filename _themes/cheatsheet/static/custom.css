@@ -13,7 +13,7 @@ h1 {
 
 pre {
 	overflow:visible;
-	white-space: normal;
+	white-space: pre-line;
 }
 
 colgroup {
