@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QuantEcon Cheat Sheet
+QuantEcon MATLAB-Python-Julia Cheat Sheet
 =========================================================================
 
 This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia.

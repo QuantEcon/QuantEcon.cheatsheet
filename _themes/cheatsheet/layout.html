@@ -12,39 +12,6 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 
-{%- macro navigation() %}
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-	        
-          {#%- block sidebarlogo %#}
-
-            <p class="logo"><a href="{{ pathto(master_doc) }}">
-              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-            </a></p>
-
-          
-            {%- block sidebartoc %}
-            {%- include "localtoc.html" %}
-            {%- endblock %}
-
-        </div>
-      </div>
-{%- endmacro %}
-
-{%- macro script() %}
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ pathto('_static/cheatsheet.js', 1) }}"></script>
-{%- endmacro %}
-
-{%- macro css() %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}" type="text/css" />
-{%- endmacro %}
-
-
-  </head>
-
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -54,16 +21,34 @@
     {%- block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {%- endblock %}
-    
-    {{ css() }}
-    {{ script() }}
+
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}" type="text/css" />
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ pathto('_static/cheatsheet.js', 1) }}"></script>
 
   </head>
   <body>
 
-{#%- block header %}{% endblock %#}
+	<div class="title-bar">
+	  <div class="row">
+		  <button class="menu-icon" type="button"></button>
+		  <div class="title-bar-title">Menu</div>
+	  </div>
+	</div>
+	
+	<div class="row">
+	  <div class="toc-menu">
+	                  
+	        {%- block sidebartoc %}
+	        {%- include "localtoc.html" %}
+	        {%- endblock %}
+	
+	  </div>
+	</div>
 
-{#%- block navigation %} {{ navigation() }} {% endblock %#}
 
 {%- block content %}
 
@@ -73,7 +58,14 @@
 	
 		<main class="main-content" role="main" tabindex="0">
 
-			<p class="site-logo"><img src="{{ pathto('_static/qe-logo.png', 1) }}" alt="QuantEcon logo"></p>
+			<p class="site-logo">
+				<a href="http://quantecon.org/" title="QuantEcon"><img src="{{ pathto('_static/qe-logo.png', 1) }}" alt="QuantEcon logo"></a>
+			</p>
+			
+			<p class="github-logo">
+				<a href="http://github.com/QuantEcon/" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
+			</p>
+				
 			
 						
 	        {% block body %}

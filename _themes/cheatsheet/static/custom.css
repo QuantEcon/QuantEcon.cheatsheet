@@ -2,13 +2,56 @@ body {
 	background: #191C22;
 }
 
-.main-content {
-	background: #fff;
-	padding:25px;
+.title-bar {
+	text-align: center;
+    cursor: pointer;
+    font-size: 0.9em;
 }
 
-h1 {
-    font-size: 2rem;
+.toc-menu {
+	display: none;
+	background: #efefef;
+    border-bottom: 2px solid #d2d2d2;
+    padding:25px 0;
+}
+
+.toc-menu>ul {
+	list-style: none;
+	text-align: center;
+	margin:0;
+	padding:0;
+}
+
+.toc-menu>ul>li {
+	
+}
+
+.toc-menu>ul>li a {
+	color:#444;
+}
+
+.toc-menu ul ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.toc-menu ul ul li {
+	
+}
+
+.toc-menu ul ul li a {
+	color: #444;
+    font-weight: 700;
+    font-size: 0.8em;
+    border-bottom: 2px solid #d2d2d2;
+    padding: 5px 0 0 0;	
+}
+
+.main-content {
+	position: relative;
+	background: #fff;
+	padding:25px;
 }
 
 pre {
@@ -75,15 +118,15 @@ tbody tr td:nth-child(1) {
 }
 
 tbody tr td:nth-child(2) .highlight {
-	background: #ffe6e7;
+	background: #ffebd8;
 }
 
 tbody tr td:nth-child(3) .highlight {
-	background: #fff6e2;
+	background: #fffde2;
 }
 
 tbody tr td:nth-child(4) .highlight {
-	background: #e8f4ff;
+	background: #f7edfb;
 }
 
 .section h2 {
@@ -100,12 +143,24 @@ tbody tr td:nth-child(4) .highlight {
 }
 
 .site-logo img {
-	width:15%;
+	width:180px;
+}
+
+.github-logo {
+	position: absolute;
+	top:25px;
+	right:25px;
+}
+
+.github-logo img {
+	width: 60px;
 }
 
 .section h1 {
 	border-bottom: 2px solid #efefef;
-    display: inline-block;
+    margin: 0 0 25px 0;
+    text-align: center;
+    font-size:1.8em;
 }
 
 .section h1 .headerlink {
@@ -127,10 +182,19 @@ table tbody tr:nth-child(even) {
 }
 
 
+
 @media screen and (max-width: 40em) {
+
+	.github-logo {
+		position: static;
+		text-align: center;
+	}
 	
+	.github-logo img {
+
+	}	
 	.site-logo img {
-		width:50%;
+		width:70%;
 	}
 	tbody tr {
 		display: block;
@@ -139,15 +203,15 @@ table tbody tr:nth-child(even) {
 		display: block;
 	}
 	thead tr th:nth-child(2) {
-		background: #ffe6e7;
+		background: #ffebd8;
 	}
 	
 	thead tr th:nth-child(3) {
-		background: #fff6e2;
+		background: #fffde2;
 	}
 	
 	thead tr th:nth-child(4) {
-		background: #e8f4ff;
+		background: #f7edfb;
 	}
 
 }
