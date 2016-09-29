@@ -42,7 +42,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'cheatsheet'
+master_doc = 'index'
 
 # General information about the project.
 project = u'QuantEcon Cheat Sheet'
@@ -112,16 +112,13 @@ html_theme = 'cheatsheet'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-<<<<<<< Updated upstream
-html_theme_options = {
-	'code_font_size': '0.8em',
-	'sidebar_width': '150px'
-}
-=======
+# html_theme_options = {
+# 	'code_font_size': '0.8em',
+# 	'sidebar_width': '150px'
+# }
 #html_theme_options = {
 #	'code_font_size': '0.8em',
 #}
->>>>>>> Stashed changes
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = ['_themes']
@@ -240,12 +237,8 @@ latex_documents = [
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
-<<<<<<< Updated upstream
-# the title page.latex_logo = 'quantecon_logo_2.jpg'
-=======
 # the title page.
 latex_logo = 'qe-logo.png'
->>>>>>> Stashed changes
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
