@@ -1,0 +1,346 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{fullpage}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{minted}
+\usepackage[margin=2cm]{geometry}
+\newcommand{\dd}{\displaystyle}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\LL}{\mathbb L}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\MM}{\mathbb M}
+\newcommand{\KK}{\mathbb K}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Pin}{P_{\text{in}}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\bB}{\mathbf B}
+\newcommand{\bM}{\mathbf M}
+\newcommand{\bS}{\mathbf S}
+\newcommand{\phis}{\varphi}
+\newcommand{\barphis}{\overline\phis}
+\newcommand{\bmat}{\begin{matrix}}
+\newcommand{\emat}{\end{matrix}}
+\newcommand{\se}{\text{se}}
+\newcommand{\daga}{a^\dagger}
+\newcommand{\devides}{\bigl |}
+\newcommand{\eval}{\biggl |}
+\newcommand{\ybar}{\overline y}
+\newcommand{\bWhat}{\hat{\mathbf W}}
+\newcommand{\bW}{\mathbf W}
+\newcommand{\bz}{\mathbf z}
+\newcommand{\bs}{\mathbf s}
+\newcommand{\rightas}{\stackrel{a.s.}{\rightarrow}}
+\newcommand{\rightp}{\stackrel{p}{\rightarrow}}
+\newcommand{\rightd}{\stackrel{d}{\rightarrow}}
+\newcommand{\bI}{\mathbf I}
+
+\begin{document}
+\section{Useful Python Commands}
+
+%-Functions-%
+
+\subsection{Functions}
+\begin{longtable}{ |m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description}
+	\\\hline
+	* & multiplication operation: {\mintinline{python}{2*3} } return 6.
+	\\\hline
+	** & power operation: {\mintinline{python}{2**3} } returns 8.
+    \\\hline
+    @ & matrix multiplication:
+    \begin{minted}{python}
+    import numpy as np
+    A = np.array([[1,2,3]])
+    B = np.array([[3],[2],[1]])
+    A @ B
+    \end{minted}
+    returns
+    \begin{minted}{python}
+    array([[10]])
+    \end{minted}
+	\\\hline
+	lambda & Used for create anonymous one line functions of the form:
+	\begin{center}
+	{\mintinline{python}{f = lambda x,y: 5*x+y}}
+	\end{center}
+	The code after the lambda but before variables specifies the parameters. The code after the colon tells python what object to return.
+	\\\hline
+	def & The def command is used to create functions of more than one line:
+	\begin{minted}{python}
+def g(x,y):
+"""
+Docstring
+"""
+    ret = sin(x)
+    return ret + y
+	\end{minted}
+	The code immediately following {\mintinline{python}{def} } names the function, in this example {\verb g }.   The variables in the parenthesis are the parameters of the function.  The remaining lines of the function are denoted by tab indents.  The return statement specifies the object to be returned.
+	\\\hline
+	\mintinline{python}{len(iterable)} & {\mintinline{python}{len} } is a function that takes an iterable, such as a list, tuple or numpy array and returns the number of items in that object.  For a numpy array, {\mintinline{python}{len} } returns the length of the outermost dimension
+	\begin{minted}{python}
+	len( np.zeros( (5,4) ) )
+	\end{minted}
+    returns 5.
+	\\\hline
+	\mintinline{python}{l = [a1,a2,...,an]} & Constructs a list containing the objects a1,a2,...,an.  You can append to the list using l.append().  The $i$th element of $l$ can be accessed using {\mintinline{python}{l[i]} } 
+	\\\hline
+	\mintinline{python}{t =(a1,a2,...,an)} & Constructs a tuple containing the objects $a1,a2,...,an$.  The $i$th element of $t$ can be accessed using {\mintinline{python}{t[i]} }
+	\\\hline
+    \begin{verbatim}for a in iterable: \end{verbatim}  & For loop used to perform a sequence of commands (denoted using tabs) for each element in an iterable object such as a list, tuple, or numpy array. An example code is 
+	\begin{minted}{python}
+l  = []
+for i in [1,2,3]:
+     l.append(i**2)
+print(l)
+	\end{minted} 
+    prints \mintinline{python}{[1,4,9]} 
+	\\\hline
+	\begin{verbatim}
+	if condition:
+	\end{verbatim}
+    & Performs code if a condition is met (using tabs). For example
+	\begin{minted}{python}
+if x == 5:
+     x = x**2
+else:
+     x = x**3
+	\end{minted}
+    squares $x$ if x is 5, otherwise cubes it.
+	\\\hline
+	\mintinline{python}{plt.plot(x,y,s =None)} & The plot command is included in {\mintinline{python}{matplotlib.pyplot }}.  The plot command is used to plot $x$ versus $y$ where $x$ and $y$ are iterables of the same length.  By default the plot command draws a line, using the $s$ argument you can specify type of line and color.  For example '-','- -',':','o','x', and '-o' reprent line, dashed line, dotted line, circles, x's, and circle with line through it respectively.  Color can be changed by appending 'b','k','g' or 'r', to get a blue, black, green or red plot respectively.  For example,
+	\begin{minted}{python}
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.linspace(0,10,100)
+N=len(x)
+v= np.cos(x)
+plt.figure(1)
+plt.plot(x,v,'-og')
+plt.show()
+plt.savefig('tom_test.eps')
+	\end{minted} 
+    plots the cosine function on the domain (0,10) with a green line with circles at the points $x,v$
+	\\\hline
+    zip & Make an iterator that aggregates elements from each of the iterables.
+    \begin{minted}{python}
+    x = [1, 2, 3]
+    y = [4, 5, 6]
+    zipped = zip(x, y)
+    list(zipped)
+    \end{minted}
+    returns \mintinline{python}{[(1, 4), (2, 5), (3, 6)]}
+    \\\hline
+\end{longtable}
+
+%-NumPy Arrays-%
+
+\subsection{Numpy Arrays}
+\begin{longtable}{ | m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description} \\
+	\hline
+	\mintinline{python}{np.array(object,dtype = None)} & {\mintinline{python}{np.array}} constructs a numpy array from an object, such as a list or a list of lists.  {\verb dtype } allows you to specify the type of object the array is holding.  You will generally note need to specify the {\verb dtype }.  Examples:
+	\begin{minted}{python}
+np.array([1, 2, 3]) #creates 1 dim array of ints
+np.array( [1,2,3.0] )#creates 1 dim array of floats
+np.array( [ [1,2],
+            [3,4] ]) #creates a 2 dim array
+	\end{minted}
+	\\\hline
+	\begin{minted}{python}
+A[i1,i2,...,in] 
+	\end{minted} 
+    & Access a the element in numpy array A in with index i1 in dimension 1, i2 in dimension 2, etc.  Can use {\verb : } to access a range of indices, where {\verb imin :imax } represents all $i$ such that $imin \leq i < imax$. Always returns an object of minimal dimension.  For example,
+	\begin{minted}{python}
+    A[:,2]
+	\end{minted}
+    returns the 2nd column (counting from 0) of A as a 1 dimensional array and 
+	\begin{minted}{python}
+    A[0:2,:]
+	\end{minted} 
+    returns the 0th and 1st rows in a 2 dimensional array.
+	\\\hline
+	\mintinline{python}{np.zeros( shape )} & Constructs numpy array of shape shape.  Here shape is an integer of sequence of integers.  Such as 3, (1,2),(2,1), or (5,5).  Thus
+	\begin{minted}{python}
+		np.zeros( (5,5) ) 
+	\end{minted}
+    Constructs an $5\times 5$ array while
+	\begin{minted}{python}
+		np.zeros(5,5)
+	\end{minted}
+    will throw an error.\\\hline
+	\mintinline{python}{np.ones(shape)} & Same as \mintinline{python}{np.zeros} but produces an array of ones\\\hline
+	\mintinline{python}{np.linspace(a,b,n)} & Returns a numpy array with $n$ linearly spaced points between $a$ and $b$.  For example
+	\begin{minted}{python}
+		np.linspace(1,2,10) 
+	\end{minted}
+    returns
+	\begin{minted}{python}
+array([ 1.        ,  1.11111111,  1.22222222,  1.33333333,
+        1.44444444, 1.55555556,  1.66666667,  1.77777778, 
+        1.88888889,  2.        ])
+	\end{minted}
+	\\\hline
+	\mintinline{python}{np.eye(N)} & Constructs the identity matrix of size $N$.  For example  
+	\begin{minted}{python}
+    np.eye(3)
+	\end{minted}
+    returns the $3\times 3$ identity matrix:
+	\[
+		\left(\begin{matrix}1&0&0\\0&1&0\\ 0&0&1\end{matrix}\right)
+	\]\\\hline
+	\mintinline{python}{np.diag(a)} & {\mintinline{python}{np.diag} } has 2 uses.  First if {\mintinline{python}{a}} is a 2 dimensional array then \mintinline{python}{np.diag} returns the principle diagonal of the matrix.  Thus
+	\begin{minted}{python}
+        np.diag( [ [1,3],
+                   [5,6] ])
+	\end{minted} 
+    returns {\mintinline{python}{[1,6]} }.  If $a$ is a 1 dimensional array then {\mintinline{python}{np.diag} } constructs an array with $a$ as the principle diagonal.  Thus,
+	\begin{minted}{python}
+        np.diag([1,2])
+	\end{minted}
+    returns
+	\[
+		\left(\begin{matrix}1&0\\0&2\end{matrix}\right)
+	\]\\\hline
+	\mintinline{python}{np.random.rand(d0, d1, ..., dn)} & Constructs a numpy array of shape {\mintinline{python}{(d0,d1,...,dn)} } filled with random numbers drawn from a uniform distribution between $(0,1)$.  For example, {\mintinline{python}{np.random.rand(2,3)} } returns
+	\begin{minted}{python}
+array([[ 0.69060674,  0.38943021,  0.19128955],
+       [ 0.5419038 ,  0.66963507,  0.78687237]])
+	\end{minted}
+	\\\hline
+	\mintinline{python}{np.random.randn(d0, d1, ..., dn)} & Same as {\mintinline{python}{np.random.rand(d0, d1, ..., dn)} } except that it draws from the standard normal distribution $\mathcal N(0,1)$ rather than the uniform distribution.
+	\\\hline
+	\mintinline{python}{A.T} & Reverses the dimensions of an array (transpose).  For example, if $x = \left(\begin{matrix} 1& 2\\3&4\end{matrix}\right)$ then \mintinline{python}{x.T} returns $\left(\begin{matrix} 1& 3\\2&4\end{matrix}\right)$
+	\\\hline
+	\mintinline{python}{np.hstack( tuple )} & Take a sequence of arrays and stack them horizontally to make a single array.  For example 
+	\begin{minted}{python}
+a = np.array(( [1,2,3] )
+b = np.array( [2,3,4] )
+np.hstack( (a,b) )
+	\end{minted}
+    returns $[1,2,3,2,3,4]$ while 
+	\begin{minted}{python}
+a = np.array( [[1],[2],[3]] )
+b = np.array( [[2],[3],[4]] )
+np.hstack((a,b))
+	\end{minted} 
+    returns $\left( \begin{matrix} 1&2\\2&3\\ 3&4 \end{matrix}\right)$
+	\\\hline
+	\mintinline{python}{np.vstack( tuple )} & Like \mintinline{python}{np.hstack}.  Takes a sequence of arrays and stack them vertically to make a single array.  For example 
+	\begin{minted}{python}
+a = np.array( [1,2,3] )
+b = np.array( [2,3,4] )
+np.hstack( (a,b) )
+	\end{minted}
+    returns 
+	\begin{minted}{python}
+array( [ [1,2,3],
+         [2,3,4] ] )
+	\end{minted}
+	\\\hline
+	\mintinline{python}{np.amax(a, axis = None)} & By default {\mintinline{python}{np.amax(a)} } finds the maximum of all elements in the array $a$.  Can specify maximization along a particular dimension with axis.  If 
+	\begin{minted}{python}
+a = np.array( [ [2,1],
+                [3,4] ]) #creates a 2 dim array
+	\end{minted}
+    then
+	\begin{minted}{python}
+np.amax(a,axis = 0) #maximization along row (dim 0)
+	\end{minted}
+    returns {\mintinline{python}{array([3,4])} } and 
+	\begin{minted}{python}
+np.amax(a, axis = 1) #maximization along column (dim 1)
+	\end{minted}
+    returns {\mintinline{python}{array([2,4])} }
+	\\\hline
+	\mintinline{python}{np.amin(a, axis = None)} & Same as {\mintinline{python}{np.amax} } except returns minimum element.
+	\\\hline
+	\mintinline{python}{np.argmax(a, axis = None)} & Performs similar function to np.amax except returns index of maximal element.  By default gives index of flattened array, otherwise can use axis to specify dimension.  From the example for np.amax
+	\begin{minted}{python}
+np.amax(a,axis = 0) #maximization along row (dim 0)
+	\end{minted}
+    returns {\mintinline{python}{array([1,1])} } and 
+	\begin{minted}{python}
+np.amax(a, axis = 1) #maximization along column (dim 1)
+	\end{minted}
+    returns {\mintinline{python}{array([0,1])} }
+	\\\hline
+	\mintinline{python}{np.argmin(a, axis =None)} & Same as {\mintinline{python}{np.argmax} } except finds minimal index.
+	\\\hline
+\mintinline{python}{np.dot(a,b)} or \mintinline{python}{a.dot(b)} & Returns an array equal to the dot product of $a$ and $b$.  For this operation to work the innermost dimension of $a$ must be equal to the outermost dimension of $b$.  If $a$ is a $(3,2)$ array and $b$ is a $(2)$ array then \mintinline{python}{np.dot(a,b)} is valid.  If $b$ is a $(1,2)$ array then the operation will return an error.
+	\\\hline
+\end{longtable}
+
+%-Linear Algebra Commands-%
+
+    \subsection{numpy.linalg commands}
+    \begin{longtable}{| m{6cm}  | m{11cm} |}
+    \hline
+    \textbf{Command} & \textbf{Description} 
+    \\\hline
+    \mintinline{python}{np.linalg.inv(A)} & For a 2-dimensional array $A$.  {\mintinline{python}{np.linalg.inv} } returns the inverse of $A$.  For example, for a (2,2) array A
+    \begin{minted}{python}
+np.linalg.inv(A).dot(A)
+    \end{minted}
+    returns
+    \begin{minted}{python}
+np.array( [1,0],
+          [0,1] ])
+    \end{minted}
+    \\\hline
+    \mintinline{python}{np.linalg.eig(A)} & Returns a 1-dimensional array with all the eigenvalues of $A$ as well as a 2-dimensional array with the eigenvectors as columns.  For example,
+    \begin{minted}{python}
+eigvals,eigvecs = np.linalg.eig(A)
+    \end{minted}
+    returns the eigenvalues in {\mintinline{python}{eigvals} } and the eigenvectors in  {\mintinline{python}{eigvecs} }.  {\mintinline{python}{eigvecs[:,i]} } is the eigenvector of $A$  with eigenvalue of {\mintinline{python}{eigval[i]} }.
+    \\\hline
+    \mintinline{python}{np.linalg.solve(A,b)} & Constructs array $x$ such that {\mintinline{python}{A.dot(x)} } is equal to $b$.  Theoretically should give the same answer as
+    \begin{minted}{python}
+Ainv = np.linalg.inv(A)
+x = Ainv.dot(b)
+    \end{minted} 
+    but numerically more stable.
+    \\\hline
+    \end{longtable}
+
+%-Pandas Commands-%
+
+    \subsection{Pandas}
+    \begin{longtable}{| m{6cm}  | m{11cm} |}
+    \hline
+    \textbf{Command} & \textbf{Description} 
+    \\\hline
+    pd.Series() & Constructs a Pandas Series Object from some specified data and/or index
+    \begin{minted}{python}
+    s1 = pd.Series([1,2,3])
+    s2 = pd.Series([1,2,3], index=['a','b','c'])
+    \end{minted}
+    \\\hline
+    pd.DataFrame() & Constructs a Pandas DataFrame object from some specified data and/or index, column names etc.
+    \begin{minted}{python}
+    d = {'a' : [1,2,3], 'b' : [4,5,6]}
+    df = pd.DataFrame(d)
+    \end{minted}
+    or alternatively,
+    \begin{minted}{python}
+    a = [1,2,3]
+    b = [4,5,6]
+    df = pd.DataFrame(list(zip(a,b)), columns=['a','b'])
+    \end{minted}
+    \\\hline
+    \end{longtable}
+
+\end{document}  
