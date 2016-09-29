@@ -1,0 +1,153 @@
+body {
+	background: #191C22;
+}
+
+.main-content {
+	background: #fff;
+	padding:25px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+pre {
+	overflow:visible;
+	white-space: normal;
+}
+
+colgroup {
+	display:none;
+}
+
+table {
+	width:100%;
+	border:0;
+}
+
+table thead {
+	background:inherit;
+	border:0;
+}
+
+thead tr {
+    display: flex;
+}
+
+table tbody {
+	border:0;
+}
+tbody tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+thead tr th:first-child{
+  display:none;
+}
+
+thead tr th {
+	flex: 1;
+    text-transform: uppercase;
+    background: #ecffdc;
+    margin: 0 10px;
+    padding: 0;
+    font-weight: 700;
+    text-align: center;
+    font-size: 0.7em;
+    border: 1px solid #ddd;
+	display:block;
+}
+
+tbody tr td {
+	flex: 1 0 30%;
+    border: 0px solid #efefef;
+	display: block;
+}
+
+tbody tr td:nth-child(1) {
+	flex: 0 1 100%;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-bottom: 1px solid #efefef;
+    padding: 20px 10px 0 10px;
+}
+
+tbody tr td:nth-child(2) .highlight {
+	background: #ffe6e7;
+}
+
+tbody tr td:nth-child(3) .highlight {
+	background: #fff6e2;
+}
+
+tbody tr td:nth-child(4) .highlight {
+	background: #e8f4ff;
+}
+
+.section h2 {
+	background: #515964;
+    color: #fff;
+    font-size: 1em;
+    padding: 3px 10px;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+}
+
+.site-logo {
+	text-align: center;
+}
+
+.site-logo img {
+	width:15%;
+}
+
+.section h1 {
+	border-bottom: 2px solid #efefef;
+    display: inline-block;
+}
+
+.section h1 .headerlink {
+	color:#fff;
+}
+
+.section h2 .headerlink {
+	color:#515964;
+}
+
+.highlight {
+	background:#ffefaf;
+	padding: 5px 10px;
+    border: 1px solid #e1e1e1;
+}
+
+table tbody tr:nth-child(even) {
+	background-color: inherit;
+}
+
+
+@media screen and (max-width: 40em) {
+	
+	.site-logo img {
+		width:50%;
+	}
+	tbody tr {
+		display: block;
+	}
+	tbody tr td {
+		display: block;
+	}
+	thead tr th:nth-child(2) {
+		background: #ffe6e7;
+	}
+	
+	thead tr th:nth-child(3) {
+		background: #fff6e2;
+	}
+	
+	thead tr th:nth-child(4) {
+		background: #e8f4ff;
+	}
+
+}

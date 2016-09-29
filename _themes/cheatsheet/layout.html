@@ -1,0 +1,112 @@
+{%- block doctype -%}
+<!doctype html>
+{%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set url_root = pathto('', 1) %}
+{# XXX necessary? #}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- if not embedded and docstitle %}
+  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{%- else %}
+  {%- set titlesuffix = "" %}
+{%- endif %}
+
+{%- macro navigation() %}
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+	        
+          {#%- block sidebarlogo %#}
+
+            <p class="logo"><a href="{{ pathto(master_doc) }}">
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+            </a></p>
+
+          
+            {%- block sidebartoc %}
+            {%- include "localtoc.html" %}
+            {%- endblock %}
+
+        </div>
+      </div>
+{%- endmacro %}
+
+{%- macro script() %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ pathto('_static/cheatsheet.js', 1) }}"></script>
+{%- endmacro %}
+
+{%- macro css() %}
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}" type="text/css" />
+{%- endmacro %}
+
+
+  </head>
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {%- block htmltitle %}
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {%- endblock %}
+    
+    {{ css() }}
+    {{ script() }}
+
+  </head>
+  <body>
+
+{#%- block header %}{% endblock %#}
+
+{#%- block navigation %} {{ navigation() }} {% endblock %#}
+
+{%- block content %}
+
+	{%- block document %}
+
+      <div class="row">
+	
+		<main class="main-content" role="main" tabindex="0">
+
+			<p class="site-logo"><img src="{{ pathto('_static/qe-logo.png', 1) }}" alt="QuantEcon logo"></p>
+			
+						
+	        {% block body %}
+			
+
+	         {% endblock %}
+			  
+			{%- block footer %}
+			    <div class="footer">
+			    {%- if show_copyright %}
+			      {%- if hasdoc('copyright') %}
+			        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+			      {%- else %}
+			        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+			      {%- endif %}
+			    {%- endif %}
+			    {%- if last_updated %}
+			      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+			    {%- endif %}
+			    {%- if show_sphinx %}
+			      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+			    {%- endif %}
+			    </div>
+			{%- endblock %}
+					  
+		</main>
+		
+      </div>
+
+	{%- endblock %}
+
+{%- endblock %}
+
+
+  </body>
+</html>
