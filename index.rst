@@ -6,7 +6,8 @@
 QuantEcon MATLAB-Python-Julia Cheat Sheet
 =========================================================================
 
-This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia.
+The Python code assumes that NumPy is installed and imported as ``import
+numpy as np``.
 
 
 
@@ -18,11 +19,22 @@ Creating Vectors
 +=============================+==========================+=======================================+==========================+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
-| Create a row vector         |     A = [1 2 3]          |  A = np.array([1, 2, 3])              |     A = [1 2 3]          |
+| Create a row vector:        |     A = [1 2 3]          |  A = np.array([1, 2, 3]).reshape(1,3) |     A = [1 2 3]          |
+| size (1, n)                 |                          |                                       |                          |
 +-----------------------------+--------------------------+---------------------------------------+--------------------------+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
-| Create a column vector      |     A = [1; 2; 3]        |  A = np.array([1, 2, 3]).reshape(3,1) |     A = [1; 2; 3]        |
+| Create a column vector:     |     A = [1; 2; 3]        |  A = np.array([1, 2, 3]).reshape(3,1) |     A = [1 2 3]'         |
+| size (n, 1)                 |                          |                                       |                          |
++-----------------------------+--------------------------+---------------------------------------+--------------------------+
+|                             | Not possible             | .. code-block:: python                | .. code-block:: julia    |
+|                             |                          |                                       |                          |
+| Create 1d array: size (n, ) |                          |  A = np.array([1, 2, 3])              |     A = [1; 2; 3]        |
+|                             |                          |                                       | or                       |
+|                             |                          |                                       |                          |
+|                             |                          |                                       | .. code-block:: julia    |
+|                             |                          |                                       |                          |
+|                             |                          |                                       |     A = [1, 2, 3]        |
 +-----------------------------+--------------------------+---------------------------------------+--------------------------+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
@@ -140,7 +152,7 @@ Accessing Vector/Matrix Elements
 +================================+===============================+===============================+===========================+
 |                                | .. code-block:: matlab        | .. code-block:: python        | .. code-block:: julia     |
 |                                |                               |                               |                           |
-| Access one element             |     A(2, 2)                   |    A[2, 2]                    |     A[2, 2]               |
+| Access one element             |     A(2, 2)                   |    A[1, 1]                    |     A[2, 2]               |
 +--------------------------------+-------------------------------+-------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python        | .. code-block:: julia     |
 |                                |                               |                               |                           |
@@ -217,7 +229,14 @@ Mathematical Operations
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
 | Solve linear system            |     A\b                       |    np.linalg.solve(A, b)       |     A\b                   |
-| :math:`Ax=b`                   |                               |                                |                           |
+| :math:`Ax=b` (when :math:`A`   |                               |                                |                           |
+| is square)                     |                               |                                |                           |
++--------------------------------+-------------------------------+--------------------------------+---------------------------+
+|                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
+|                                |                               |                                |                           |
+| Solve least squares problem    |     A\b                       |    np.linalg.lstsq(A, b)       |     A\b                   |
+| :math:`Ax=b` (when :math:`A`   |                               |                                |                           |
+| is rectangular)                |                               |                                |                           |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 
 
@@ -264,63 +283,61 @@ Sum/Maximum/Minimum
 Programming
 -----------
 
-+------------------------+----------------------------+----------------------------+-------------------------------+
-| Operation              |         MATLAB             | Python                     | Julia                         |
-+========================+============================+============================+===============================+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| Comment one line       |     % This is a comment    |    # This is a comment     |     # This is a comment       |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| Comment block          |     %{                     |    # Block                 |     #=                        |
-|                        |     Comment block          |    # comment               |     Comment block             |
-|                        |     %}                     |    # following PEP8        |     =#                        |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| For loop               |     for i = 1:N            |    for i in range(n):      |     for i = 1:N               |
-|                        |        % do something      |        # do something      |        # do something         |
-|                        |     end                    |                            |     end                       |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| While loop             |     while i <= N           |    while i <= N:           |     while i <= N              |
-|                        |        % do something      |        # do something      |        # do something         |
-|                        |     end                    |                            |     end                       |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| If statement           |     if i <= N              |    if i <= N:              |     if i <= N                 |
-|                        |        % do something      |       # do something       |        # do something         |
-|                        |     end                    |                            |     end                       |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| If/else statement      |     if i <= N              |   if i <= N:               |    if i <= N                  |
-|                        |        % do something      |       # do something       |       # do something          |
-|                        |     else                   |   else:                    |    else                       |
-|                        |        % do something else |       # so something else  |       # do something else     |
-|                        |     end                    |                            |    end                        |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| Print text and variable|     x = 10                 |    x = 10                  |    x = 10                     |
-| to screen              |     fprintf('The value of  |    print('The value of     |    println("The value of      |
-|                        |     x is %d. \n', x)       |    x is {}.'.format(x))    |    x is $(x).")               |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| Function: one line/    |     fun = @(x) x^2         |    fun = lambda x: x**2    |     fun(x) = x^2              |
-| anonymous              |                            |                            |                               |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-|                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
-|                        |                            |                            |                               |
-| Function: multiple     |     function out  = fun(x) |    def fun(x):             |     function fun(x)           |
-| lines                  |        out = x^2           |        return x**2         |        return x^2             |
-|                        |     end                    |                            |     end                       |
-+------------------------+----------------------------+----------------------------+-------------------------------+
-
-
++------------------------+-------------------------------+----------------------------+-------------------------------+
+| Operation              |         MATLAB                | Python                     | Julia                         |
++========================+===============================+============================+===============================+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| Comment one line       |     % This is a comment       |    # This is a comment     |     # This is a comment       |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| Comment block          |     %{                        |    # Block                 |     #=                        |
+|                        |     Comment block             |    # comment               |     Comment block             |
+|                        |     %}                        |    # following PEP8        |     =#                        |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| For loop               |     for i = 1:N               |    for i in range(n):      |     for i = 1:N               |
+|                        |          % do something       |        # do something      |        # do something         |
+|                        |     end                       |                            |     end                       |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| While loop             |     while i <= N              |    while i <= N:           |     while i <= N              |
+|                        |          % do something       |        # do something      |        # do something         |
+|                        |     end                       |                            |     end                       |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| If statement           |     if i <= N                 |    if i <= N:              |     if i <= N                 |
+|                        |          % do something       |       # do something       |        # do something         |
+|                        |     end                       |                            |     end                       |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| If/else statement      |     if i <= N                 |   if i <= N:               |    if i <= N                  |
+|                        |          % do something       |       # do something       |       # do something          |
+|                        |     else                      |   else:                    |    else                       |
+|                        |          % do something else  |       # so something else  |       # do something else     |
+|                        |     end                       |                            |    end                        |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| Print text and variable|     x = 10                    |    x = 10                  |    x = 10                     |
+| to screen              |     fprintf('The value of     |    print('The value of     |    println("The value of      |
+|                        |     x is %d. \n', x)          |    x is {}.'.format(x))    |    x is $(x).")               |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| Function: one line/    |     fun = @(x) x^2            |    fun = lambda x: x**2    |     fun(x) = x^2              |
+| anonymous              |                               |                            |                               |
++------------------------+-------------------------------+----------------------------+-------------------------------+
+|                        | .. code-block:: matlab        | .. code-block:: python     | .. code-block:: julia         |
+|                        |                               |                            |                               |
+| Function: multiple     |     function out  = fun(x)    |    def fun(x):             |     function fun(x)           |
+| lines                  |        out = x^2              |        return x**2         |        return x^2             |
+|                        |     end                       |                            |     end                       |
++------------------------+-------------------------------+----------------------------+-------------------------------+
 
 
