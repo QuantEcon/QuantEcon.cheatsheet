@@ -1,11 +1,4 @@
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!cheatsheet.rst
-!conf.py
-!make.bat
-!Makefile
-!quantecon_logo_2.jpg
-!README.md
+_build/
+_backup/
+.DS_Store
+*.bak
