@@ -55,8 +55,7 @@ body {
 }
 
 pre {
-	overflow:visible;
-	white-space: pre-line;
+	white-space: pre-wrap;
 }
 
 colgroup {
