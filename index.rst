@@ -6,7 +6,7 @@
 QuantEcon MATLAB-Python-Julia Cheat Sheet
 =========================================================================
 
-This document summarizes commonly-used, equivalent commands across MATLAB, Python, and Julia.
+In the Python code we assume that you have already run :code:`import numpy as np`
 
 
 

@@ -1,11 +1,16 @@
 body {
-	background: #191C22;
+	background: #e6e6e6;
+}
+
+code {
+	font-size:0.9em;
+	background: #fffde2;
 }
 
 .title-bar {
 	text-align: center;
     cursor: pointer;
-    font-size: 0.9em;
+    padding: .75rem .5rem;
 }
 
 .toc-menu {
