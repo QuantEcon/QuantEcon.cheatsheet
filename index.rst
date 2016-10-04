@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QuantEcon MATLAB-Python-Julia Cheat Sheet
+MATLAB-Python-Julia Cheat Sheet
 =========================================================================
 
 In the Python code we assume that you have already run :code:`import numpy as np`
