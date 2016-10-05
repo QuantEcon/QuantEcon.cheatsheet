@@ -18,17 +18,16 @@ Creating Vectors
 +=============================+==========================+=======================================+==========================+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
-| Create a row vector         |     A = [1 2 3]          |  A = np.array([1, 2, 3])              |     A = [1 2 3]          |
+| Row vector                  |     A = [1 2 3]          |  A = np.array([1, 2, 3])              |     A = [1 2 3]          |
 +-----------------------------+--------------------------+---------------------------------------+--------------------------+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
-| Create a column vector      |     A = [1; 2; 3]        |  A = np.array([1, 2, 3]).reshape(3,1) |     A = [1; 2; 3]        |
+| Column vector               |     A = [1; 2; 3]        |  A = np.array([1, 2, 3]).reshape(3,1) |     A = [1; 2; 3]        |
 +-----------------------------+--------------------------+---------------------------------------+--------------------------+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
-| Sequence starting at j      |     A = j:k:n            |  A = np.arange(j, n+1, k)             |     A = j:k:n            |
-| ending at n, with           |                          |                                       |                          |
-| difference k between points |                          |                                       |                          |
+| Integers from j to n with   |     A = j:k:n            |  A = np.arange(j, n+1, k)             |     A = j:k:n            |
+| step size k                 |                          |                                       |                          |
 +-----------------------------+--------------------------+---------------------------------------+--------------------------+
 |                             | .. code-block:: matlab   | .. code-block:: python                | .. code-block:: julia    |
 |                             |                          |                                       |                          |
@@ -50,29 +49,27 @@ Creating Matrices
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Create a 2 by 2 matrix of zeros|     A = zeros(2, 2)      |   A = np.zeros((2, 2))           |     A = zeros(2, 2)      |
+| 2 x 2 matrix of zeros          |     A = zeros(2, 2)      |   A = np.zeros((2, 2))           |     A = zeros(2, 2)      |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Create a 2 by 2 matrix of ones |     A = ones(2, 2)       |   A = np.ones((2, 2))            |     A = ones(2, 2)       |
+| 2 x 2 matrix of ones           |     A = ones(2, 2)       |   A = np.ones((2, 2))            |     A = ones(2, 2)       |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Create a 2 by 2 identity matrix|     A = eye(2, 2)        |   A = np.eye(2)                  |     A = eye(2, 2)        |
+| 2 x 2 identity matrix          |     A = eye(2, 2)        |   A = np.eye(2)                  |     A = eye(2, 2)        |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Create a diagonal matrix       |     A = diag([1 2 3])    |   A = np.diag([1, 2, 3])         |     A = diagm([1; 2; 3]) |
+| Diagonal matrix                |     A = diag([1 2 3])    |   A = np.diag([1, 2, 3])         |     A = diagm([1; 2; 3]) |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Matrix of uniformly distributed|     A = rand(2, 2)       |   A = np.random.rand(2,2)        |     A = rand(2, 2)       |
-| random numbers                 |                          |                                  |                          |
+| Uniform random numbers         |     A = rand(2, 2)       |   A = np.random.rand(2,2)        |     A = rand(2, 2)       |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
 |                                |                          |                                  |                          |
-| Matrix of random numbers drawn |     A = randn(2, 2)      |   A = np.random.randn(2, 2)      |     A = randn(2, 2)      |
-| a standard normal              |                          |                                  |                          |
+| Normal random numbers          |     A = randn(2, 2)      |   A = np.random.randn(2, 2)      |     A = randn(2, 2)      |
 +--------------------------------+--------------------------+----------------------------------+--------------------------+
 
 
@@ -173,16 +170,15 @@ Mathematical Operations
 +================================+===============================+================================+===========================+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Vector dot product             |     dot(A, B)                 |    np.dot(A, B) or A@B         |     dot(A, B)             |
+| Dot product                    |     dot(A, B)                 |    np.dot(A, B) or A @ B       |     dot(A, B)             |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Matrix multiplication          |     A*B                       |    np.dot(A, B) or A@B         |     A*B                   |
+| Matrix multiplication          |     A * B                     |     A @ B                      |     A * B                 |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Element-wise matrix            |     A.*B                      |    A*B                         |     A.*B                  |
-| multiplication                 |                               |                                |                           |
+| Element-wise multiplication    |     A .* B                    |    A * B                       |     A .* B                |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
@@ -194,7 +190,7 @@ Mathematical Operations
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Inverse of a matrix            |     inv(A)                    |    np.linalg.inv(A)            |     inv(A)                |
+| Inverse                        |     inv(A)                    |    np.linalg.inv(A)            |     inv(A)                |
 |                                |                               |                                |                           |
 |                                | or                            |                                | or                        |
 |                                |                               |                                |                           |
@@ -204,7 +200,7 @@ Mathematical Operations
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Determinant of a matrix        |     det(A)                    |    np.linalg.det(A)            |     det(A)                |
+| Determinant                    |     det(A)                    |    np.linalg.det(A)            |     det(A)                |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
@@ -216,13 +212,12 @@ Mathematical Operations
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
 |                                |                               |                                |                           |
-| Solve linear system            |     A\b                       |    np.linalg.solve(A, b)       |     A\b                   |
-| :math:`Ax=b`                   |                               |                                |                           |
+| Solve :math:`Ax=b`             |     A\b                       |    np.linalg.solve(A, b)       |     A\b                   |
 +--------------------------------+-------------------------------+--------------------------------+---------------------------+
 
 
 
-Sum/Maximum/Minimum
+Sum / max / min
 -------------------
 
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
@@ -230,31 +225,31 @@ Sum/Maximum/Minimum
 +================================+===============================+=================================+===========================+
 |                                | .. code-block:: matlab        | .. code-block:: python          | .. code-block:: julia     |
 |                                |                               |                                 |                           |
-| Sum/maximum/minimum of         |     sum(A, 1)                 |    sum(A, 0)                    |     sum(A, 1)             |
+| Sum / max / min of             |     sum(A, 1)                 |    sum(A, 0)                    |     sum(A, 1)             |
 | each column                    |     max(A, [], 1)             |    np.amax(A, 0)                |     maximum(A, 1)         |
 |                                |     min(A, [], 1)             |    np.amin(A, 0)                |     minimum(A, 1)         |
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python          | .. code-block:: julia     |
 |                                |                               |                                 |                           |
-| Sum/maximum/minimum of         |     sum(A, 2)                 |    sum(A, 1)                    |     sum(A, 2)             |
-| each row                       |     max(A, [], 2)             |    np.amax(A, 1)                |     maximum(A, 2)         |
+| Sum / max / min of each row    |     sum(A, 2)                 |    sum(A, 1)                    |     sum(A, 2)             |
+|                                |     max(A, [], 2)             |    np.amax(A, 1)                |     maximum(A, 2)         |
 |                                |     min(A, [], 2)             |    np.amin(A, 1)                |     minimum(A, 2)         |
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python          | .. code-block:: julia     |
 |                                |                               |                                 |                           |
-| Sum/maximum/minimum of         |     sum(A(:))                 |    np.sum(A)                    |     sum(A)                |
+| Sum / max / min of             |     sum(A(:))                 |    np.sum(A)                    |     sum(A)                |
 | entire matrix                  |     max(A(:))                 |    np.amax(A)                   |     maximum(A)            |
 |                                |     min(A(:))                 |    np.amin(A)                   |     minimum(A)            |
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python          | .. code-block:: julia     |
 |                                |                               |                                 |                           |
-| Cumulative sum/maximum/minimum |     cumsum(A, 1)              |    np.cumsum(A, 0)              |     cumsum(A, 1)          |
+| Cumulative sum / max / min     |     cumsum(A, 1)              |    np.cumsum(A, 0)              |     cumsum(A, 1)          |
 | by row                         |     cummax(A, 1)              |    np.maximum.accumulate(A, 0)  |     cummax(A, 1)          |
 |                                |     cummin(A, 1)              |    np.minimum.accumulate(A, 0)  |     cummin(A, 1)          |
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
 |                                | .. code-block:: matlab        | .. code-block:: python          | .. code-block:: julia     |
 |                                |                               |                                 |                           |
-| Cumulative sum/maximum/minimum |     cumsum(A, 2)              |    np.cumsum(A, 1)              |     cumsum(A, 2)          |
+| Cumulative sum / max / min     |     cumsum(A, 2)              |    np.cumsum(A, 1)              |     cumsum(A, 2)          |
 | by column                      |     cummax(A, 2)              |    np.maximum.accumulate(A, 1)  |     cummax(A, 2)          |
 |                                |     cummin(A, 2)              |    np.minimum.accumulate(A, 1)  |     cummin(A, 2)          |
 +--------------------------------+-------------------------------+---------------------------------+---------------------------+
@@ -291,13 +286,13 @@ Programming
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
 |                        |                            |                            |                               |
-| If statement           |     if i <= N              |    if i <= N:              |     if i <= N                 |
+| If                     |     if i <= N              |    if i <= N:              |     if i <= N                 |
 |                        |        % do something      |       # do something       |        # do something         |
 |                        |     end                    |                            |     end                       |
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
 |                        |                            |                            |                               |
-| If/else statement      |     if i <= N              |   if i <= N:               |    if i <= N                  |
+| If / else              |     if i <= N              |   if i <= N:               |    if i <= N                  |
 |                        |        % do something      |       # do something       |       # do something          |
 |                        |     else                   |   else:                    |    else                       |
 |                        |        % do something else |       # so something else  |       # do something else     |
@@ -305,18 +300,17 @@ Programming
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
 |                        |                            |                            |                               |
-| Print text and variable|     x = 10                 |    x = 10                  |    x = 10                     |
-| to screen              |     fprintf('The value of  |    print('The value of     |    println("The value of      |
-|                        |     x is %d. \n', x)       |    x is {}.'.format(x))    |    x is $(x).")               |
+| Print text and variable|     x = 10                 |   x = 10                   |    x = 10                     |
+|                        |     fprintf('x = %d \n', x)|   print('x = {}'.format(x))|    println("x = $x")          |
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
 |                        |                            |                            |                               |
-| Function: one line/    |     fun = @(x) x^2         |    fun = lambda x: x**2    |     fun(x) = x^2              |
+| Function: one line/    |     f = @(x) x^2           |    f = lambda x: x**2      |     f(x) = x^2                |
 | anonymous              |                            |                            |                               |
 +------------------------+----------------------------+----------------------------+-------------------------------+
 |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
 |                        |                            |                            |                               |
-| Function: multiple     |     function out  = fun(x) |    def fun(x):             |     function fun(x)           |
+| Function: multiple     |     function out  = f(x)   |    def f(x):               |     function f(x)             |
 | lines                  |        out = x^2           |        return x**2         |        return x^2             |
 |                        |     end                    |                            |     end                       |
 +------------------------+----------------------------+----------------------------+-------------------------------+
