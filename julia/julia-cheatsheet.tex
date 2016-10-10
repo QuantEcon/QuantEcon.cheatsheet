@@ -1,0 +1,470 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{fullpage}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{minted}
+\usepackage[margin=2cm]{geometry}
+\begin{document}
+
+\title{%
+\textbf{QuantEcon Julia Cheatsheet}}
+\date{}
+\maketitle
+
+\section{Variables}
+
+Here are a few examples of basic kinds of variables we might be interested in creating.
+\begin{longtable}{ |m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description}
+	\\\hline
+\begin{minted}{julia}
+A = 4.1
+B = [1, 2, 3]
+C = [1.1 2.2 3.3]
+D = [1 2 3]'
+E = [1 2; 3 4]
+\end{minted}
+	& How to \textbf{create a scalar, a vector, or a matrix}. Here, each example will result in a slightly different form of output. \texttt{A} is a scalar, \texttt{B} is a flat array with 3 elements, \texttt{C} is a 1 by 3 vector, \texttt{D} is a 3 by 1 vector, and \texttt{E} is a 2 by 2 matrix.
+	\\\hline
+\begin{minted}{julia}
+s = "This is a string"
+\end{minted}
+	& A \textbf{string} variable 
+	\\\hline
+\begin{minted}{julia}
+x = true
+\end{minted}
+	& A \textbf{Boolean} variable 
+	\\\hline
+\end{longtable}
+
+\section{Vectors and Matrices}
+
+These are a few kinds of special vectors/matrices we can create and some things we can do with them.
+\begin{longtable}{ |m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description}
+	\\\hline
+	\begin{minted}{julia}
+A = zeros(m, n)
+\end{minted}
+& Creates a \textbf{matrix of all zeros} of size \texttt{m} by \texttt{n}. We can also
+do the following:
+\begin{minted}{julia}
+A = zeros(B)
+\end{minted}
+which will create a matrix of all zeros with the same dimensions as
+matrix or vector \texttt{B}. 
+\\\hline
+\begin{minted}{julia}
+A = ones(m, n)
+\end{minted}
+& Creates a \textbf{matrix of all ones} of size \texttt{m} by \texttt{n}. We can also
+do the following:
+\begin{minted}{julia}
+A = ones(B)
+\end{minted}
+which will create a matrix of all ones with the same dimensions as
+matrix or vector \texttt{B}. 
+\\\hline
+\begin{minted}{julia}
+A = eye(n)
+\end{minted}
+& Creates an \texttt{n} by \texttt{n} \textbf{identity matrix}. For example,
+\texttt{eye(3)} will return
+$\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\\
+\end{pmatrix}$.
+\\\hline
+\begin{minted}{julia}
+A = j:k:n
+\end{minted}
+	& This will create a \textbf{sequence} starting at \texttt{j}, ending at
+    \texttt{n}, with difference \texttt{k} between points. For example,
+    \texttt{A = 2:4:10} will create the sequence \texttt{2, 6, 10}. To convert the 
+    output to an array, use \texttt{collect(A)}.	
+    \\\hline
+\begin{minted}{julia}
+A = linspace(j, n, m)
+\end{minted}
+	& This will create a \textbf{sequence} of \texttt{m} points starting at \texttt{j}, ending at
+    \texttt{n}. For example,
+    \texttt{A = linspace(2, 10, 3)} will create the sequence \texttt{2.0, 6.0,
+    10.0}. To convert the 
+    output to an array, use \texttt{collect(A)}.	
+    \\\hline
+\begin{minted}{julia}
+A = diagm(x)
+\end{minted}
+& Creates a \textbf{diagonal matrix} using the elements in \texttt{x}.  For example, if
+\texttt{x = [1, 2, 3]}, \texttt{diagm(x)} will return
+$\begin{pmatrix}
+1 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 3\\
+\end{pmatrix}$.
+\\\hline
+\begin{minted}{julia}
+A = rand(m, n)
+\end{minted}
+& Creates an \texttt{m} by \texttt{n} \textbf{matrix of random numbers} drawn from a
+\textbf{uniform distribution} on $[0, 1]$. Alternatively, \texttt{rand} can be used to
+draw random elements from a set \texttt{X}. For example, if \texttt{X = [1, 2,
+3]}, \texttt{rand(X)} will return either \texttt{1}, \texttt{2}, or \texttt{3}.
+\\\hline
+\begin{minted}{julia}
+A = randn(m, n)
+\end{minted}
+& Creates an \texttt{m} by \texttt{n} \textbf{matrix of random numbers} drawn form a
+\textbf{standard normal distribution}.\\\hline
+\begin{minted}{julia}
+A[m, n]
+\end{minted}
+	& This is the general syntax for \textbf{accessing elements} of an array or matrix, where \texttt{m} and \texttt{n} are integers. The example here returns the element in the second row and third column. 
+	\begin{itemize}
+	\item We can also use ranges (like \texttt{1:3}) in place of single numbers to extract multiple rows or columns. 
+	\item A colon, \texttt{:}, by itself indicates all rows or columns
+	\item The word \texttt{end} can also be used to indicate the last row or column.
+	\end{itemize}
+	\\\hline
+\begin{minted}{julia}
+nrow, ncol = size(A)
+\end{minted}
+	& \textbf{Returns the number of rows and columns} in a matrix. Alternatively, we can do:
+\begin{minted}{julia}
+nrow = size(A, 1)
+\end{minted}
+	and 
+\begin{minted}{julia}
+ncol = size(A, 2)
+\end{minted}
+	\\\hline
+\begin{minted}{julia}
+diag(A)
+\end{minted}
+	& This function returns a vector of the \textbf{diagonal elements} of
+    \texttt{A} (i.e., \texttt{A[1, 1], A[2, 2]}, etc...).
+	\\\hline
+\begin{minted}{julia}
+A = hcat([1 2], [3 4])
+\end{minted}
+    & \textbf{Horizontally concatenates} two matrices or vectors. The example here
+    would return 
+    $\begin{pmatrix}
+    1 & 2 & 3 & 4
+    \end{pmatrix}$. An alternative syntax is:
+    \begin{minted}{julia}
+    A = [[1 2] [3 4]]
+    \end{minted}
+    For either of these commands to work, both matrices or vectors must have
+    the same number of rows.
+	\\\hline
+\begin{minted}{julia}
+A = vcat([1 2], [3 4])
+\end{minted}
+    & \textbf{Vertically concatenates} two matrices or vectors. The example here
+    would return 
+    $\begin{pmatrix}
+    1 & 2 \\
+    3 & 4
+    \end{pmatrix}$. An alternative syntax is:
+    \begin{minted}{julia}
+    A = [[1 2]; [3 4]]
+    \end{minted}
+    For either of these commands to work, both matrices or vectors must have
+    the same number of columns.
+	\\\hline
+\begin{minted}{julia}
+A = reshape(a, m, n)
+\end{minted}
+    & \textbf{Reshapes} matrix or vector \texttt{a} into a new matrix or
+    vector, \texttt{A} with \texttt{m} rows and \texttt{n} columns. For
+    example, 
+    \begin{minted}{julia}
+    A = reshape(1:10, 5, 2)
+    \end{minted}
+    would return 
+    $\begin{pmatrix}
+    1 & 6 \\
+    2 & 7 \\
+    3 & 8 \\
+    4 & 9 \\
+    5 & 10
+    \end{pmatrix}$
+    For this to work, the number of elements in \texttt{a} (number of rows
+    times number of columns) must equal \texttt{m*n}.
+    \\\hline
+\begin{minted}{julia}
+A[:]
+\end{minted}
+    & \textbf{Converts matrix A to a vector.} For
+    example, if \texttt{A = [1 2; 3 4]}, then \texttt{A[:]} will return
+    $\begin{pmatrix}
+        1 \\
+        3 \\
+        2 \\
+        4
+    \end{pmatrix}$.
+    \\\hline
+\begin{minted}{julia}
+flipdim(A, d)
+\end{minted}
+    & Reverses the vector or matrix \texttt{A} along dimension \texttt{d}. For
+    example, if \texttt{A = [1 2 3; 4 5 6]}, \texttt{flipdim(A, 1)}, will
+    reverse the rows of \texttt{A} and return 
+    $\begin{pmatrix}
+    4 & 5 & 6 \\
+    1 & 2 & 3
+    \end{pmatrix}$.
+    \texttt{flipdim(A, 2)} will reverse the columns of \texttt{A} and return
+    $\begin{pmatrix}
+    3 & 2 & 1 \\
+    6 & 5 & 4
+    \end{pmatrix}$.
+    \\\hline
+\begin{minted}{julia}
+repmat(A, m, n)
+\end{minted}
+    & \textbf{Repeats matrix} \texttt{A}, \texttt{m} times in the row
+    direction and \texttt{n} in the column direction. For example, if
+    \texttt{A = [1 2; 3 4]}, \texttt{repmat(A, 2, 3)} will return
+    $\begin{pmatrix}
+    1 & 2 & 1 & 2 & 1 & 2 \\
+    3 & 4 & 3 & 4 & 3 & 4 \\
+    1 & 2 & 1 & 2 & 1 & 2 \\
+    3 & 4 & 3 & 4 & 3 & 4 \\
+    \end{pmatrix}$.
+    \\\hline
+\end{longtable}
+
+\section{Mathematical Functions}
+Here, we cover some useful functions for doing math.
+\begin{longtable}{ |m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description}
+	\\\hline
+	\begin{minted}{julia}
+5+2
+5-2
+5*2 
+5\2
+5^2
+5%2
+	\end{minted}
+	& \textbf{Scalar arithmetic operations}: addition, subtraction, multiplication, division, power, remainder.
+	\\\hline
+	\begin{minted}{julia}
+A+B
+A-B
+A.*B
+A./B
+A.^B
+A.%B
+	\end{minted}
+    & \textbf{Element-by-element operations} on matrices. This syntax applies
+    the operation element-wise to corresponding elements of the matrices.
+    \\\hline
+	\begin{minted}{julia}
+A*B
+	\end{minted}
+	& When \texttt{A} and \texttt{B} are matrices, \texttt{*} will perform
+    \textbf{matrix multiplication}, as long as the number of columns in \texttt{A} is the same as the number of columns in \texttt{B}. 
+	\\\hline
+	\begin{minted}{julia}
+dot(A, B)
+	\end{minted}
+	& This function returns the \textbf{dot product/inner product} of the two vectors
+    \texttt{A} and \texttt{B}. The two vectors need to be dimensionless or
+    column vectors.	\\\hline
+    \begin{minted}{julia}
+A'
+	\end{minted}
+	& This syntax returns the \textbf{transpose} of the matrix
+    \texttt{A} (i.e., reverses the dimensions of \texttt{A}). For example if
+    $A = \begin{pmatrix}
+    1 & 2 \\
+    3 & 4 
+    \end{pmatrix}$, then \texttt{A'} returns 
+    $\begin{pmatrix}
+    1 & 3 \\
+    2 & 4
+    \end{pmatrix}$. \\\hline
+\begin{minted}{julia}
+sum(A)
+maximum(A)
+minumum(A)
+	\end{minted}
+	& These functions compute the sum, maximum, and minimum elements,
+    respectively, in matrix or vector \texttt{A}. We can also add an
+    additional argument for the dimension to compute the sum/maximum/minumum
+    across. For example \texttt{sum(A, 2)} will compute the row sums of
+    \texttt{A} and \texttt{maximum(A, 1)} will compute the maxima of each
+    column of \texttt{A}.
+    \\\hline
+    \begin{minted}{julia}
+inv(A)
+	\end{minted}
+	& This function returns the \textbf{inverse} of the matrix
+    \texttt{A}. Alternatively, we can do:
+    \begin{minted}{julia}
+    A^(-1)
+    \end{minted}
+    \\\hline
+ \begin{minted}{julia}
+det(A)
+	\end{minted}
+	& This function returns the \textbf{determinant} of the matrix
+    \texttt{A}.     
+    \\\hline
+ \begin{minted}{julia}
+val, vec = eig(A)
+	\end{minted} 
+&    Returns the \textbf{eigenvalues} (\texttt{val}) and \textbf{eigenvectors} (\texttt{vec}) of
+    matrix \texttt{A}. In the output, \texttt{val[i]} is the eigenvalue
+    corresponding to eigenvector \texttt{val[:, i]}.
+    \\\hline
+ \begin{minted}{julia}
+norm(A)
+	\end{minted} 
+&    Returns the Euclidean \textbf{norm} of matrix or vector \texttt{A}.
+We can also provide an argument \texttt{p}, like so:
+\begin{minted}{julia}
+norm(A, p)
+\end{minted}
+which will compute the \texttt{p}-norm (the default \texttt{p} is 2). If
+\texttt{A} is a matrix, valid values of \texttt{p} are \texttt{1, 2} amd
+\texttt{Inf}.
+\\\hline
+ \begin{minted}{julia}
+A\b
+	\end{minted} 
+&   If \texttt{A} is square, this syntax \textbf{solves the linear system} $Ax = b$.
+Therefore, it returns \texttt{x} such that \texttt{A*x = b}.
+If \texttt{A} is rectangular, it \textbf{solves for the least-squares
+solution} to the
+problem.
+\\\hline
+\end{longtable} 
+
+\section{Programming}
+The following are useful basics for Julia programming.
+\begin{longtable}{ |m{6cm}  | m{11cm} |}
+	\hline
+	\textbf{Command} & \textbf{Description}
+	\\\hline
+	\begin{minted}{julia}
+    # One line comment
+
+    #=
+    Comment 
+    block
+    =#
+	\end{minted}
+	& Two ways to make \textbf{comments}. Comments are useful for annotating
+    code and explaining what it does. The first example limits your comment to
+    one line and the second example allows the comments to span multiple lines
+    between the \texttt{\#=} and \texttt{=\#}.
+    \\\hline
+\begin{minted}{julia}
+    for i in iterable
+        # do something
+    end
+	\end{minted}
+	& A \textbf{for loop} is used to perform a sequence of commands for each
+    element in an iterable object, such as an array. For example, the
+    following for loop fills the vector \texttt{l} with the squares of the
+    integers from 1 to 3:
+    \begin{minted}{julia}
+    N = 3
+    l = zeros(N, 1)
+    for i = 1:N
+        l[i] = i^2
+    end
+    \end{minted}
+    \\\hline
+\begin{minted}{julia}
+    while i <= N
+        # do something
+    end
+	\end{minted}
+	& A \textbf{while loop} performs a sequence of commands as long as some
+    condition is true. For example, the
+    following while loop achieves the same result as the for loop above
+    \begin{minted}{julia}
+    N = 3
+    l = zeros(N, 1)
+    i = 1
+    while i <= N
+        l[i] = i^2
+        i = i + 1
+    end
+    \end{minted}
+    \\\hline
+\begin{minted}{julia}
+    if i <= N
+        # do something
+    else
+        # do something else
+    end
+	\end{minted}
+	& An \textbf{if/else statement} performs commands if a condition is met. For example, the
+    following squares \texttt{x} is \texttt{x} is 5, and cubes it otherwise:
+    \begin{minted}{julia}
+    if x == 5
+        x = x^2
+    else
+        x = x^3
+    end
+    \end{minted}
+    We can also just have an if statement on its own, in which case it would
+    square \texttt{x} if \texttt{x} is 5, and do nothing otherwise.
+    \begin{minted}{julia}
+    if x == 5
+        x = x^2
+    end
+    \end{minted}
+    \\\hline
+\begin{minted}{julia}
+    fun(x, y) = 5*x + y
+
+    function fun(x, y)
+        ret = 5*x
+        return ret + y
+    end
+	\end{minted}
+	& These are two ways to define \textbf{functions}. Both examples here define
+    equivalent functions.
+
+    The first method is for defining a function on one line. The name of the
+    function is \texttt{fun} and it takes two inputs, \texttt{x} and
+    \texttt{y}, which are specified between the parentheses. The code after
+    the equals sign tells Julia what the output of the function is.
+
+    The second method is used to create functions of more than one line. The
+    name of the function, \texttt{fun}, is specified right after
+    \texttt{function}, and like the one-line version, has its arguments in
+    parentheses. The \texttt{return} statement specifies the output of the
+    function.
+    \\\hline
+\begin{minted}{julia}
+    println("Hello world")
+	\end{minted}
+	& How to \textbf{print} to screen. We can also print the values of
+    variables to screen:
+    \begin{minted}{julia}
+    println("The value of x is $(x).")
+    \end{minted}
+    \\\hline
+
+\end{longtable}
+
+
+\end{document}
