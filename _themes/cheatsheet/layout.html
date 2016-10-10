@@ -41,10 +41,16 @@
 	
 	<div class="row">
 	  <div class="toc-menu">
+
+			<p class="github-logo">
+				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
+			</p>
 	                  
 	        {%- block sidebartoc %}
 	        {%- include "localtoc.html" %}
 	        {%- endblock %}
+
+			<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon.</p>
 	
 	  </div>
 	</div>
@@ -61,12 +67,6 @@
 			<p class="site-logo">
 				<a href="http://quantecon.org/" title="QuantEcon"><img src="{{ pathto('_static/qe-logo.png', 1) }}" alt="QuantEcon logo"></a>
 			</p>
-			
-			<p class="github-logo">
-				<a href="http://github.com/QuantEcon/" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
-			</p>
-				
-			
 						
 	        {% block body %}
 			
