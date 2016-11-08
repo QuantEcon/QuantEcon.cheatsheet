@@ -200,7 +200,7 @@ A = reshape(a, m, n)
     5 & 10
     \end{pmatrix}$
     For this to work, the number of elements in \texttt{a} (number of rows
-    times number of columns) must equal \texttt{m*n}.
+    times number of columns) must equal \texttt{m * n}.
     \\\hline
 \begin{minted}{julia}
 A[:]
@@ -252,28 +252,28 @@ Here, we cover some useful functions for doing math.
 	\textbf{Command} & \textbf{Description}
 	\\\hline
 	\begin{minted}{julia}
-5+2
-5-2
-5*2 
-5\2
-5^2
-5%2
+5 + 2
+5 - 2
+5 * 2 
+5 \ 2
+5 ^ 2
+5 % 2
 	\end{minted}
 	& \textbf{Scalar arithmetic operations}: addition, subtraction, multiplication, division, power, remainder.
 	\\\hline
 	\begin{minted}{julia}
-A+B
-A-B
-A.*B
-A./B
-A.^B
-A.%B
+A + B
+A - B
+A .* B
+A ./ B
+A .^ B
+A .% B
 	\end{minted}
     & \textbf{Element-by-element operations} on matrices. This syntax applies
     the operation element-wise to corresponding elements of the matrices.
     \\\hline
 	\begin{minted}{julia}
-A*B
+A * B
 	\end{minted}
 	& When \texttt{A} and \texttt{B} are matrices, \texttt{*} will perform
     \textbf{matrix multiplication}, as long as the number of columns in \texttt{A} is the same as the number of columns in \texttt{B}. 
@@ -315,7 +315,7 @@ inv(A)
 	& This function returns the \textbf{inverse} of the matrix
     \texttt{A}. Alternatively, we can do:
     \begin{minted}{julia}
-    A^(-1)
+    A ^ (-1)
     \end{minted}
     \\\hline
  \begin{minted}{julia}
@@ -344,10 +344,10 @@ which will compute the \texttt{p}-norm (the default \texttt{p} is 2). If
 \texttt{Inf}.
 \\\hline
  \begin{minted}{julia}
-A\b
+A \ b
 	\end{minted} 
 &   If \texttt{A} is square, this syntax \textbf{solves the linear system} $Ax = b$.
-Therefore, it returns \texttt{x} such that \texttt{A*x = b}.
+Therefore, it returns \texttt{x} such that \texttt{A * x = b}.
 If \texttt{A} is rectangular, it \textbf{solves for the least-squares
 solution} to the
 problem.
@@ -386,7 +386,7 @@ The following are useful basics for Julia programming.
     N = 3
     l = zeros(N, 1)
     for i = 1:N
-        l[i] = i^2
+        l[i] = i ^ 2
     end
     \end{minted}
     \\\hline
@@ -403,7 +403,7 @@ The following are useful basics for Julia programming.
     l = zeros(N, 1)
     i = 1
     while i <= N
-        l[i] = i^2
+        l[i] = i ^ 2
         i = i + 1
     end
     \end{minted}
@@ -419,24 +419,24 @@ The following are useful basics for Julia programming.
     following squares \texttt{x} is \texttt{x} is 5, and cubes it otherwise:
     \begin{minted}{julia}
     if x == 5
-        x = x^2
+        x = x ^ 2
     else
-        x = x^3
+        x = x ^ 3
     end
     \end{minted}
     We can also just have an if statement on its own, in which case it would
     square \texttt{x} if \texttt{x} is 5, and do nothing otherwise.
     \begin{minted}{julia}
     if x == 5
-        x = x^2
+        x = x ^ 2
     end
     \end{minted}
     \\\hline
 \begin{minted}{julia}
-    fun(x, y) = 5*x + y
+    fun(x, y) = 5 * x + y
 
     function fun(x, y)
-        ret = 5*x
+        ret = 5 * x
         return ret + y
     end
 	\end{minted}
