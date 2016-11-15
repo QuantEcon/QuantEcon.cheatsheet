@@ -193,4 +193,169 @@ These are a few kinds of special vectors/matrices we can create and some things 
 |                           |                                                                                                        |
 +---------------------------+--------------------------------------------------------------------------------------------------------+
 
+Mathematical Functions
+----------------------
+Here, we cover some useful functions for doing math.
 
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| Command                   |      Description                                                                                       |
++===========================+========================================================================================================+
+| .. code-block:: julia     | **Scalar arithmetic operations**: addition, subtraction, multiplication, division, power, remainder.   |
+|                           |                                                                                                        |
+|    5 + 2                  |                                                                                                        |
+|    5 - 2                  |                                                                                                        |
+|    5 * 2                  |                                                                                                        |
+|    5 / 2                  |                                                                                                        |
+|    5 ^ 2                  |                                                                                                        |
+|    5 % 2                  |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | **Element-by-element operations** on matrices. This syntax applies the operation element-wise to       |
+|                           | corresponding elements of the matrices.                                                                |
+|                           |                                                                                                        |
+|    A + B                  |                                                                                                        |
+|    A - B                  |                                                                                                        |
+|    A .* B                 |                                                                                                        |
+|    A ./ B                 |                                                                                                        |
+|    A .^ B                 |                                                                                                        |
+|    A .% B                 |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | When ``A`` and ``B`` are matrices, ``*`` will perform **matrix multiplication**, as long as the number |
+|                           | of columns in ``A`` is the same as the number of columns in ``B``.                                     |
+|    A * B                  |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | This function returns the **dot product/inner product** of the two vectors ``A`` and ``B``. The two    |
+|                           | vectors need to be dimensionless or column vectors.                                                    |
+|    dot(A, B)              |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | This syntax returns the **transpose** of the matrix ``A`` (i.e., reverses the dimensions of ``A``).    |
+|                           | For example if                                                                                         |
+|    A'                     |  .. math::                                                                                             |
+|                           |                                                                                                        |
+|                           |     A = \begin{pmatrix}                                                                                |
+|                           |     1 & 2 \\                                                                                           |
+|                           |     3 & 4                                                                                              |
+|                           |     \end{pmatrix}                                                                                      |
+|                           |                                                                                                        |
+|                           | then ``A`` returns                                                                                     |
+|                           |  .. math::                                                                                             |
+|                           |                                                                                                        |
+|                           |     \begin{pmatrix}                                                                                    |
+|                           |     1 & 3 \\                                                                                           |
+|                           |     2 & 4                                                                                              |
+|                           |     \end{pmatrix}                                                                                      |
+|                           |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | These functions compute the **sum, maximum, and minimum** elements, respectively, in matrix or vector  |
+|                           | ``A``. We can also add an additional argument for the dimension to compute the sum/maximum/minumum     |
+|    sum(A)                 | across. For example ``sum(A, 2)`` will compute the row sums of ``A`` and ``maximum(A, 1)`` will compute|
+|    maximum(A)             | the maxima of eachcolumn of ``A``.                                                                     |
+|    minimum(A)             |                                                                                                        |
+|                           |                                                                                                        |
+|                           |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | This function returns the **inverse** of the matrix ``A``. Alternatively, we can do:                   |
+|                           |   .. code-block:: julia                                                                                |
+|    A = zeros(m, n)        |                                                                                                        |
+|                           |     A ^ (-1)                                                                                           |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | This function returns the **determinant** of the matrix ``A``.                                         |
+|                           |                                                                                                        |
+|    det(A)                 |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | Returns the **eigenvalues** (``val``) and **eigenvectors** (``vec``) of matrix ``A``. In the output,   |
+|                           | ``val[i]`` is the eigenvalue corresponding to eigenvector ``val[:, i]``.                               |
+|    val, vec = eig(A)      |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | Returns the Euclidean **norm** of matrix or vector ``A``. We can also provide an argument ``p``, like  |
+|                           | so:                                                                                                    |
+|    norm(A)                |                                                                                                        |
+|                           |   .. code-block:: julia                                                                                |
+|                           |                                                                                                        |
+|                           |     norm(A, p)                                                                                         |
+|                           |                                                                                                        |
+|                           | which will compute the ``p``-norm (the default ``p`` is 2). If ``A`` is a matrix, valid values of ``p``|
+|                           | are \texttt{1, 2} and \texttt{Inf}.                                                                    |
+|                           |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia     | If ``A`` is square, this syntax **solves the linear system** :math:`Ax = b`. Therefore, it returns     | 
+|                           | ``x`` such that ``A * x = b``. If ``A`` is rectangular, it **solves for the least-squares solution**   |
+|    A \ b                  | to the problem.                                                                                        |
+|                           |                                                                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------+
+
+Programming
+-----------
+The following are useful basics for Julia programming.
+
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| Command                           |      Description                                                                                       |
++===================================+========================================================================================================+
+| .. code-block:: julia             | Two ways to make **comments**. Comments are useful for annotating code and explaining what it does.    |
+|                                   | The first example limits your comment to one line and the second example allows the comments to span   | 
+|                                   | multiple lines between the ``#=`` and ``=#``.                                                          |
+|    # One line comment             |                                                                                                        |
+|                                   |                                                                                                        |
+|    #=                             |                                                                                                        |
+|    Comment block                  |                                                                                                        |
+|    =#                             |                                                                                                        |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia             | A **for loop** is used to perform a sequence of commands for each element in an iterable object,       | 
+|                                   | such as an array. For example, the following for loop fills the vector ``l`` with the squares of the   |
+|    for i in iterable              | integers from 1 to 3:                                                                                  |
+|    	# do something              |   .. code-block:: julia                                                                                |
+|    end                            |                                                                                                        |
+|                                   |     N = 3                                                                                              |
+|                                   |     l = zeros(N, 1)                                                                                    |
+|                                   |     for i = 1:N                                                                                        |
+|                                   |        l[i] = i ^ 2                                                                                    |
+|                                   |     end                                                                                                |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia             | A **while loop** performs a sequence of commands as long as some condition is true. For example, the   |
+|                                   | following while loop achieves the same result as the for loop above                                    |
+|    while i <= N                   |                                                                                                        |
+|    	# do something              |   .. code-block:: julia                                                                                |
+|    end                            |                                                                                                        |
+|                                   |     N = 3                                                                                              |
+|                                   |     l = zeros(N, 1)                                                                                    |
+|                                   |     i = 1                                                                                              |
+|                                   |     while i <= N                                                                                       |
+|                                   |        l[i] = i ^ 2                                                                                    |
+|                                   |        i = i + 1                                                                                       |
+|                                   |     end                                                                                                |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia             | An **if/else statement** performs commands if a condition is met. For example, the following squares   |
+|                                   | ``x`` if ``x`` is 5, and cubes it otherwise:                                                           |
+|    if i <= N                      |                                                                                                        |
+|    	# do something              |   .. code-block:: julia                                                                                |
+|    else                           |                                                                                                        |
+|    	# do something else         |     if x == 5                                                                                          |
+|    end                            |         x = x ^ 2                                                                                      |
+|                                   |     else                                                                                               |
+|                                   |         x = x ^ 3                                                                                      |
+|                                   |     end                                                                                                |
+|                                   |                                                                                                        |
+|                                   | We can also just have an if statement on its own, in which case it would square ``x`` if ``x`` is 5,   |
+|                                   | and do nothing otherwise.                                                                              |
+|                                   |                                                                                                        |
+|                                   |   .. code-block:: julia                                                                                |
+|                                   |                                                                                                        |
+|                                   |     if x == 5                                                                                          |
+|                                   |         x = x ^ 2                                                                                      |
+|                                   |     end                                                                                                |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia             | These are two ways to define **functions**. Both examples here define equivalent functions.            |
+|                                   |                                                                                                        |
+|    fun(x, y) = 5 * x + y          | The first method is for defining a function on one line. The name of the function is ``fun`` and it    |
+|                                   | takes two inputs, ``x`` and ``y``, which are specified between the parentheses. The code after the     |
+|    function fun(x, y)             | equals sign tells Julia what the output of the function is.                                            |
+|    	ret = 5 * x                 |                                                                                                        |
+|    	return ret + y              | The second method is used to create functions of more than one line. The name of the function, ``fun``,|
+|    end                            | is specified right after ``function``, and like the one-line version, has its arguments in             |
+|                                   | parentheses. The ``return`` statement specifies the output of the function.                            |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+
+| .. code-block:: julia             |  How to **print** to screen. We can also print the values of variables to screen:                      |
+|                                   |                                                                                                        |
+|    println("Hello world")         |   .. code-block:: julia                                                                                |
+|                                   |                                                                                                        |
+|                                   |     println("The value of x is $(x).")                                                                 |
++-----------------------------------+--------------------------------------------------------------------------------------------------------+

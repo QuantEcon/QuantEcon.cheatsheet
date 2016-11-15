@@ -255,7 +255,7 @@ Here, we cover some useful functions for doing math.
 5 + 2
 5 - 2
 5 * 2 
-5 \ 2
+5 / 2
 5 ^ 2
 5 % 2
 	\end{minted}
@@ -302,7 +302,7 @@ sum(A)
 maximum(A)
 minumum(A)
 	\end{minted}
-	& These functions compute the sum, maximum, and minimum elements,
+	& These functions compute the \textbf{sum, maximum, and minimum} elements,
     respectively, in matrix or vector \texttt{A}. We can also add an
     additional argument for the dimension to compute the sum/maximum/minumum
     across. For example \texttt{sum(A, 2)} will compute the row sums of
@@ -340,7 +340,7 @@ We can also provide an argument \texttt{p}, like so:
 norm(A, p)
 \end{minted}
 which will compute the \texttt{p}-norm (the default \texttt{p} is 2). If
-\texttt{A} is a matrix, valid values of \texttt{p} are \texttt{1, 2} amd
+\texttt{A} is a matrix, valid values of \texttt{p} are \texttt{1, 2} and
 \texttt{Inf}.
 \\\hline
  \begin{minted}{julia}
@@ -416,7 +416,7 @@ The following are useful basics for Julia programming.
     end
 	\end{minted}
 	& An \textbf{if/else statement} performs commands if a condition is met. For example, the
-    following squares \texttt{x} is \texttt{x} is 5, and cubes it otherwise:
+    following squares \texttt{x} if \texttt{x} is 5, and cubes it otherwise:
     \begin{minted}{julia}
     if x == 5
         x = x ^ 2
