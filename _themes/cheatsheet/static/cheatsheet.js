@@ -1,7 +1,9 @@
 $(document).ready(function() {
-	$('.title-bar').click(function(e){
-		$('.toc-menu').slideToggle();
-	});
+	
+	var contents = $('.contents');
+	contents.detach();
+	contents.insertAfter('h1').show();
+
 });
 
 

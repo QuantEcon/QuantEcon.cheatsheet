@@ -27,46 +27,52 @@
     <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}" type="text/css" />
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="{{ pathto('_static/underscore.js', 1) }}"></script>
+<!--     <script type="text/javascript" src="{{ pathto('_static/doctools.js', 1) }}"></script> -->
     <script type="text/javascript" src="{{ pathto('_static/cheatsheet.js', 1) }}"></script>
 
   </head>
   <body>
 
-	<div class="title-bar">
-	  <div class="row">
-		  <button class="menu-icon" type="button"></button>
-		  <div class="title-bar-title">Menu</div>
-	  </div>
-	</div>
-	
-	<div class="row">
-	  <div class="toc-menu">
-
-			<p class="github-logo">
-				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
-			</p>
-	                  
-	        {%- block sidebartoc %}
-	        {%- include "localtoc.html" %}
-	        {%- endblock %}
-
-			<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon.</p>
-	
-	  </div>
-	</div>
-
-
 {%- block content %}
 
 	{%- block document %}
+	
 
       <div class="row">
+
+		<div class="title-bar">
+			<div class="menu-centered">
+			  <ul class="menu">
+			    <li><a href="index.html">Comparison cheatsheet</a></li>
+			    <li><a href="python-cheatsheet.html">Python cheatsheet</a></li>
+			    <li><a href="julia-cheatsheet.html">Julia cheatsheet</a></li>
+			  </ul>
+			</div>			
+		</div>
 	
 		<main class="main-content" role="main" tabindex="0">
 
 			<p class="site-logo">
 				<a href="http://quantecon.org/" title="QuantEcon"><img src="{{ pathto('_static/qe-logo.png', 1) }}" alt="QuantEcon logo"></a>
 			</p>
+
+			<p class="github-logo">
+				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
+			</p>
+
+			<div class="contents">
+							
+				<div class="toc-menu">
+				              
+				    {%- block sidebartoc %}
+				    {%- include "localtoc.html" %}
+				    {%- endblock %}
+								
+				</div>
+
+			</div>
 						
 	        {% block body %}
 			
@@ -88,6 +94,9 @@
 			    {%- if show_sphinx %}
 			      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
 			    {%- endif %}
+
+					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
+
 			    </div>
 			{%- endblock %}
 					  
