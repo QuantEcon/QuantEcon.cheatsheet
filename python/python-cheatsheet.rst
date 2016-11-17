@@ -22,7 +22,7 @@ Python Cheat Sheet
 Functions
 ---------
 
-.. container:: simple-table
+.. container:: singlelang-table python-table
 
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Command                         | Description                                                                                                                                        |
@@ -117,7 +117,7 @@ Functions
 Numpy Arrays
 ------------
 
-.. container:: simple-table
+.. container:: singlelang-table python-table
 
     +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | Command                                     | Description                                                                                                                                                                                         |
@@ -246,7 +246,7 @@ Numpy Arrays
 numpy.linalg 
 -------------
 
-.. container:: simple-table
+.. container:: singlelang-table python-table
 
     +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
     | Command                        | Description                                                                                                                      |
@@ -277,7 +277,7 @@ numpy.linalg
 Pandas
 ------
 
-.. container:: simple-table
+.. container:: singlelang-table python-table
 
     +----------------+-----------------------------------------------------------------------------------------------+
     | Command        | Description                                                                                   |
