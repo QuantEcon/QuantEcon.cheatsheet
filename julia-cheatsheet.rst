@@ -1,7 +1,7 @@
 .. _julia-cheatsheet:
 
-QuantEcon Julia Cheat Sheet
-===========================
+Julia cheatsheet
+================
 
 Variables
 ---------

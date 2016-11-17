@@ -3,8 +3,8 @@
 .. role:: python(code)
    :language: python
 
-Python Cheat Sheet
-===================
+Python cheatsheet
+=================
 
 Functions
 ---------
