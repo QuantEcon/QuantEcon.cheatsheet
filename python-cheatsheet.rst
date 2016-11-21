@@ -14,11 +14,11 @@ Functions
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Command                         | Description                                                                                                                                        |
     +=================================+====================================================================================================================================================+
-    | *                               | multiplication operation: :python:`2*3` returns ``6``                                                                                              |
+    | :python:`*`                     | multiplication operation: :python:`2*3` returns ``6``                                                                                              |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | **                              | power operation: :python:`2**3` returns ``8``                                                                                                      |
+    | :python:`**`                    | power operation: :python:`2**3` returns ``8``                                                                                                      |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | @                               | matrix multiplication:                                                                                                                             |
+    | :python:`@`                     | matrix multiplication:                                                                                                                             |
     |                                 |                                                                                                                                                    |
     |                                 | .. code-block:: python                                                                                                                             |
     |                                 |                                                                                                                                                    |
@@ -34,7 +34,7 @@ Functions
     |                                 |     array([[10]])                                                                                                                                  |
     |                                 |                                                                                                                                                    |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | lambda                          | Used for create anonymous one line functions of the form:                                                                                          |
+    | :python:`lambda`                | Used for create anonymous one line functions of the form:                                                                                          |
     |                                 |                                                                                                                                                    |
     |                                 | .. code-block:: python                                                                                                                             |
     |                                 |                                                                                                                                                    |
@@ -42,7 +42,7 @@ Functions
     |                                 |                                                                                                                                                    |
     |                                 | The code after the lambda but before variables specifies the parameters. The code after the colon tells python what object to return.              |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | def                             | The def command is used to create functions of more than one line:                                                                                 |
+    | :python:`def`                   | The def command is used to create functions of more than one line:                                                                                 |
     |                                 |                                                                                                                                                    |
     |                                 | .. code-block:: python                                                                                                                             |
     |                                 |                                                                                                                                                    |
@@ -203,7 +203,7 @@ Numpy Arrays
     |                                             |                                                                                                                                                       |
     |                                             | :python:`np.diag( [ [1,3], [5,6] ])`                                                                                                                  |
     |                                             |                                                                                                                                                       |
-    |                                             | returns {:python:`[1,6]`}.                                                                                                                            |
+    |                                             | returns :python:`[1,6]`.                                                                                                                              |
     |                                             |                                                                                                                                                       |
     |                                             | If :math:`a` is a 1 dimensional array then :python:`np.diag` constructs an array with $a$ as the principle diagonal.  Thus,                           |
     |                                             |                                                                                                                                                       |
@@ -232,7 +232,7 @@ Numpy Arrays
     |                                             | For example,                                                                                                                                          |
     |                                             | if :math:`x = \left(\begin{matrix} 1& 2\\3&4\end{matrix}\right)` then :python:`x.T` returns :math:`\left(\begin{matrix} 1& 3\\2&4\end{matrix}\right)` |
     +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`np.hstack( tuple )`                | Take a sequence of arrays and stack them horizontally to make a single array.  For example                                                            |
+    | :python:`np.hstack(tuple)`                  | Take a sequence of arrays and stack them horizontally to make a single array.  For example                                                            |
     |                                             |                                                                                                                                                       |
     |                                             | .. code-block:: python                                                                                                                                |
     |                                             |                                                                                                                                                       |
@@ -250,7 +250,7 @@ Numpy Arrays
     |                                             |                                                                                                                                                       |
     |                                             | returns :math:`\left( \begin{matrix} 1&2\\2&3\\ 3&4 \end{matrix}\right)`                                                                              |
     +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`np.vstack( tuple )`                | Like :python:`np.hstack`.  Takes a sequence of arrays and stack them vertically to make a single array.  For example                                  |
+    | :python:`np.vstack(tuple)`                  | Like :python:`np.hstack`.  Takes a sequence of arrays and stack them vertically to make a single array.  For example                                  |
     |                                             |                                                                                                                                                       |
     |                                             | .. code-block:: python                                                                                                                                |
     |                                             |                                                                                                                                                       |
