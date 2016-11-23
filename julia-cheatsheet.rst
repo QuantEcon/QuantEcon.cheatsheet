@@ -70,7 +70,8 @@ These are a few kinds of special vectors/matrices we can create and some things 
 	+---------------------------+--------------------------------------------------------------------------------------------------------+
 	| .. code-block:: julia     | Creates a **diagonal matrix** using the elements in ``x``.  For example if ``x = [1, 2, 3]``,          |
 	|                           |  ``diagm(x)`` will return                                                                              |
-	|    A = diagm(x)           |  .. math::                                                                                             |
+	|    A = diagm(x)           |                                                                                                        |
+	|                           |  .. math::                                                                                             |
 	|                           |                                                                                                        |
 	|                           |     \begin{pmatrix}                                                                                    |
 	|                           |     1 & 0 & 0\\                                                                                        |
@@ -169,7 +170,8 @@ These are a few kinds of special vectors/matrices we can create and some things 
 	+---------------------------+--------------------------------------------------------------------------------------------------------+
 	| .. code-block:: julia     | Reverses the vector or matrix ``A`` along dimension ``d``. For example, if ``A = [1 2 3; 4 5 6]``,     |
 	|                           |  ``flipdim(A, 1)}``, will reverse the rows of ``A`` and return                                         |
-	|    flipdim(A, d)          |  .. math::                                                                                             |
+	|    flipdim(A, d)          |                                                                                                        |     
+	|                           |  .. math::                                                                                             |
 	|                           |                                                                                                        |
 	|                           |     \begin{pmatrix}                                                                                    |
 	|                           |     4 & 5 & 6 \\                                                                                       |
@@ -177,6 +179,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
 	|                           |     \end{pmatrix}                                                                                      |
 	|                           |                                                                                                        |
 	|                           |  ``flipdim(A, 2)`` will reverse the columns of ``A`` and return                                        |
+	|                           |                                                                                                        |	
 	|                           |  .. math::                                                                                             |
 	|                           |                                                                                                        |
 	|                           |     \begin{pmatrix}                                                                                    |
