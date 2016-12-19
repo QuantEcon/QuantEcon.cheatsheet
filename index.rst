@@ -94,6 +94,10 @@ Manipulating Vectors and Matrices
     |                                | .. code-block:: matlab        | .. code-block:: python    | .. code-block:: julia     |
     |                                |                               |                           |                           |
     | Transpose                      |     A.'                       |   A.T                     |     A.'                   |
+	+--------------------------------+-------------------------------+---------------------------+---------------------------+
+    |                                | .. code-block:: matlab        | .. code-block:: python    | .. code-block:: julia     |
+    |                                |                               |                           |                           |
+    | Complex conjugate transpose    |     A'                        |   A.conj()                |     A'                   |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python    | .. code-block:: julia     |
     |                                |                               |                           |                           |

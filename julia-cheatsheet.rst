@@ -252,6 +252,56 @@ Here, we cover some useful functions for doing math.
 	|                           |     1 & 3 \\                                                                                           |
 	|                           |     2 & 4                                                                                              |
 	|                           |     \end{pmatrix}                                                                                      |
+	|							|																									     |
+	| 							| If ``A`` contains complex numbers 																	 |
+	|                           |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     A = \begin{pmatrix}                                                                                |
+	|                           |     1-1i & 2+1i \\                                                                                     |
+	|                           |     3-2i & 4+2i                                                                                        |
+	|                           |     \end{pmatrix}                                                                                      |
+	|                           |                                                                                                        |
+	|                           | then ``A`` returns                                                                                     |
+	|                           |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     \begin{pmatrix}                                                                                    |
+	|                           |     1-1i & 3-2i \\                                                                                     |
+	|                           |     2+1i & 4+2i                                                                                        |
+	|                           |     \end{pmatrix}                                                                                      |
+	|                           |                                                                                                        |
+	+---------------------------+--------------------------------------------------------------------------------------------------------+
+	| .. code-block:: julia     | This syntax returns the complex conjugate **transpose** of the matrix ``A``.                           |
+	|                           | For example if ``A`` is a real matrix                                                                  |
+	|    A'                     |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     A = \begin{pmatrix}                                                                                |
+	|                           |     1 & 2 \\                                                                                           |
+	|                           |     3 & 4                                                                                              |
+	|                           |     \end{pmatrix}                                                                                      |
+	|                           |                                                                                                        |
+	|                           | then ``A`` returns                                                                                     |
+	|                           |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     \begin{pmatrix}                                                                                    |
+	|                           |     1 & 3 \\                                                                                           |
+	|                           |     2 & 4                                                                                              |
+	|                           |     \end{pmatrix}                                                                                      |
+	|							|																										 |
+	| 							| If ``A`` contains complex numbers 																	 |
+	|                           |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     A = \begin{pmatrix}                                                                                |
+	|                           |     1-1i & 2+1i \\                                                                                     |
+	|                           |     3-2i & 4+2i                                                                                        |
+	|                           |     \end{pmatrix}                                                                                      |
+	|                           |                                                                                                        |
+	|                           | then ``A`` returns                                                                                     |
+	|                           |  .. math::                                                                                             |
+	|                           |                                                                                                        |
+	|                           |     \begin{pmatrix}                                                                                    |
+	|                           |     1+1i & 3+2i \\                                                                                     |
+	|                           |     2-1i & 4-2i                                                                                        |
+	|                           |     \end{pmatrix}                                                                                      |	
 	|                           |                                                                                                        |
 	+---------------------------+--------------------------------------------------------------------------------------------------------+
 	| .. code-block:: julia     | These functions compute the **sum, maximum, and minimum** elements, respectively, in matrix or vector  |
