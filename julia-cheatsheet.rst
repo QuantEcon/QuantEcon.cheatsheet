@@ -238,7 +238,7 @@ Here, we cover some useful functions for doing math.
 	+---------------------------+--------------------------------------------------------------------------------------------------------+
 	| .. code-block:: julia     | This syntax returns the **transpose** of the matrix ``A`` (i.e., reverses the dimensions of ``A``).    |
 	|                           | For example if                                                                                         |
-	|    A'                     |  .. math::                                                                                             |
+	|    A.'                    |  .. math::                                                                                             |
 	|                           |                                                                                                        |
 	|                           |     A = \begin{pmatrix}                                                                                |
 	|                           |     1 & 2 \\                                                                                           |
