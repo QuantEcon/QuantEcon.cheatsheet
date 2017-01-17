@@ -6,7 +6,7 @@
 Python cheatsheet
 =================
 
-Functions
+Operators
 ---------
 
 .. container:: singlelang-table python-table
@@ -34,6 +34,100 @@ Functions
     |                                 |     array([[10]])                                                                                                                                  |
     |                                 |                                                                                                                                                    |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Data Types
+----------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
+    | :python:`l = [a1,a2,...,an]`    | Constructs a list containing the objects :math:`a1,a2,...,an`.  You can append to the list using :python:`l.append()`.                             |
+    |                                 | The :math:`ith` element of :math:`l` can be accessed using :python:`l[i]`                                                                          |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | :python:`t =(a1,a2,...,an)`     | Constructs a tuple containing the objects :math:`a1,a2,...,an`.  The :math:`ith` element of :math:`t` can be accessed using :python:`t[i]`         |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Built-In Functions
+----------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
+    | :python:`len(iterable)`         | :python:`len` is a function that takes an iterable, such as a list, tuple or numpy array and returns the number of items in that object.           |
+    |                                 | For a numpy array, :python:`len` returns the length of the outermost dimension                                                                     |
+    |                                 |                                                                                                                                                    |
+    |                                 | .. code-block:: python                                                                                                                             |
+    |                                 |                                                                                                                                                    |
+    |                                 |     len(np.zeros((5,4)))                                                                                                                           |
+    |                                 |                                                                                                                                                    |
+    |                                 | returns ``5``.                                                                                                                                     |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | :python:`zip`                   | Make an iterator that aggregates elements from each of the iterables.                                                                              |
+    |                                 |                                                                                                                                                    |
+    |                                 | .. code-block:: python                                                                                                                             |
+    |                                 |                                                                                                                                                    |
+    |                                 |     x = [1, 2, 3]                                                                                                                                  |
+    |                                 |     y = [4, 5, 6]                                                                                                                                  |
+    |                                 |     zipped = zip(x, y)                                                                                                                             |
+    |                                 |     list(zipped)                                                                                                                                   |
+    |                                 |                                                                                                                                                    |
+    |                                 | returns :python:`[(1, 4), (2, 5), (3, 6)]`                                                                                                         |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Iterating
+----------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
+    | :python:`for a in iterable:`    | For loop used to perform a sequence of commands (denoted using tabs) for each element in an iterable object such as a list, tuple, or numpy array. |
+    |                                 | An example code is                                                                                                                                 |
+    |                                 |                                                                                                                                                    |
+    |                                 | .. code-block:: python                                                                                                                             |
+    |                                 |                                                                                                                                                    |
+    |                                 |     l  = []                                                                                                                                        |
+    |                                 |     for i in [1,2,3]:                                                                                                                              |
+    |                                 |         l.append(i**2)                                                                                                                             |
+    |                                 |     print(l)                                                                                                                                       |
+    |                                 |                                                                                                                                                    |
+    |                                 | prints :python:`[1,4,9]`                                                                                                                           |
+    |                                 |                                                                                                                                                    |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Comparisons and Logical Operators
+---------------------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
+    | :python:`if condition:`         | Performs code if a condition is met (using tabs). For example                                                                                      |
+    |                                 |                                                                                                                                                    |
+    |                                 | .. code-block:: python                                                                                                                             |
+    |                                 |                                                                                                                                                    |
+    |                                 |     if x == 5:                                                                                                                                     |
+    |                                 |         x = x**2                                                                                                                                   |
+    |                                 |     else:                                                                                                                                          |
+    |                                 |         x = x**3                                                                                                                                   |
+    |                                 |                                                                                                                                                    |
+    |                                 | squares :math:`x` if :math:`x` is :math:`5`, otherwise cubes it.                                                                                   |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+User-Defined Functions
+----------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
     | :python:`lambda`                | Used for create anonymous one line functions of the form:                                                                                          |
     |                                 |                                                                                                                                                    |
     |                                 | .. code-block:: python                                                                                                                             |
@@ -57,79 +151,8 @@ Functions
     |                                 | The variables in the parenthesis are the parameters of the function.  The remaining lines of the function are denoted by tab indents.              |
     |                                 | The return statement specifies the object to be returned.                                                                                          |
     +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`len(iterable)`         | :python:`len` is a function that takes an iterable, such as a list, tuple or numpy array and returns the number of items in that object.           |
-    |                                 | For a numpy array, :python:`len` returns the length of the outermost dimension                                                                     |
-    |                                 |                                                                                                                                                    |
-    |                                 | .. code-block:: python                                                                                                                             |
-    |                                 |                                                                                                                                                    |
-    |                                 |     len(np.zeros((5,4)))                                                                                                                           |
-    |                                 |                                                                                                                                                    |
-    |                                 | returns ``5``.                                                                                                                                     |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`l = [a1,a2,...,an]`    | Constructs a list containing the objects :math:`a1,a2,...,an`.  You can append to the list using :python:`l.append()`.                             |
-    |                                 | The :math:`ith` element of :math:`l` can be accessed using :python:`l[i]`                                                                          |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`t =(a1,a2,...,an)`     | Constructs a tuple containing the objects :math:`a1,a2,...,an`.  The :math:`ith` element of :math:`t` can be accessed using :python:`t[i]`         |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`for a in iterable:`    | For loop used to perform a sequence of commands (denoted using tabs) for each element in an iterable object such as a list, tuple, or numpy array. |
-    |                                 | An example code is                                                                                                                                 |
-    |                                 |                                                                                                                                                    |
-    |                                 | .. code-block:: python                                                                                                                             |
-    |                                 |                                                                                                                                                    |
-    |                                 |     l  = []                                                                                                                                        |
-    |                                 |     for i in [1,2,3]:                                                                                                                              |
-    |                                 |         l.append(i**2)                                                                                                                             |
-    |                                 |     print(l)                                                                                                                                       |
-    |                                 |                                                                                                                                                    |
-    |                                 | prints :python:`[1,4,9]`                                                                                                                           |
-    |                                 |                                                                                                                                                    |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`if condition:`         | Performs code if a condition is met (using tabs). For example                                                                                      |
-    |                                 |                                                                                                                                                    |
-    |                                 | .. code-block:: python                                                                                                                             |
-    |                                 |                                                                                                                                                    |
-    |                                 |     if x == 5:                                                                                                                                     |
-    |                                 |         x = x**2                                                                                                                                   |
-    |                                 |     else:                                                                                                                                          |
-    |                                 |         x = x**3                                                                                                                                   |
-    |                                 |                                                                                                                                                    |
-    |                                 | squares :math:`x` if :math:`x` is :math:`5`, otherwise cubes it.                                                                                   |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`plt.plot(x,y,s =None)` | The plot command is included in :python:`matplotlib.pyplot`.                                                                                       |
-    |                                 | The plot command is used to plot :math:`x` versus :math:`y` where :math:`x` and :math:`y` are iterables of the same length.                        |
-    |                                 | By default the plot command draws a line, using the :math:`s` argument you can specify type of line and color.                                     |
-    |                                 | For example '-','- -',':','o','x', and '-o' reprent line, dashed line, dotted line, circles, x's, and circle with line through it respectively.    |
-    |                                 | Color can be changed by appending 'b','k','g' or 'r', to get a blue, black, green or red plot respectively.                                        |
-    |                                 | For example,                                                                                                                                       |
-    |                                 |                                                                                                                                                    |
-    |                                 | .. code-block:: python                                                                                                                             |
-    |                                 |                                                                                                                                                    |
-    |                                 |     import numpy as np                                                                                                                             |
-    |                                 |     import matplotlib.pyplot as plt                                                                                                                |
-    |                                 |     x=np.linspace(0,10,100)                                                                                                                        |
-    |                                 |     N=len(x)                                                                                                                                       |
-    |                                 |     v= np.cos(x)                                                                                                                                   |
-    |                                 |     plt.figure(1)                                                                                                                                  |
-    |                                 |     plt.plot(x,v,'-og')                                                                                                                            |
-    |                                 |     plt.show()                                                                                                                                     |
-    |                                 |     plt.savefig('tom_test.eps')                                                                                                                    |
-    |                                 |                                                                                                                                                    |
-    |                                 | plots the cosine function on the domain (0,10) with a green line with circles at the points :math:`x,v`                                            |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-    | :python:`zip`                   | Make an iterator that aggregates elements from each of the iterables.                                                                              |
-    |                                 |                                                                                                                                                    |
-    |                                 | .. code-block:: python                                                                                                                             |
-    |                                 |                                                                                                                                                    |
-    |                                 |     x = [1, 2, 3]                                                                                                                                  |
-    |                                 |     y = [4, 5, 6]                                                                                                                                  |
-    |                                 |     zipped = zip(x, y)                                                                                                                             |
-    |                                 |     list(zipped)                                                                                                                                   |
-    |                                 |                                                                                                                                                    |
-    |                                 | returns :python:`[(1, 4), (2, 5), (3, 6)]`                                                                                                         |
-    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-Numpy Arrays
+Numpy
 ------------
 
 .. container:: singlelang-table python-table
@@ -351,7 +374,6 @@ numpy.linalg
     |                                | but numerically more stable.                                                                                                     |
     +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
     
-
 Pandas
 ------
 
@@ -384,4 +406,34 @@ Pandas
     |                |      df = pd.DataFrame(list(zip(a,b)), columns=['a','b'])                                     |
     |                |                                                                                               |
     +----------------+-----------------------------------------------------------------------------------------------+
+
+Plotting
+---------------------------------
+
+.. container:: singlelang-table python-table
+
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+    | Command                         | Description                                                                                                                                        |
+    +=================================+====================================================================================================================================================+
+    | :python:`plt.plot(x,y,s =None)` | The plot command is included in :python:`matplotlib.pyplot`.                                                                                       |
+    |                                 | The plot command is used to plot :math:`x` versus :math:`y` where :math:`x` and :math:`y` are iterables of the same length.                        |
+    |                                 | By default the plot command draws a line, using the :math:`s` argument you can specify type of line and color.                                     |
+    |                                 | For example '-','- -',':','o','x', and '-o' reprent line, dashed line, dotted line, circles, x's, and circle with line through it respectively.    |
+    |                                 | Color can be changed by appending 'b','k','g' or 'r', to get a blue, black, green or red plot respectively.                                        |
+    |                                 | For example,                                                                                                                                       |
+    |                                 |                                                                                                                                                    |
+    |                                 | .. code-block:: python                                                                                                                             |
+    |                                 |                                                                                                                                                    |
+    |                                 |     import numpy as np                                                                                                                             |
+    |                                 |     import matplotlib.pyplot as plt                                                                                                                |
+    |                                 |     x=np.linspace(0,10,100)                                                                                                                        |
+    |                                 |     N=len(x)                                                                                                                                       |
+    |                                 |     v= np.cos(x)                                                                                                                                   |
+    |                                 |     plt.figure(1)                                                                                                                                  |
+    |                                 |     plt.plot(x,v,'-og')                                                                                                                            |
+    |                                 |     plt.show()                                                                                                                                     |
+    |                                 |     plt.savefig('tom_test.eps')                                                                                                                    |
+    |                                 |                                                                                                                                                    |
+    |                                 | plots the cosine function on the domain (0,10) with a green line with circles at the points :math:`x,v`                                            |
+    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
     
