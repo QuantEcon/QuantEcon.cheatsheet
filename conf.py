@@ -234,6 +234,10 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'TheQuantEconMATLAB-Python-JuliaCheatSheet.tex', u'The QuantEcon MATLAB-Python-Julia Cheat Sheet',
      u'QuantEcon', 'manual'),
+    ('julia-cheatsheet', 'TheQuantEconJuliaCheatSheet.tex', u'The QuantEcon Julia Cheat Sheet',
+     u'QuantEcon', 'manual'),
+    ('python-cheatsheet', 'TheQuantEconPythonCheatSheet.tex', u'The QuantEcon Python Cheat Sheet',
+     u'QuantEcon', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

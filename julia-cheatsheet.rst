@@ -168,7 +168,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           |    4                                                                                                   |
     |                           |    \end{pmatrix}                                                                                       |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     | Reverses the vector or matrix ``A`` along dimension ``d``. For example, if ``A = [1 2 3; 4 5 6]``,     |
+    | .. code-block:: julia     | **Reverses** the vector or matrix ``A`` along dimension ``d``. For example, if ``A = [1 2 3; 4 5 6]``, |
     |                           |  ``flipdim(A, 1)}``, will reverse the rows of ``A`` and return                                         |
     |    flipdim(A, d)          |                                                                                                        |     
     |                           |  .. math::                                                                                             |
@@ -271,7 +271,7 @@ Here, we cover some useful functions for doing math.
     |                           |     \end{pmatrix}                                                                                      |
     |                           |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     | This syntax returns the complex conjugate **transpose** of the matrix ``A``.                           |
+    | .. code-block:: julia     | This syntax returns the **complex conjugate transpose** of the matrix ``A``.                           |
     |                           |                                                                                                        |
     |    A'                     | For example if ``A`` is a real matrix                                                                  |
     |                           |  .. math::                                                                                             |
@@ -316,7 +316,7 @@ Here, we cover some useful functions for doing math.
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | This function returns the **inverse** of the matrix ``A``. Alternatively, we can do:                   |
     |                           |   .. code-block:: julia                                                                                |
-    |    A = zeros(m, n)        |                                                                                                        |
+    |    inv(A)                 |                                                                                                        |
     |                           |     A ^ (-1)                                                                                           |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | This function returns the **determinant** of the matrix ``A``.                                         |
@@ -335,7 +335,7 @@ Here, we cover some useful functions for doing math.
     |                           |     norm(A, p)                                                                                         |
     |                           |                                                                                                        |
     |                           | which will compute the ``p``-norm (the default ``p`` is 2). If ``A`` is a matrix, valid values of ``p``|
-    |                           | are \texttt{1, 2} and \texttt{Inf}.                                                                    |
+    |                           | are ``1, 2`` and ``Inf``.                                                                              |
     |                           |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | If ``A`` is square, this syntax **solves the linear system** :math:`Ax = b`. Therefore, it returns     | 
