@@ -238,6 +238,7 @@ code {
 }
 
 .singlelang-table tbody tr td {
+	border:0;
 }
 
 .singlelang-table tbody tr td:nth-child(1) {
