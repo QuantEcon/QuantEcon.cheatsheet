@@ -1,3 +1,7 @@
+.. raw:: html
+
+	<style type="text/css">.menu>li.python-on>a {background:#e2e2e2;cursor: default;}</style>
+
 .. _python-cheatsheet:
 
 .. role:: python(code)

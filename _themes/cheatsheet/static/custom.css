@@ -1,5 +1,10 @@
 body {
-	background: #e6e6e6;
+	background: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+strong {
+	font-weight:700;
 }
 
 code {
@@ -10,15 +15,35 @@ code {
 
 .contents {
     border: 1px solid #d2d2d2;
-/*     border-width: 1px 0; */
     margin:2em 0;
     display: none;
 }
 
-.title-bar {
-    background: #f8f8f8;
-    color: #444;
-    border-bottom: 1px solid #d2d2d2;
+.top-bar {
+	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.top-bar, .top-bar ul {
+	background-color:#f2f2f2;
+}
+
+.top-bar a {
+	color:#000;
+}
+
+.menu>li {
+	margin:0.6rem 0 0 0;
+    display: inline-block;
+}
+
+.menu>li>a {
+	padding: 0.6rem 1rem 0.6rem 1rem;
+	font-size: 0.8em;
+	border-radius:10px;
+}
+
+.menu>li>a:hover {
+	background:#e2e2e2;
 }
 
 .menu-icon:after {
@@ -30,11 +55,21 @@ code {
 	background: #f8f8f8;
     padding:25px 25px;
     position: relative;
+    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.copyright {
+	font-size: 0.8em;
+	margin:.5em 0;
+}
+
+.copyright span {
+    display: block;
 }
 
 .credits {
 	font-size: 0.8em;
-	margin:1.5em 0 0 0;
+	margin:.5em 0;
 }
 
 .credits span {
@@ -76,8 +111,8 @@ code {
 
 .main-content {
 	position: relative;
-	background: #fff;
-	padding:25px;
+	padding:85px 25px 25px 25px;
+	outline:0;
 }
 
 .highlight {
@@ -86,6 +121,10 @@ code {
 }
 
 /* Multi-language table */
+
+.multilang-table, .python-table, .julia-table {
+	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+}
 
 .multilang-table pre {
 	white-space: pre-wrap;
@@ -126,7 +165,7 @@ code {
 	flex: 1;
     text-transform: uppercase;
     background: #ecffdc;
-    margin: 0 10px;
+    margin: 10px 10px;
     padding: 0;
     font-weight: 700;
     text-align: center;
@@ -204,11 +243,6 @@ code {
 .singlelang-table tbody tr td:nth-child(1) {
 }
 
-
-
-
-
-
 .section h2 {
 	background: #515964;
     color: #fff;
@@ -216,14 +250,14 @@ code {
     padding: 3px 10px;
     font-weight: 700;
     margin: 40px 0 20px 0;
+    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
 }
 
-.site-logo {
-	text-align: center;
-}
+.site-logo {font-family: 'Exo', sans-serif; font-weight:200; font-size:1.4em;margin:0;}
+.site-logo span {font-family: 'Exo', sans-serif; font-weight: 400;}
+.site-logo a {color:#333;text-decoration: none;}
 
 .site-logo img {
-	width:180px;
 }
 
 .github-logo {
@@ -255,7 +289,11 @@ table tbody tr:nth-child(even) {
 	background-color: inherit;
 }
 
-
+.footer {
+	background-color: #f2f2f2;
+	padding:2rem 0;
+	box-shadow: inset 0 1px 2px rgba(195, 195, 195, 0.4);
+}
 
 @media screen and (max-width: 40em) {
 
@@ -267,8 +305,7 @@ table tbody tr:nth-child(even) {
 	.github-logo img {
 
 	}	
-	.site-logo img {
-		width:70%;
+	.site-logo {
 	}
 	.multilang-table tbody tr {
 		display: block;

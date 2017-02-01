@@ -1,3 +1,7 @@
+.. raw:: html
+
+	<style type="text/css">.menu>li.julia-on>a {background:#e2e2e2;cursor: default;}</style>
+
 .. _julia-cheatsheet:
 
 Julia cheatsheet

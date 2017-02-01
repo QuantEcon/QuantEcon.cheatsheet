@@ -1,3 +1,7 @@
+.. raw:: html
+
+	<style type="text/css">.menu>li.comparison-on>a {background:#e2e2e2;cursor: default;}</style>
+
 .. The QuantEcon MultiLanguage Cheatsheet documentation master file, created by
    sphinx-quickstart on Thu Sep  1 18:39:43 2016.
    You can adapt this file completely to your liking, but it should at least
