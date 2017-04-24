@@ -46,7 +46,7 @@ Basics
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
     |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
     |                                  |                                               |                                              |                                            |
-    | Drop variable x                  |      drop x                                   |     del x                                    |    df$x <- NULL                            |
+    | Drop variable x                  |      drop x                                   |     df = df.drop("x", axis=1)                |    df$x <- NULL                            |
     |                                  |                                               |                                              |                                            |
     |                                  |                                               |                                              |                                            |
     |                                  |                                               |                                              |                                            |
