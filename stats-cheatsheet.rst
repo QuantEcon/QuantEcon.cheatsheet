@@ -46,7 +46,7 @@ Basics
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
     |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
     |                                  |                                               |                                              |                                            |
-    | Drop variable x                  |      drop x                                   |     df = df.drop("x", axis=1)                |    df$x <- NULL                            |
+    | Drop variable x                  |      drop x                                   |     df = df.drop('x', axis=1)                |    df$x <- NULL                            |
     |                                  |                                               |                                              |                                            |
     |                                  |                                               |                                              |                                            |
     |                                  |                                               |                                              |                                            |
@@ -80,7 +80,7 @@ Filtering data
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
     |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
     |                                                      |                           |                                       |                                |
-    | Conditionally print observations with 'or' operator  |     list x if > 1  y < 0  |     df[(df['x'] > 1) | (df['y'] < 0)] |     subset(df, x == 1 | y < 0) |
+    | Conditionally print observations with 'or' operator  |     list if x > 1 | y < 0 |     df[(df['x'] > 1) | (df['y'] < 0)] |     subset(df, x == 1 | y < 0) |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
     |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
     |                                                      |                           |                                       |                                |
@@ -92,7 +92,7 @@ Filtering data
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
     |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
     |                                                      |                           |                                       |                                |
-    | Print observations with missing values in x          |     list if x >= .        |     df[df['x'].isnull()]              |     subset(df, is.na(x))       |
+    | Print observations with missing values in x          |     list if missing(x)    |     df[df['x'].isnull()]              |     subset(df, is.na(x))       |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
 
 
