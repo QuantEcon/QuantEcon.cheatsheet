@@ -16,7 +16,7 @@ Basics
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
     |            Operation             |                     STATA                     |                    Pandas                    |                   Base R                   |
     +==================================+===============================================+==============================================+============================================+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     |  Create new dataset from values  |      input a b                                |     d = {'a' : [1,2,3], 'b' : [4,5,6]}       |     df <- data.frame(a=1:3, b=4:6)         |
     |                                  |      1 4                                      |                                              |                                            |
@@ -24,27 +24,27 @@ Basics
     |                                  |      3 6                                      |                                              |                                            |
     |                                  |      end                                      |                                              |                                            |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Create new dataset from csv file |      import delim mydata.csv, delimiters(",") |      df = pd.read_csv('mydata.csv', sep=',') |     df <- read.csv('my_data.csv', sep=',') |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Print observations               |     list                                      |     df                                       |     df                                     |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Print observations of variable x |     list x                                    |     df['x']                                  |     df$x                                   |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Select only variable x           |     keep x                                    |     df = df['x']                             |     df <- df$x                             |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Select only variables x and y    |     keep x y                                  |     df = df[['x', 'y']]                      |     df <- df[c(‘x’, ‘y’)]                  |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Drop variable x                  |      drop x                                   |     df = df.drop('x', axis=1)                |    df$x <- NULL                            |
     |                                  |                                               |                                              |                                            |
@@ -52,15 +52,15 @@ Basics
     |                                  |                                               |                                              |                                            |
     |                                  |                                               |                                              |                                            |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Generate new variable            |      gen z = x + y                            |      df['z'] = df['x'] + df['y']             |     df$z <- df$x + df$y                    |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Rename variable                  |     rename x y                                |     df.rename(columns = {'x' : 'y'})         |     names(df)[names(df) == ‘x’] <- ‘y’     |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
-    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: none                       |
+    |                                  | .. code-block:: none                          | .. code-block:: python                       | .. code-block:: r                          |
     |                                  |                                               |                                              |                                            |
     | Sort by variable                 |      sort x                                   |      df.sort_values('x')                     |     df[order(df$x), ]                      |
     +----------------------------------+-----------------------------------------------+----------------------------------------------+--------------------------------------------+
@@ -74,23 +74,23 @@ Filtering data
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
     |                      Operation                       |           STATA           |                 Pandas                |             Base R             |
     +======================================================+===========================+=======================================+================================+
-    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
+    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: r              |
     |                                                      |                           |                                       |                                |
     | Conditionally print observations                     |     list if x > 1         |    df[df['x'] > 1]                    |     subset(df, x == 1)         |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
-    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
+    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: r              |
     |                                                      |                           |                                       |                                |
     | Conditionally print observations with 'or' operator  |     list if x > 1 | y < 0 |     df[(df['x'] > 1) | (df['y'] < 0)] |     subset(df, x == 1 | y < 0) |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
-    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
+    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: r              |
     |                                                      |                           |                                       |                                |
     | Conditionally print observations with 'and' operator |     list if x < 1 & y > 5 |     df[(df['x'] > 1) & (df['y'] < 0)] |     subset(df, x == 1 & y < 0) |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
-    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
+    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: r              |
     |                                                      |                           |                                       |                                |
     | Print subset of observations based on location       |     list in 1/3           |     df[0:3]                           |     df[1:3, ]                  |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
-    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: none           |
+    |                                                      | .. code-block:: none      | .. code-block:: python                | .. code-block:: r              |
     |                                                      |                           |                                       |                                |
     | Print observations with missing values in x          |     list if missing(x)    |     df[df['x'].isnull()]              |     subset(df, is.na(x))       |
     +------------------------------------------------------+---------------------------+---------------------------------------+--------------------------------+
@@ -104,7 +104,7 @@ Summarizing data
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
     |                   Description                    |              STATA              |                Pandas               |               Base R              |
     +==================================================+=================================+=====================================+===================================+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Print summary statistics                         |     summarize                   |     df.describe()                   |     summary(df)                   |
     |                                                  |                                 |                                     |                                   |
@@ -112,27 +112,27 @@ Summarizing data
     |                                                  |                                 |                                     |                                   |
     |                                                  |                                 |                                     |                                   |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Print information about variables and data types |     describe                    |     df.info()                       |    str(df)                        |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Print aggregation of variable                    |     mean x                      |     df['x'].mean()                  |     mean(df$x)                    |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Group data by variable and summarize             |     bysort x: summarize         |     df.groupby('x').describe()      |     aggregate(. ~ x, df, summary) |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Print frequency table                            |     tab x                       |     df['x'].value_counts()          |    table(df$x)                    |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Print cross-tabulation                           |     tab x y                     |     pd.crosstab(df['x'], df['y'])   |    table(df$x, df$y)              |
     +--------------------------------------------------+---------------------------------+-------------------------------------+-----------------------------------+
-    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: none              |
+    |                                                  | .. code-block:: none            | .. code-block:: python              | .. code-block:: r                 |
     |                                                  |                                 |                                     |                                   |
     | Create bins based                                |     egen bins = cut x, group(3) |     df['bins'] = pd.cut(df['x'], 3) |    df$bins <- cut(df$x, 3)        |
     | on values in x in new column 'bins'              |                                 |                                     |                                   |
@@ -146,11 +146,11 @@ Reshaping data
     +--------------------------------------+-----------------------------+--------------------------------------------+------------------------------------------------------------------------------------+
     |              Operation               |            STATA            |                   Pandas                   |                                       Base R                                       |
     +======================================+=============================+============================================+====================================================================================+
-    |                                      | .. code-block:: none        | .. code-block:: python                     | .. code-block:: none                                                               |
+    |                                      | .. code-block:: none        | .. code-block:: python                     | .. code-block:: r                                                                  |
     |                                      |                             |                                            |                                                                                    |
     | Reshape data from wide to long panel |   reshape long x, i(i) j(j) |   pd.wide_to_long(df, ['x'], i='i', j='j') |    reshape(df, direction=’long’, varying=grep(‘x’, names(df), value=TRUE), sep='') |
     +--------------------------------------+-----------------------------+--------------------------------------------+------------------------------------------------------------------------------------+
-    |                                      | .. code-block:: none        | .. code-block:: python                     | .. code-block:: none                                                               |
+    |                                      | .. code-block:: none        | .. code-block:: python                     | .. code-block:: r                                                                  |
     |                                      |                             |                                            |                                                                                    |
     | Reshape data from long to wide panel |     reshape wide            |     df.unstack()                           |     reshape(df, direction='wide', varying=x, value=TRUE), sep='')                  |
     |                                      |                             |                                            |                                                                                    |
@@ -166,7 +166,7 @@ Merging data
     +---------------------------------+--------------------------+------------------------------------------+----------------------------------------------------------+
     |            Operation            |          STATA           |                  Pandas                  |                          Base R                          |
     +=================================+==========================+==========================================+==========================================================+
-    |                                 | .. code-block:: none     | .. code-block:: python                   | .. code-block:: none                                     |
+    |                                 | .. code-block:: none     | .. code-block:: python                   | .. code-block:: r                                        |
     |                                 |                          |                                          |                                                          |
     | Vertically concatenate datasets |    append using y        |    pd.concat([x, y])                     |    rbind(x, y)                                           |
     |                                 |                          |                                          |                                                          |
@@ -174,7 +174,7 @@ Merging data
     |                                 |                          |                                          |                                                          |
     |                                 |                          |                                          |                                                          |
     +---------------------------------+--------------------------+------------------------------------------+----------------------------------------------------------+
-    |                                 | .. code-block:: none     | .. code-block:: python                   | .. code-block:: none                                     |
+    |                                 | .. code-block:: none     | .. code-block:: python                   | .. code-block:: r                                        |
     |                                 |                          |                                          |                                                          |
     | Merge datasets on key           |    merge 1:1 key using y |    pd.merge(x, y, on='key', how='inner') |    merge(x, y, by='key')                                 |
     +---------------------------------+--------------------------+------------------------------------------+----------------------------------------------------------+
@@ -188,7 +188,7 @@ Plotting
     +--------------+----------------------+-------------------------------+----------------------+
     |  Operation   |        STATA         |             Pandas            |        Base R        |
     +==============+======================+===============================+======================+
-    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: none |
+    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: r    |
     | Scatter plot |                      |                               |                      |
     |              |     plot x y         |     df.plot.scatter('x', 'y') |   plot(df$x, df$y)   |
     |              |                      |                               |                      |
@@ -196,7 +196,7 @@ Plotting
     |              |                      |                               |                      |
     |              |                      |                               |                      |
     +--------------+----------------------+-------------------------------+----------------------+
-    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: none |
+    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: r    |
     | Line plot    |                      |                               |                      |
     |              |     line x y         |     df.plot('x', 'y')         |   lines(df$x, df$y)  |
     |              |                      |                               |                      |
@@ -204,14 +204,11 @@ Plotting
     |              |                      |                               |                      |
     |              |                      |                               |                      |
     +--------------+----------------------+-------------------------------+----------------------+
-    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: none |
+    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: r    |
     |              |                      |                               |                      |
     | Histogram    |     hist x           |     df.hist('x')              |    hist(df$x)        |
     +--------------+----------------------+-------------------------------+----------------------+
-    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: none |
+    |              | .. code-block:: none | .. code-block:: python        | .. code-block:: r    |
     |              |                      |                               |                      |
     | Boxplot      |     graph box x      |     df.boxplot('x')           |    boxplot(df$x)     |
     +--------------+----------------------+-------------------------------+----------------------+
-
-
-
