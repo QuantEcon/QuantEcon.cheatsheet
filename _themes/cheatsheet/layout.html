@@ -22,39 +22,60 @@
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {%- endblock %}
 
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
-    <link rel="stylesheet" href="{{ pathto('_static/custom.css', 1) }}" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/qe-menubar.css" type="text/css" />
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="{{ pathto('_static/underscore.js', 1) }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/_static/underscore.js"></script>
 <!--     <script type="text/javascript" src="{{ pathto('_static/doctools.js', 1) }}"></script> -->
-    <script type="text/javascript" src="{{ pathto('_static/cheatsheet.js', 1) }}"></script>
+    <script type="text/javascript" src="/_static/js/cheatsheet.js"></script>
     
-	<link href="https://fonts.googleapis.com/css?family=Exo:200,400|Open+Sans:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
     
 
   </head>
   <body>
+
+    <div class="qe-menubar">
+    
+        <p class="qe-menubar-logo"><a href="https://quantecon.org/" title="quantecon.org"><img src="/_static/img/qe-menubar-logo.png" alt="QuantEcon logo"> Quant<span>Econ</span></a></p>
+    
+        <ul class="qe-menubar-nav">
+            <li><a href="https://lectures.quantecon.org/" title="Lectures">Lectures</a></li>
+            <li><a href="https://quantecon.org/python_index.html" title="QuantEcon.Py">QuantEcon.Py</a></li>
+            <li><a href="https://quantecon.org/julia_index.html" title="QuantEcon.jl">QuantEcon.jl</a></li>
+            <li><a href="http://notebooks.quantecon.org/" title="Notebooks">Notebooks</a></li>
+            <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets">Cheatsheets</a></li>
+            <li><a href="http://discourse.quantecon.org/" title="Forum">Forum</a></li>
+            <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="visuallyhidden">Repository</span></a></li>
+            <li><a href="https://twitter.com/quanteconomics" title="Twitter"><span class="visuallyhidden">Twitter</span></a></li>
+        </ul>
+
+    </div>
 
 {%- block content %}
 
 	{%- block document %}
 	
 	<div class="top-bar">
-		<div class="row">
+		<div class="row columns">
 	
 			<div class="top-bar-title site-logo">
-				<a href="https://quantecon.org/" title="quantecon.org"><img src="_static/qe-logo-horizontal.png" alt="QuantEcon logo"> Quant<span>Econ</span></a>
+				<a href="/" title="Home">
+					<img src="/_static/img/cheatsheets-logo.png" alt="Cheatsheets logo">
+					<p class="site-title">Cheatsheets <small>by Quant<span>Econ</span></small></p>
+				</a>
 			</div>
 			<div class="top-bar-right">
 				<div class="menu-centered">
 				  <ul class="menu">
-				    <li class="comparison-on"><a href="index.html">Comparison cheatsheet</a></li>
-				    <li class="python-on"><a href="python-cheatsheet.html">Python cheatsheet</a></li>
-				    <li class="julia-on"><a href="julia-cheatsheet.html">Julia cheatsheet</a></li>
-				    <li class="statistics-on"><a href="stats-cheatsheet.html">Statistics cheatsheet</a></li>
+				    <li class="comparison-on"><a href="index.html">Comparison</a></li>
+				    <li class="python-on"><a href="python-cheatsheet.html">Python</a></li>
+				    <li class="julia-on"><a href="julia-cheatsheet.html">Julia</a></li>
+				    <li class="statistics-on"><a href="stats-cheatsheet.html">Statistics</a></li>
 				  </ul>
 				</div>
 			</div>			
@@ -67,7 +88,7 @@
 		<main class="main-content" role="main" tabindex="0">
 
 			<p class="github-logo">
-				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="{{ pathto('_static/GitHub-Mark-120px-plus.png', 1) }}" alt="GitHub logo"></a>
+				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="/_static/img/github-logo.png" alt="GitHub logo"></a>
 			</p>
 
 			<div class="contents">

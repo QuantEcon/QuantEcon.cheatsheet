@@ -1,6 +1,6 @@
 body {
 	background: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 strong {
@@ -14,17 +14,23 @@ code {
 }
 
 .contents {
-    border: 1px solid #d2d2d2;
     margin:2em 0;
     display: none;
 }
 
 .top-bar {
-	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background: #f8f8f8;
+}
+
+.top-bar>.row {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .top-bar, .top-bar ul {
-	background-color:#f2f2f2;
+	background-color:#f8f8f8;
 }
 
 .top-bar a {
@@ -32,14 +38,21 @@ code {
 }
 
 .menu>li {
-	margin:0.6rem 0 0 0;
+	margin: 0 10px;
     display: inline-block;
 }
 
+.menu>li:last-child {
+	margin:0 0 0 10px;
+}
+
 .menu>li>a {
-	padding: 0.6rem 1rem 0.6rem 1rem;
-	font-size: 0.8em;
-	border-radius:10px;
+	border: 1px solid #CACACA;
+    border-radius: 5px;
+    padding: 5px 15px;
+    line-height: 1;
+    font-size: 0.8em;
+    color: #444;
 }
 
 .menu>li>a:hover {
@@ -55,7 +68,8 @@ code {
 	background: #f8f8f8;
     padding:25px 25px;
     position: relative;
-    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 5px;
 }
 
 .copyright {
@@ -254,11 +268,29 @@ code {
     box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.5);
 }
 
-.site-logo {font-family: 'Exo', sans-serif; font-weight:200; font-size:1.4em;margin:0;}
-.site-logo span {font-family: 'Exo', sans-serif; font-weight: 400;}
-.site-logo a {color:#333;text-decoration: none;}
-
-.site-logo img {
+.site-logo {
+	flex:1;
+	font-size:1.4rem;
+	margin:0; 
+}
+.site-logo a {
+	color:#333;
+	text-decoration: none;
+	display:flex;
+	align-items: center;
+}
+.site-title {
+	line-height: 1.4;
+	margin:0 0 0 10px;
+}
+.site-title small {
+	font-size:0.9rem;
+	display:block;
+	font-family: 'Exo', sans-serif;
+	font-weight:200;
+}
+.site-title span {
+	font-weight: 400;
 }
 
 .github-logo {
@@ -291,7 +323,7 @@ table tbody tr:nth-child(even) {
 }
 
 .footer {
-	background-color: #f2f2f2;
+	background-color: #f8f8f8;
 	padding:2rem 0;
 	box-shadow: inset 0 1px 2px rgba(195, 195, 195, 0.4);
 }

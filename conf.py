@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'MATLAB-Python-Julia Cheat Sheet'
+project = 'Cheatsheets by QuantEcon'
 copyright = u'2016, QuantEcon'
 author = u'QuantEcon'
 

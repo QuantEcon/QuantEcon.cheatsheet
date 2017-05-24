@@ -1,0 +1,105 @@
+.qe-menubar {
+   border-bottom:1px solid #ccc;
+   background:#fff;
+   padding:2px 25px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .qe-menubar-logo {
+   margin:0;
+   font-family: 'Exo', sans-serif;
+   font-weight:200;
+   font-size:15px;
+   position: relative;
+   top:2px;
+ }
+ .qe-menubar-logo	a {
+   color: #000;
+   text-decoration: none;
+   font-weight: 200;
+ }
+ .qe-menubar-logo	img {
+   position: relative;
+   top: -2px;
+   margin: 0 5px 0 0;
+ }
+ .qe-menubar-logo span {
+   font-weight: 400;
+ }
+ .qe-menubar-nav {
+   list-style: none;
+   padding:0;
+   margin:0;
+   font-family: 'Roboto', sans-serif;
+   font-size: 12px;
+   display: flex;
+   justify-content: space-between;
+ }
+ .qe-menubar-nav	li {
+   margin:0 0 0 15px;
+   padding:0;
+ }
+.qe-menubar-nav	li	a {
+  color: #000;
+  font-weight: normal;
+  text-decoration: none;
+  position: relative;
+  padding: 0 15px 0 20px;
+}
+.qe-menubar-nav	li:last-child	a {
+  padding-right:0;
+}
+.qe-menubar-nav	li	a:before {
+  content: " ";
+  width:16px;
+  height:16px;
+  position: absolute;
+  left: 0;
+  top: -1px;
+  background:url(../img/qe-menubar-icons.png) no-repeat left top;
+  background-size: 128px 16px;
+}
+.qe-menubar-nav	li	a:after {
+  position: absolute;
+  content: "•";
+  top:0;
+  right:0;
+  font-family: sans-serif;
+}
+.qe-menubar-nav	li:last-child	a:after {
+  content:"";
+}
+.qe-menubar-nav li:nth-child(1)	a:before {
+  background-position: 0 0;
+}
+.qe-menubar-nav li:nth-child(2)	a:before {
+  background-position: -16px 0;
+}
+.qe-menubar-nav li:nth-child(3)	a:before {
+  background-position: -32px 0;
+}
+.qe-menubar-nav li:nth-child(4)	a:before {
+  background-position: -48px 0;
+}
+.qe-menubar-nav li:nth-child(5)	a:before {
+  background-position: -64px 0;
+}
+.qe-menubar-nav li:nth-child(6)	a:before {
+  background-position: -80px 0;
+}
+.qe-menubar-nav li:nth-child(7)	a:before {
+  background-position: -96px 0;
+}
+.qe-menubar-nav li:nth-child(8)	a:before {
+  background-position: -112px 0;
+}
+
+@media (max-width: 1024px) {
+  .qe-menubar {
+    justify-content: center;
+  }
+  .qe-menubar-nav {
+    display:none;
+  }
+}
