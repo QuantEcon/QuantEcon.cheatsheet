@@ -56,7 +56,7 @@ code {
 }
 
 .menu>li>a:hover {
-	background:#e2e2e2;
+	border-color:#444444;
 }
 
 .menu-icon:after {
