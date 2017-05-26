@@ -2,8 +2,8 @@
 
 	<style type="text/css">.menu>li.comparison-on>a {border-color:#444;cursor: default;}</style>
 
-Py/Jl/Matlab comparison cheatsheet
-==================================
+Numerical programming comparison cheatsheet
+===========================================
 
 Creating Vectors
 ----------------
