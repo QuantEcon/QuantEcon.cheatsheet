@@ -2,7 +2,7 @@
 
 	<style type="text/css">.menu>li.comparison-on>a {border-color:#444;cursor: default;}</style>
 
-Numerical programming comparison cheatsheet
+MATLAB--Python--Julia comparison cheatsheet
 ===========================================
 
 Creating Vectors
