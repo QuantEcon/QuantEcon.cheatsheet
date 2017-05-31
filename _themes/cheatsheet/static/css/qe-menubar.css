@@ -94,6 +94,13 @@
 .qe-menubar-nav li:nth-child(8)	a:before {
   background-position: -112px 0;
 }
+.show-for-sr {
+    position: absolute!important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
 
 @media (max-width: 1024px) {
   .qe-menubar {
