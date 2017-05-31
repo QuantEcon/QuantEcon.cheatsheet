@@ -2,6 +2,13 @@
 
 	<style type="text/css">.menu>li.comparison-on>a {border-color:#444;cursor: default;}</style>
 
+.. toctree::
+   :hidden:
+
+   julia-cheatsheet
+   python-cheatsheet
+   stats-cheatsheet
+
 MATLAB--Python--Julia cheatsheet
 ===========================================
 
