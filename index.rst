@@ -194,11 +194,11 @@ Mathematical Operations
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     | Operation                      |         MATLAB                | Python                         | Julia                     |
     +================================+===============================+================================+===========================+
-    |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
+    |                                | .. code-block:: matlab        | .. code-block:: python3        | .. code-block:: julia     |
     |                                |                               |                                |                           |
     | Dot product                    |     dot(A, B)                 |    np.dot(A, B) or A @ B       |     dot(A, B)             |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
-    |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
+    |                                | .. code-block:: matlab        | .. code-block:: python3        | .. code-block:: julia     |
     |                                |                               |                                |                           |
     | Matrix multiplication          |     A * B                     |     A @ B                      |     A * B                 |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
