@@ -58,7 +58,7 @@
   left: 0;
   top: -1px;
   background:url(../img/qe-menubar-icons.png) no-repeat left top;
-  background-size: 128px 16px;
+  background-size: 144px 16px;
 }
 .qe-menubar-nav	li	a:after {
   position: absolute;
@@ -93,6 +93,9 @@
 }
 .qe-menubar-nav li:nth-child(8)	a:before {
   background-position: -112px 0;
+}
+.qe-menubar-nav li:nth-child(9) a:before {
+  background-position: -128px 0;
 }
 .show-for-sr {
     position: absolute!important;
