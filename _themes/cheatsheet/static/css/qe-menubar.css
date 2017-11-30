@@ -62,7 +62,7 @@
 }
 .qe-menubar-nav	li	a:after {
   position: absolute;
-  content: "•";
+  content: '\2022';
   top:0;
   right:0;
   font-family: sans-serif;
