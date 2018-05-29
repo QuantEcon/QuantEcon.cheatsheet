@@ -148,11 +148,11 @@ Reshaping data
     +======================================+=============================+============================================+====================================================================================+
     |                                      | .. code-block:: stata       | .. code-block:: python                     | .. code-block:: r                                                                  |
     |                                      |                             |                                            |                                                                                    |
-    | Reshape data from wide to long panel |   reshape long x, i(i) j(j) |   pd.wide_to_long(df, ['x'], i='i', j='j') |    reshape(df, direction=’long’, varying=grep(‘x’, names(df), value=TRUE), sep='') |
+    | Reshape data from wide to long panel |   reshape long x, i(i) j(j) |   pd.wide_to_long(df, ['x'], i='i', j='j') |    reshape(df, direction='long', varying=grep('j', names(df), value=TRUE), sep='') |
     +--------------------------------------+-----------------------------+--------------------------------------------+------------------------------------------------------------------------------------+
     |                                      | .. code-block:: stata       | .. code-block:: python                     | .. code-block:: r                                                                  |
     |                                      |                             |                                            |                                                                                    |
-    | Reshape data from long to wide panel |     reshape wide            |     df.unstack()                           |     reshape(df, direction='wide', varying=x, value=TRUE), sep='')                  |
+    | Reshape data from long to wide panel |     reshape wide            |     df.unstack()                           |     reshape(df, timevar='x', idvar='i', direction='wide')                          |
     |                                      |                             |                                            |                                                                                    |
     |                                      |                             |     # returns hierarchical columns         |                                                                                    |
     +--------------------------------------+-----------------------------+--------------------------------------------+------------------------------------------------------------------------------------+
