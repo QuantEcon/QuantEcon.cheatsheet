@@ -17,37 +17,37 @@ Creating Vectors
 
 .. container:: multilang-table
 
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
-    |         Operation          |           MATLAB          |                 Python                |           Julia           |
-    +============================+===========================+=======================================+===========================+
-    |                            | .. code-block:: matlab    | .. code-block:: python                | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    | Row vector: size (1, n)    |     A = [1 2 3]           |  A = np.array([1, 2, 3]).reshape(1,3) |     A = [1 2 3]           |
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
-    |                            | .. code-block:: matlab    | .. code-block:: python                | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    | Column vector: size (n, 1) |     A = [1; 2; 3]         |  A = np.array([1, 2, 3]).reshape(3,1) |     A = [1 2 3]'          |
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
-    |                            | Not possible              | .. code-block:: python                | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    | 1d array: size (n, )       |                           |  A = np.array([1, 2, 3])              |     A = [1; 2; 3]         |
-    |                            |                           |                                       |                           |
-    |                            |                           |                                       | or                        |
-    |                            |                           |                                       |                           |
-    |                            |                           |                                       | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    |                            |                           |                                       |     A = [1, 2, 3]         |
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
-    |                            | .. code-block:: matlab    | .. code-block:: python                | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    | Integers from j to n with  |     A = j:k:n             |  A = np.arange(j, n+1, k)             |     A = j:k:n             |
-    | step size k                |                           |                                       |                           |
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
-    |                            | .. code-block:: matlab    | .. code-block:: python                | .. code-block:: julia     |
-    |                            |                           |                                       |                           |
-    | Linearly spaced vector     |     A = linspace(1, 5, k) |  A = np.linspace(1, 5, k)             |     A = linspace(1, 5, k) |
-    | of k points                |                           |                                       |                           |
-    +----------------------------+---------------------------+---------------------------------------+---------------------------+
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
+    |         Operation          |           MATLAB          |                 Python                 |           Julia           |
+    +============================+===========================+========================================+===========================+
+    |                            | .. code-block:: matlab    | .. code-block:: python                 | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    | Row vector: size (1, n)    |     A = [1 2 3]           |  A = np.array([1, 2, 3]).reshape(1, 3) |     A = [1 2 3]           |
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
+    |                            | .. code-block:: matlab    | .. code-block:: python                 | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    | Column vector: size (n, 1) |     A = [1; 2; 3]         |  A = np.array([1, 2, 3]).reshape(3, 1) |     A = [1 2 3]'          |
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
+    |                            | Not possible              | .. code-block:: python                 | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    | 1d array: size (n, )       |                           |  A = np.array([1, 2, 3])               |     A = [1; 2; 3]         |
+    |                            |                           |                                        |                           |
+    |                            |                           |                                        | or                        |
+    |                            |                           |                                        |                           |
+    |                            |                           |                                        | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    |                            |                           |                                        |     A = [1, 2, 3]         |
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
+    |                            | .. code-block:: matlab    | .. code-block:: python                 | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    | Integers from j to n with  |     A = j:k:n             |  A = np.arange(j, n+1, k)              |     A = j:k:n             |
+    | step size k                |                           |                                        |                           |
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
+    |                            | .. code-block:: matlab    | .. code-block:: python                 | .. code-block:: julia     |
+    |                            |                           |                                        |                           |
+    | Linearly spaced vector     |     A = linspace(1, 5, k) |  A = np.linspace(1, 5, k)              |     A = linspace(1, 5, k) |
+    | of k points                |                           |                                        |                           |
+    +----------------------------+---------------------------+----------------------------------------+---------------------------+
 
 
 
@@ -81,7 +81,7 @@ Creating Matrices
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
-    | Uniform random numbers         |     A = rand(2, 2)       |   A = np.random.rand(2,2)        |     A = rand(2, 2)       |
+    | Uniform random numbers         |     A = rand(2, 2)       |   A = np.random.rand(2, 2)       |     A = rand(2, 2)       |
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
@@ -128,7 +128,7 @@ Manipulating Vectors and Matrices
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python    | .. code-block:: julia     |
     |                                |                               |                           |                           |
-    | Reshape (to 5 rows, 2 columns) |    A = reshape(1:10, 5, 2)    |    A = A.reshape(5,2)     |    A = reshape(1:10, 5, 2)|
+    | Reshape (to 5 rows, 2 columns) |    A = reshape(1:10, 5, 2)    |    A = A.reshape(5, 2)    |    A = reshape(1:10, 5, 2)|
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python    | .. code-block:: julia     |
     |                                |                               |                           |                           |
@@ -339,7 +339,7 @@ Programming
     |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
     |                        |                            |                            |                               |
     | Print text and variable|     x = 10                 |   x = 10                   |    x = 10                     |
-    |                        |     fprintf('x = %d \n', x)|   print('x = {}'.format(x))|    println("x = $x")          |
+    |                        |     fprintf('x = %d \n', x)|   print(f'x = {x}')        |    println("x = $x")          |
     +------------------------+----------------------------+----------------------------+-------------------------------+
     |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
     |                        |                            |                            |                               |
