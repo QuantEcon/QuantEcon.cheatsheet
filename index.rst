@@ -12,6 +12,17 @@
 MATLAB--Python--Julia cheatsheet
 ===========================================
 
+Dependencies and Setup 
+--------------------------
+
+In the Python code we assume that you have already run :code:`import numpy as np`
+
+In the Julia, we assume you are using v1.0.2 or later and have run 
+
+.. code-block:: julia 
+
+    using LinearAlgebra, Statistics, Compat
+
 Creating Vectors
 ----------------
 
@@ -352,6 +363,3 @@ Programming
     | lines                  |        out = x^2           |        return x**2         |        return x^2             |
     |                        |     end                    |                            |     end                       |
     +------------------------+----------------------------+----------------------------+-------------------------------+
-
-
-In the Python code we assume that you have already run :code:`import numpy as np`
