@@ -106,14 +106,14 @@ Creating Matrices
     | Sparse Matrices                |                          |                                  |     using SparseArrays   | 
     |                                |                          |                                  |     A = spzeros(2, 2)    | 
     |                                |                          |                                  |     A[1, 2] = 4          |
-    |                                |                          |                                  |     A[3, 3]  = 1         | 
+    |                                |                          |                                  |     A[2, 2] = 1          | 
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
     | Tridiagonal Matrices           |                          |                                  |     x = [1, 2, 3]        |
-    |                                |                          |                                  |     y = [4, 5, 6]        |
-    |                                |                          |                                  |     z = [7, 8, 9, 10]    |
-    |                                |                          |                                  |     Tridiagonal(x, z, y) |
+    |                                |                          |                                  |     y = [4, 5, 6, 7]     |
+    |                                |                          |                                  |     z = [8, 9, 10]       |
+    |                                |                          |                                  |     Tridiagonal(x, y, z) |
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
 
 Manipulating Vectors and Matrices
@@ -283,7 +283,7 @@ Mathematical Operations
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
-    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A)       |    val, vec = np.linalg.eig(A) |     val, vec = eig(A)     |
+    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A)       |    val, vec = np.linalg.eig(A) |     val, vec = eigen(A    |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
