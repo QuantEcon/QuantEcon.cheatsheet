@@ -32,7 +32,7 @@ Here are a few examples of basic kinds of variables we might be interested in cr
     | .. code-block:: julia     | A **Boolean** variable                                                                                        |
     |                           |                                                                                                               |
     |    x = true               |                                                                                                               |
-    +---------------------------+---------------------------------------------------------------------------------------------------------------+  
+    +---------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Vectors and Matrices
 --------------------
@@ -162,17 +162,19 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           | For this to work, the number  of elements in ``a`` (number of rows times number of columns) must       |
     |                           | equal ``m * n``.                                                                                       |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     | **Converts matrix A to a vector.** For example, if ``A = [1 2; 3 4]``, then ``A[:]`` will return       |
+    | .. code-block:: julia     | **Converts matrix A to a vector.** For example, if ``A = [1 2; 3 4]``, then ``vec(A)`` will return     |
     |                           |                                                                                                        |
-    |    A[:]                   |                                                                                                        |
+    |    vec(A)                 |                                                                                                        |
     |                           |  .. math::                                                                                             |
     |                           |                                                                                                        |
     |                           |    \begin{pmatrix}                                                                                     |
     |                           |    1 \\                                                                                                |
-    |                           |    2 \\                                                                                                |
     |                           |    3 \\                                                                                                |
+    |                           |    2 \\                                                                                                |
     |                           |    4                                                                                                   |
     |                           |    \end{pmatrix}                                                                                       |
+    |                           |                                                                                                        |
+    |                           | You can also do ``A[:]``, which will yield the same result, but will copy all data inside ``A``        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | **Reverses** the vector or matrix ``A`` along dimension ``d``. For example, if ``A = [1 2 3; 4 5 6]``, |
     |                           |  ``flipdim(A, 1)}``, will reverse the rows of ``A`` and return                                         |
@@ -227,12 +229,13 @@ Here, we cover some useful functions for doing math.
     | .. code-block:: julia     | **Element-by-element operations** on matrices. This syntax applies the operation element-wise to       |
     |                           | corresponding elements of the matrices.                                                                |
     |                           |                                                                                                        |
-    |    A + B                  |                                                                                                        |
-    |    A - B                  |                                                                                                        |
+    |    A .+ B                 | Addition (``+``) and subtraction (``-``) can also be applied elementwise without the leading ``.``,    |
+    |    A .- B                 | but will not participate in `loop fusion`_.                                                            |
     |    A .* B                 |                                                                                                        |
     |    A ./ B                 |                                                                                                        |
     |    A .^ B                 |                                                                                                        |
     |    A .% B                 |                                                                                                        |
+    |                           |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | When ``A`` and ``B`` are matrices, ``*`` will perform **matrix multiplication**, as long as the number |
     |                           | of columns in ``A`` is the same as the number of columns in ``B``.                                     |
@@ -344,11 +347,13 @@ Here, we cover some useful functions for doing math.
     |                           | are ``1, 2`` and ``Inf``.                                                                              |
     |                           |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     | If ``A`` is square, this syntax **solves the linear system** :math:`Ax = b`. Therefore, it returns     | 
+    | .. code-block:: julia     | If ``A`` is square, this syntax **solves the linear system** :math:`Ax = b`. Therefore, it returns     |
     |                           | ``x`` such that ``A * x = b``. If ``A`` is rectangular, it **solves for the least-squares solution**   |
     |    A \ b                  | to the problem.                                                                                        |
     |                           |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. _loop fusion: https://docs.julialang.org/en/latest/manual/performance-tips.html#More-dots:-Fuse-vectorized-operations-1
 
 Programming
 -----------
@@ -417,15 +422,22 @@ The following are useful basics for Julia programming.
     |                           |                                                                                                         |
     |    fun(x, y) = 5 * x + y  | The first method is for defining a function on one line. The name of the function is ``fun`` and it     |
     |                           | takes two inputs, ``x`` and ``y``, which are specified between the parentheses. The code after the      |
-    |    function fun(x, y)     | equals sign tells Julia what the output of the function is.                                             |
+    |    function fun1(x, y)    | equals sign tells Julia what the output of the function is.                                             |
     |       ret = 5 * x         |                                                                                                         |
     |       return ret + y      | The second method is used to create functions of more than one line. The name of the function, ``fun``, |
     |    end                    | is specified right after ``function``, and like the one-line version, has its arguments in              |
     |                           | parentheses. The ``return`` statement specifies the output of the function.                             |
+    |    function fun2(x, y)    |                                                                                                         |
+    |        ret = 5 * x        | The ``return`` keyword is optional. If it is omitted the last statement in the function is returned.    | 
+    |        ret + y            | ``fun1`` and ``fun2`` are equivalent functions.                                                         |
+    |    end                    |                                                                                                         |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     |  How to **print** to screen. We can also print the values of variables to screen:                       |
+    | .. code-block:: julia     | How to **print** to screen. We can also print the values of variables to screen:                        |
     |                           |                                                                                                         |
-    |    println("Hello world") |   .. code-block:: julia                                                                                 |
+    |    println("Hello world") |  .. code-block:: julia                                                                                  |
     |                           |                                                                                                         |
-    |                           |     println("The value of x is $(x).")                                                                  |
+    |                           |    println("The value of x is $(x).")                                                                   |
+    |                           |                                                                                                         |
+    |                           | ``println`` will print the message followed by a new line character (``\n``).  You can also use         |
+    |                           | ``print`` to print a message without the trailing newline.                                              |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
