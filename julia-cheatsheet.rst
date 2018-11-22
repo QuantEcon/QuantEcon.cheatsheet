@@ -69,7 +69,8 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           | which will create a matrix of all ones with the same dimensions as matrix or vector ``B``.             |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     |  Creates a ``UniformScaling`` object which conforms to the dimensions required (e.g., in ``I +``       |
-    |    A = I                  |  ``zeros(2, 2)``, the ``I`` will act like ``2 x 2``.                                                   |
+    |                           |                                                                                                        |
+    |      A = I                |  ``zeros(2, 2)``, the ``I`` will act like ``2 x 2``.                                                   |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | This will create a **sequence** starting at ``j``, ending at ``n``, with difference                    |
     |                           | ``k`` between points. For example, ``A = 2:4:10`` will create the sequence ``2, 6, 10``                |
@@ -89,9 +90,9 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           |  .. math::                                                                                             |
     |                           |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
-    |                           |     1 & \cdot & \cdot\\                                                                                        |
-    |                           |     \cdot & 2 & \cdot \\                                                                                        |
-    |                           |     \cdot & \cdot & 3                                                                                          |
+    |                           |     1 & \cdot & \cdot\\                                                                                |
+    |                           |     \cdot & 2 & \cdot \\                                                                               |
+    |                           |     \cdot & \cdot & 3                                                                                  |
     |                           |     \end{pmatrix}                                                                                      |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Creates an ``m`` by ``n`` **matrix of random numbers** drawn from a **uniform distribution** on        |
@@ -250,7 +251,7 @@ Here, we cover some useful functions for doing math.
     | .. code-block:: julia     | This function returns the **dot product/inner product** of the two vectors ``A`` and ``B``. The two    |
     |                           | vectors need to be dimensionless or column vectors.                                                    |
     |    dot(A, B)              |                                                                                                        |
-    |    A ⋅ B                  | Can also be called with the unicode ⋅ (``\cdot<TAB>``)                                                  |
+    |    A ⋅ B                  | Can also be called with the unicode ⋅ (``\cdot<TAB>``)                                                 |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | This syntax returns the **transpose** of the matrix ``A`` (i.e., reverses the dimensions of ``A``).    |
     |                           |                                                                                                        |
@@ -288,7 +289,7 @@ Here, we cover some useful functions for doing math.
     |                           |                                                                                                        |
     |                           | The function is recursive, so it will also transpose all elements if possible.                         |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     | This syntax returns the **adjoint** of the matrix ``A``.                           |
+    | .. code-block:: julia     | This syntax returns the **adjoint** of the matrix ``A``.                                               |
     |                           |                                                                                                        |
     |    A'                     | For example if ``A`` is a real matrix                                                                  |
     |                           |  .. math::                                                                                             |
@@ -344,7 +345,7 @@ Here, we cover some useful functions for doing math.
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Returns the **eigenvalues** (``val``) and **eigenvectors** (``vec``) of matrix ``A``. In the output,   |
     |                           | ``val[i]`` is the eigenvalue corresponding to eigenvector ``val[:, i]``.                               |
-    |    val, vec = eigen(A)    |                                                                                                      |
+    |    val, vec = eigen(A)    |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Returns the Euclidean **norm** of matrix or vector ``A``. We can also provide an argument ``p``, like  |
     |                           | so:                                                                                                    |
