@@ -344,7 +344,7 @@ Here, we cover some useful functions for doing math.
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Returns the **eigenvalues** (``val``) and **eigenvectors** (``vec``) of matrix ``A``. In the output,   |
     |                           | ``val[i]`` is the eigenvalue corresponding to eigenvector ``val[:, i]``.                               |
-    |    val, vec = eigen(A)      |                                                                                                      |
+    |    val, vec = eigen(A)    |                                                                                                      |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Returns the Euclidean **norm** of matrix or vector ``A``. We can also provide an argument ``p``, like  |
     |                           | so:                                                                                                    |
