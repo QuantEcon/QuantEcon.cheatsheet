@@ -103,17 +103,17 @@ Creating Matrices
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          | 
-    | Sparse Matrices                |                          |                                  |     using SparseArrays   | 
-    |                                |                          |                                  |     A = spzeros(2, 2)    | 
-    |                                |                          |                                  |     A[1, 2] = 4          |
+    | Sparse Matrices                |     A = sparse(2,2)      |                                  |     using SparseArrays   | 
+    |                                |     A(1,2) = 4           |                                  |     A = spzeros(2, 2)    | 
+    |                                |     A(2,2) = 1           |                                  |     A[1, 2] = 4          |
     |                                |                          |                                  |     A[2, 2] = 1          | 
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
-    | Tridiagonal Matrices           |                          |                                  |     x = [1, 2, 3]        |
-    |                                |                          |                                  |     y = [4, 5, 6, 7]     |
-    |                                |                          |                                  |     z = [8, 9, 10]       |
-    |                                |                          |                                  |     Tridiagonal(x, y, z) |
+    | Tridiagonal Matrices           |     A = [1 2 3 NaN;      |                                  |     x = [1, 2, 3]        |
+    |                                |          4 5 6 7;        |                                  |     y = [4, 5, 6, 7]     |
+    |                                |          NaN 8 9 0]      |                                  |     z = [8, 9, 10]       |
+    |                                |     spdiags(A',[-1 0 1], 4, 4) |                                  |     Tridiagonal(x, y, z) |
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
 
 Manipulating Vectors and Matrices
@@ -175,23 +175,23 @@ Manipulating Vectors and Matrices
     | column dimension)              |                               |                           |                           |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
     |                                |                               |                           |                           | 
-    |                                |                               |                           |                           |
+    |                                | N/A similar type              |                           |                           |
     | Preallocating/Similar          |                               |                           | .. code-block:: julia     | 
-    |                                |                               |                           |                           | 
+    |                                | .. code-block:: matlab        |                           |     x = rand(3, 3)        | 
     |                                |                               |                           |     y = similar(x)        |
-    |                                |                               |                           |     # new dims            |
-    |                                |                               |                           |     y = similar(x, R, C)  | 
+    |                                |      x = rand(10)             |                           |     # new dims            |
+    |                                |      y = zeros(size(x,1), size(x,2))                         |                           |     y = similar(x, 2, 2)  | 
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
+    |                                | Functions broadcast directly  |                           |                           |
     |                                |                               |                           |                           |
-    |                                |                               |                           |                           |
-    | Broadcast a function over a    |                               |                           | .. code-block:: julia     |
+    | Broadcast a function over a    | .. code-block:: matlab        |                           | .. code-block:: julia     |
     | collection/matrix/vector       |                               |                           |                           |
-    |                                |                               |                           |     f(x) = x^2            |
-    |                                |                               |                           |     g(x, y) = x + 2 + y^2 |
-    |                                |                               |                           |     x = 1:10              |
-    |                                |                               |                           |     y = 2:11              |
-    |                                |                               |                           |     f.(x)                 |
-    |                                |                               |                           |     g.(x,y)               |
+    |                                |      f = @(x) x.^2            |                           |     f(x) = x^2            |
+    |                                |      g = @(x, y) x + 2 + y.^2                         |                           |     g(x, y) = x + 2 + y^2 |
+    |                                |      x = 1:10                         |                           |     x = 1:10              |
+    |                                |      y = 2:11                         |                           |     y = 2:11              |
+    |                                |      f(x)                         |                           |     f.(x)                 |
+    |                                |      g(x, y)                         |                           |     g.(x,y)               |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
 
 
@@ -248,7 +248,7 @@ Mathematical Operations
     |                                |                               |                                |                           |
     | Matrix multiplication          |     A * B                     |     A @ B                      |     A * B                 |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
-    | Inplace matrix multiplication  | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
+    | Inplace matrix multiplication  | Not possible                  | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
     |                                |                               |                                |     x = [1, 2]            |
     |                                |                               |                                |     A = [1 2; 3 4]        |
@@ -406,36 +406,42 @@ Programming
     |                        |                            |                            |                               |
     |                        |                            |                            |     f(x) = x^2 # not anon!    |
     +------------------------+----------------------------+----------------------------+-------------------------------+
-    |                        |                            |                            |                               | 
-    |                        |                            |                            |                               | 
-    | Tuples                 |     N/A                    | {PYTHON}                   | .. code-block:: julia         | 
-    |                        |                            |                            |                               |
-    |                        |                            |                            |    (1, 2, 3)                  |
+    |                        | Can use cells              |                            |                               | 
+    |                        | But watch performance      |                            |                               | 
+    | Tuples                 |                            | {PYTHON}                   | .. code-block:: julia         | 
+    |                        |  .. code-block:: matlab    |                            |                               |
+    |                        |                            |                            |    t = (1, 2.0, "test")       |
+    |                        |     t = {1 2.0 "test"}     |                            |    t[1]                       |
+    |                        |     t{1}                   |                            |                               |    
     +------------------------+----------------------------+----------------------------+-------------------------------+
     |                        |                            |                            |                               |
     |                        |                            |                            |                               | 
     | Named Tuples/          |                            |                            | .. code-block:: julia         |
     | Anonymous Structures   |                            |                            |                               |
-    |                        |                            |                            |    # vanilla                  |
+    |                        | .. code-block:: matlab     |                            |    # vanilla                  |
     |                        |                            |                            |    m = (x = 1, y = 2)         |
-    |                        |                            |                            |                               |
-    |                        |                            |                            |    # constructor              |
+    |                        |                            |                            |    m.x                        |    
+    |                        |      m.x = 1               |                            |                               |
+    |                        |      m.y = 2               |                            |    # constructor              |
     |                        |                            |                            |    using Parameters           |
-    |                        |                            |                            |    func = @with_kw (x=1, y=2) |
-    |                        |                            |                            |    m = func() # same as above |
-    |                        |                            |                            |    m = func(x = 3)            | 
+    |                        |      m.x                   |                            |    mdef = @with_kw (x=1, y=2) |
+    |                        |                            |                            |    m = mdef() # same as above |
+    |                        |                            |                            |    m = mdef(x = 3)            | 
     +------------------------+----------------------------+----------------------------+-------------------------------+
     |                        |                            |                            |                               |
     |                        |                            |                            |                               |
-    | Closures               |                            |                            | .. code-block:: julia         |
+    | Closures               |  .. code-block:: matlab    |                            | .. code-block:: julia         |
     |                        |                            |                            |                               |
-    |                        |                            |                            |        a = 2.0                |
-    |                        |                            |                            |        f(x) = a + x           |
-    |                        |                            |                            |        f(1.0)                 |
+    |                        |     a = 2.0                |                            |        a = 2.0                |
+    |                        |     f = @(x) a + x         |                            |        f(x) = a + x           |
+    |                        |     f(1.0)                 |                            |        f(1.0)                 |
     +------------------------+----------------------------+----------------------------+-------------------------------+
     |                        | .. code-block:: matlab     | .. code-block:: python     | .. code-block:: julia         |
     |                        |                            |                            |                               |
-    | Inplace Modification   |                            |                            |    function f!(out, x)        |
-    |                        |                            |                            |        out .= x.^2            |
-    |                        |                            |                            |    end                        |
+    | Inplace Modification   |    function f(out, x)      |                            |    function f!(out, x)        |
+    |                        |         out = x.^2         |                            |        out .= x.^2            |
+    |                        |    end                     |                            |    end                        |
+    |                        |    x = rand(10)            |                            |    x = rand(10)               |
+    |                        |    y = zeros(length(x), 1) |                            |    y = similar(x)             |    
+    |                        |    f(y,x)                  |                            |    f!(y, x)                   |    
     +------------------------+----------------------------+----------------------------+-------------------------------+
