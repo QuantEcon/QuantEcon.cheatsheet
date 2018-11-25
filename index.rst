@@ -179,8 +179,8 @@ Manipulating Vectors and Matrices
     | Preallocating/Similar          |                               |    x = np.random.rand(3, 3)| .. code-block:: julia     |
     |                                | .. code-block:: matlab        |    y = np.empty_like(x)   |     x = rand(3, 3)        |
     |                                |                               |                           |     y = similar(x)        |
-    |                                |      x = rand(10)             |                           |     # new dims            |
-    |                                |      y = zeros(size(x,1), size(x,2))                         |                           |     y = similar(x, 2, 2)  |
+    |                                |      x = rand(10)             |     # new dims            |     # new dims            |
+    |                                |      y = zeros(size(x,1), size(x,2))    |  y = np.empty((2,3))                      |     y = similar(x, 2, 2)  |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
     |                                | Functions broadcast directly  |                           |                           |
     |                                |                               |                           |                           |
