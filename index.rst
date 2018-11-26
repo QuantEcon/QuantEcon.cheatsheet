@@ -103,17 +103,17 @@ Creating Matrices
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
-    | Sparse Matrices                |     A = sparse(2,2)      |                                  |     using SparseArrays   |
+    | Sparse Matrices                |     A = sparse(2,2)      |   import scipy.sparse as sp      |     using SparseArrays   |
     |                                |     A(1,2) = 4           |                                  |     A = spzeros(2, 2)    |
     |                                |     A(2,2) = 1           |                                  |     A[1, 2] = 4          |
     |                                |                          |                                  |     A[2, 2] = 1          |
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
     |                                | .. code-block:: matlab   | .. code-block:: python           | .. code-block:: julia    |
     |                                |                          |                                  |                          |
-    | Tridiagonal Matrices           |     A = [1 2 3 NaN;      |                                  |     x = [1, 2, 3]        |
-    |                                |          4 5 6 7;        |                                  |     y = [4, 5, 6, 7]     |
-    |                                |          NaN 8 9 0]      |                                  |     z = [8, 9, 10]       |
-    |                                |     spdiags(A',[-1 0 1], 4, 4) |                                  |     Tridiagonal(x, y, z) |
+    | Tridiagonal Matrices           |     A = [1 2 3 NaN;      |   import sp.sparse as sp                                |     x = [1, 2, 3]        |
+    |                                |          4 5 6 7;        |   diagonals = [[4, 5, 6, 7], [1, 2, 3], [8, 9, 10]]                               |     y = [4, 5, 6, 7]     |
+    |                                |          NaN 8 9 0]      |   sp.diags(diagonals, [0, -1, 2]).toarray()                              |     z = [8, 9, 10]       |
+    |                                |     spdiags(A',[-1 0 1], 4, 4) |                            |     Tridiagonal(x, y, z) |
     +--------------------------------+--------------------------+----------------------------------+--------------------------+
 
 Manipulating Vectors and Matrices
