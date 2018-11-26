@@ -383,33 +383,33 @@ Pandas
 
 .. container:: singlelang-table python-table
 
-    +----------------+-----------------------------------------------------------------------------------------------+
-    | Command        | Description                                                                                   |
-    +================+===============================================================================================+
-    | pd.Series()    | Constructs a Pandas Series Object from some specified data and/or index                       |
-    |                |                                                                                               |
-    |                | .. code-block:: python                                                                        |
-    |                |                                                                                               |
-    |                |      s1 = pd.Series([1, 2, 3])                                                                |
-    |                |      s2 = pd.Series([1, 2, 3], index=['a', 'b', 'c'])                                         |
-    |                |                                                                                               |
-    +----------------+-----------------------------------------------------------------------------------------------+
-    | pd.DataFrame() | Constructs a Pandas DataFrame object from some specified data and/or index, column names etc. |
-    |                |                                                                                               |
-    |                | .. code-block:: python                                                                        |
-    |                |                                                                                               |
-    |                |      d = {'a' : [1, 2, 3], 'b' : [4, 5, 6]}                                                   |
-    |                |      df = pd.DataFrame(d)                                                                     |
-    |                |                                                                                               |
-    |                | or alternatively,                                                                             |
-    |                |                                                                                               |
-    |                | .. code-block:: python                                                                        |
-    |                |                                                                                               |
-    |                |      a = [1, 2, 3]                                                                            |
-    |                |      b = [4, 5, 6]                                                                            |
-    |                |      df = pd.DataFrame(list(zip(a, b)), columns=['a', 'b'])                                   |
-    |                |                                                                                               |
-    +----------------+-----------------------------------------------------------------------------------------------+
+    |--------------------------|-----------------------------------------------------------------------------------------------|
+    |         Command          |                                          Description                                          |
+    |==========================|===============================================================================================|
+    | :python:`pd.Series()`    | Constructs a Pandas Series Object from some specified data and/or index                       |
+    |                          |                                                                                               |
+    |                          | .. code-block:: python                                                                        |
+    |                          |                                                                                               |
+    |                          |     s1 = pd.Series([1, 2, 3])                                                                 |
+    |                          |     s2 = pd.Series([1, 2, 3], index=['a', 'b', 'c'])                                          |
+    |                          |                                                                                               |
+    |--------------------------|-----------------------------------------------------------------------------------------------|
+    | :python:`pd.DataFrame()` | Constructs a Pandas DataFrame object from some specified data and/or index, column names etc. |
+    |                          |                                                                                               |
+    |                          | .. code-block:: python                                                                        |
+    |                          |                                                                                               |
+    |                          |     d = {'a' : [1, 2, 3], 'b' : [4, 5, 6]}                                                    |
+    |                          |     df = pd.DataFrame(d)                                                                      |
+    |                          |                                                                                               |
+    |                          | or alternatively,                                                                             |
+    |                          |                                                                                               |
+    |                          | .. code-block:: python                                                                        |
+    |                          |                                                                                               |
+    |                          |     a = [1, 2, 3]                                                                             |
+    |                          |     b = [4, 5, 6]                                                                             |
+    |                          |     df = pd.DataFrame(list(zip(a, b)), columns=['a', 'b'])                                    |
+    |                          |                                                                                               |
+    |--------------------------|-----------------------------------------------------------------------------------------------|
 
 Plotting
 ---------------------------------
