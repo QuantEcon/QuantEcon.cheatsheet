@@ -182,16 +182,16 @@ Manipulating Vectors and Matrices
     |                                |      x = rand(10)             |     # new dims            |     # new dims            |
     |                                |      y = zeros(size(x,1), size(x,2))    |  y = np.empty((2,3))                      |     y = similar(x, 2, 2)  |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
-    |                                | Functions broadcast directly  |                           |                           |
-    |                                |                               |                           |                           |
-    | Broadcast a function over a    | .. code-block:: matlab        |                           | .. code-block:: julia     |
-    | collection/matrix/vector       |                               |                           |                           |
-    |                                |      f = @(x) x.^2            |                           |     f(x) = x^2            |
-    |                                |      g = @(x, y) x + 2 + y.^2                         |                           |     g(x, y) = x + 2 + y^2 |
-    |                                |      x = 1:10                         |                           |     x = 1:10              |
-    |                                |      y = 2:11                         |                           |     y = 2:11              |
-    |                                |      f(x)                         |                           |     f.(x)                 |
-    |                                |      g(x, y)                         |                           |     g.(x,y)               |
+    |                                | Functions broadcast directly  | Functions broadcast directly |                         |
+    |                                |                               | .. code-block:: python    |                           |
+    | Broadcast a function over a    | .. code-block:: matlab        |    def f(x):              | .. code-block:: julia     |
+    | collection/matrix/vector       |                               |        return x**2        |                           |
+    |                                |      f = @(x) x.^2            |    def g(x,y):            |     f(x) = x^2            |
+    |                                |      g = @(x, y) x + 2 + y.^2 |        return x + 2 + y**2|     g(x, y) = x + 2 + y^2 |
+    |                                |      x = 1:10                 |    x = np.arange(1, 10, 1)|     x = 1:10              |
+    |                                |      y = 2:11                 |    y = np.arange(2, 11, 1)|     y = 2:11              |
+    |                                |      f(x)                     |    f(x)                   |     f.(x)                 |
+    |                                |      g(x, y)                  |    g(x,y)                 |     g.(x,y)               |
     +--------------------------------+-------------------------------+---------------------------+---------------------------+
 
 
@@ -250,8 +250,8 @@ Mathematical Operations
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     | Inplace matrix multiplication  | Not possible                  | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
-    |                                |                               |    x = np.array(([1],[2]))     |     x = [1, 2]            |
-    |                                |                               |    A = np.arra(([1,2], [3,4])) |     A = [1 2; 3 4]        |
+    |                                |                               |    x = np.array([1,2]).reshape(2,1) |     x = [1, 2]            |
+    |                                |                               |    A = np.array(([1,2], [3,4])) |     A = [1 2; 3 4]        |
     |                                |                               |    y = np.empty_like(x)        |     y = similar(x)        |
     |                                |                               |    np.matmul(A, x, y)          |     mul!(y, A, x)         |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
