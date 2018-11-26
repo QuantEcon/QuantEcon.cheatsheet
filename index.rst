@@ -250,10 +250,10 @@ Mathematical Operations
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     | Inplace matrix multiplication  | Not possible                  | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
-    |                                |                               |                                |     x = [1, 2]            |
-    |                                |                               |                                |     A = [1 2; 3 4]        |
-    |                                |                               |                                |     y = similar(x)        |
-    |                                |                               |                                |     mul!(y, A, x)         |
+    |                                |                               |    x = np.array(([1],[2]))     |     x = [1, 2]            |
+    |                                |                               |    A = np.arra(([1,2], [3,4])) |     A = [1 2; 3 4]        |
+    |                                |                               |    y = np.empty_like(x)        |     y = similar(x)        |
+    |                                |                               |    np.matmul(A, x, y)          |     mul!(y, A, x)         |
     +--------------------------------+-------------------------------+--------------------------------+---------------------------+
     |                                | .. code-block:: matlab        | .. code-block:: python         | .. code-block:: julia     |
     |                                |                               |                                |                           |
