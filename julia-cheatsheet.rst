@@ -10,13 +10,7 @@ Julia cheatsheet
 Version and Dependencies 
 ----------------------------
 
-This assumes Julia v1.0. We assume 
-
-.. code-block:: julia 
-
-    using LinearAlgebra, Statistics, Compat 
-
-Has already been run.
+This assumes Julia v1.0. We assume ``using LinearAlgebra, Statistics, Compat `` has been run.
 
 Variables
 ---------
