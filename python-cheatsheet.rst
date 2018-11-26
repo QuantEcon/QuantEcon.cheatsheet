@@ -383,9 +383,9 @@ Pandas
 
 .. container:: singlelang-table python-table
 
-    |--------------------------|-----------------------------------------------------------------------------------------------|
+    +--------------------------+-----------------------------------------------------------------------------------------------+
     |         Command          |                                          Description                                          |
-    |==========================|===============================================================================================|
+    +==========================+===============================================================================================+
     | :python:`pd.Series()`    | Constructs a Pandas Series Object from some specified data and/or index                       |
     |                          |                                                                                               |
     |                          | .. code-block:: python                                                                        |
@@ -393,7 +393,7 @@ Pandas
     |                          |     s1 = pd.Series([1, 2, 3])                                                                 |
     |                          |     s2 = pd.Series([1, 2, 3], index=['a', 'b', 'c'])                                          |
     |                          |                                                                                               |
-    |--------------------------|-----------------------------------------------------------------------------------------------|
+    +--------------------------+-----------------------------------------------------------------------------------------------+
     | :python:`pd.DataFrame()` | Constructs a Pandas DataFrame object from some specified data and/or index, column names etc. |
     |                          |                                                                                               |
     |                          | .. code-block:: python                                                                        |
@@ -409,7 +409,7 @@ Pandas
     |                          |     b = [4, 5, 6]                                                                             |
     |                          |     df = pd.DataFrame(list(zip(a, b)), columns=['a', 'b'])                                    |
     |                          |                                                                                               |
-    |--------------------------|-----------------------------------------------------------------------------------------------|
+    +--------------------------+-----------------------------------------------------------------------------------------------+
 
 Plotting
 ---------------------------------
@@ -419,7 +419,7 @@ Plotting
     +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Command                           | Description                                                                                                                                        |
     +===================================+====================================================================================================================================================+
-    | :python:`plt.plot(x, y, s =None)` | The plot command is included in :python:`matplotlib.pyplot`.                                                                                       |
+    | :python:`plt.plot(x, y, s=None)`  | The plot command is included in :python:`matplotlib.pyplot`.                                                                                       |
     |                                   | The plot command is used to plot :math:`x` versus :math:`y` where :math:`x` and :math:`y` are iterables of the same length.                        |
     |                                   | By default the plot command draws a line, using the :math:`s` argument you can specify type of line and color.                                     |
     |                                   | For example '-', '- -', ':', 'o', 'x', and '-o' reprent line, dashed line, dotted line, circles, x's, and circle with line through it respectively.|
