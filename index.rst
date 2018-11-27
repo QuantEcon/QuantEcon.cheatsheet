@@ -101,10 +101,11 @@ Creating Matrices
     +------------------------+--------------------------------+-----------------------------------------------------+-------------------------------+
     |                        | .. code-block:: matlab         | .. code-block:: python                              | .. code-block:: julia         |
     |                        |                                |                                                     |                               |
-    | Sparse Matrices        |     A = sparse(2, 2)           |   import scipy.sparse as sp                         |     using SparseArrays        |
+    | Sparse Matrices        |     A = sparse(2, 2)           |   from scipy.sparse import coo_matrix               |     using SparseArrays        |
     |                        |     A(1, 2) = 4                |                                                     |     A = spzeros(2, 2)         |
-    |                        |     A(2, 2) = 1                |                                                     |     A[1, 2] = 4               |
-    |                        |                                |                                                     |     A[2, 2] = 1               |
+    |                        |     A(2, 2) = 1                |   A = coo_matrix(([4, 1],                           |     A[1, 2] = 4               |
+    |                        |                                |                   ([0, 1], [1, 1])),                |     A[2, 2] = 1               |
+    |                        |                                |                   shape=(2, 2))                     |                               |
     +------------------------+--------------------------------+-----------------------------------------------------+-------------------------------+
     |                        | .. code-block:: matlab         | .. code-block:: python                              | .. code-block:: julia         |
     |                        |                                |                                                     |                               |
