@@ -49,14 +49,16 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |          Command          |                                              Description                                               |
     +===========================+========================================================================================================+
     | .. code-block:: julia     | Creates a **matrix of all zeros** of size ``m`` by ``n``. We can also do the following:                |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |    A = zeros(m, n)        |                                                                                                        |
     |                           |     A = zeros(B)                                                                                       |
     |                           |                                                                                                        |
     |                           | which will create a matrix of all zeros with the same dimensions as matrix or vector ``B``.            |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | Creates a **matrix of all ones** of size ``m`` by ``n``. We can also do the following:                 |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |    A = ones(m, n)         |                                                                                                        |
     |                           |     A = ones(B)                                                                                        |
     |                           |                                                                                                        |
@@ -81,7 +83,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
     | .. code-block:: julia     | Creates a ``Diagonal <: Matrix`` using the elements in ``x``.  For example if ``x = [1, 2, 3]``,       |
     |                           |  ``Diagonal(x)`` will return                                                                           |
     |    A = Diagonal(x)        |                                                                                                        |
-    |                           |  .. math::                                                                                             |
+    |                           | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     1 & \cdot & \cdot\\                                                                                |
@@ -107,12 +109,14 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           | * The word ``end`` can also be used to indicate the last row or column                                 |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | **Returns the number of rows and columns** in a matrix. Alternatively, we can do                       |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |    nrow, ncol = size(A)   |                                                                                                        |
     |                           |    nrow = size(A, 1)                                                                                   |
     |                           |                                                                                                        |
     |                           | and                                                                                                    |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |                           |                                                                                                        |
     |                           |     ncol = size(A, 2)                                                                                  |
     |                           |                                                                                                        |
@@ -122,21 +126,24 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |    diag(A)                |                                                                                                        |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | **Horizontally concatenates** two matrices or vectors. The example here would return                   |
-    |                           |  .. math::                                                                                             |
+    |                           |                                                                                                        |
+    |                           | .. math::                                                                                              |
     |    A = hcat([1 2], [3 4]) |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     1 & 2 & 3 & 4                                                                                      |
     |                           |     \end{pmatrix}                                                                                      |
     |                           |                                                                                                        |
     |                           | An alternative syntax is:                                                                              |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |                           |                                                                                                        |
     |                           |     A = [[1 2] [3 4]]                                                                                  |
     |                           |                                                                                                        |
     |                           | For either of these commands to work, both matrices or vectors must have the same number of rows.      |
     +---------------------------+--------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | **Vertically concatenates** two matrices or vectors. The example here would return                     |
-    |                           |  .. math::                                                                                             |
+    |                           |                                                                                                        |
+    |                           | .. math::                                                                                              |
     |    A = vcat([1 2], [3 4]) |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     1 & 2 \\                                                                                           |
@@ -144,7 +151,8 @@ These are a few kinds of special vectors/matrices we can create and some things 
     |                           |     \end{pmatrix}                                                                                      |
     |                           |                                                                                                        |
     |                           | An alternative syntax is:                                                                              |
-    |                           |  .. code-block:: julia                                                                                 |
+    |                           |                                                                                                        |
+    |                           | .. code-block:: julia                                                                                  |
     |                           |                                                                                                        |
     |                           |     A = [[1 2]; [3 4]]                                                                                 |
     |                           |                                                                                                        |
@@ -153,7 +161,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
     | .. code-block:: julia     | **Reshapes** matrix or vector ``a`` into a new matrix or vector, ``A`` with ``m`` rows                 |
     |                           | and ``n`` columns. For example ``A = reshape(1:10, 5, 2)`` would return                                |
     |                           |                                                                                                        |
-    |    A = reshape(a, m, n)   |  .. math::                                                                                             |
+    |    A = reshape(a, m, n)   | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |    \begin{pmatrix}                                                                                     |
     |                           |    1 & 6 \\                                                                                            |
@@ -169,7 +177,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
     | .. code-block:: julia     | **Converts matrix A to a vector.** For example, if ``A = [1 2; 3 4]``, then ``A[:]`` will return       |
     |                           |                                                                                                        |
     |    A[:]                   |                                                                                                        |
-    |                           |  .. math::                                                                                             |
+    |                           | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |    \begin{pmatrix}                                                                                     |
     |                           |    1 \\                                                                                                |
@@ -181,16 +189,16 @@ These are a few kinds of special vectors/matrices we can create and some things 
     | .. code-block:: julia     | **Reverses** the vector or matrix ``A`` along dimension ``d``. For example, if ``A = [1 2 3; 4 5 6]``, |
     |                           |  ``reverse(A, dims = 1)}``, will reverse the rows of ``A`` and return                                  |
     |    reverse(A, dims = d)   |                                                                                                        |
-    |                           |  .. math::                                                                                             |
+    |                           | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     4 & 5 & 6 \\                                                                                       |
     |                           |     1 & 2 & 3                                                                                          |
     |                           |     \end{pmatrix}                                                                                      |
     |                           |                                                                                                        |
-    |                           |  ``reverse(A, dims = 2)`` will reverse the columns of ``A`` and return                                 |
+    |                           | ``reverse(A, dims = 2)`` will reverse the columns of ``A`` and return                                  |
     |                           |                                                                                                        |
-    |                           |  .. math::                                                                                             |
+    |                           | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     3 & 2 & 1 \\                                                                                       |
@@ -200,7 +208,7 @@ These are a few kinds of special vectors/matrices we can create and some things 
     | .. code-block:: julia     | **Repeats matrix** ``A``, ``m`` times in the row direction and ``n`` in the column direction.          |
     |                           | For example, if ``A = [1 2; 3 4]``, ``repeat(A, 2, 3)`` will return                                    |
     |    repeat(A, m, n)        |                                                                                                        |
-    |                           |  .. math::                                                                                             |
+    |                           | .. math::                                                                                              |
     |                           |                                                                                                        |
     |                           |     \begin{pmatrix}                                                                                    |
     |                           |     1 & 2 & 1 & 2 & 1 & 2 \\                                                                           |
@@ -250,7 +258,8 @@ Here, we cover some useful functions for doing math.
     | .. code-block:: julia  | This syntax returns the **transpose** of the matrix ``A`` (i.e., reverses the dimensions of ``A``).     |
     |                        |                                                                                                         |
     |    transpose(A)        | For example if                                                                                          |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     A = \begin{pmatrix}                                                                                 |
     |                        |     1 & 2 \\                                                                                            |
@@ -258,7 +267,8 @@ Here, we cover some useful functions for doing math.
     |                        |     \end{pmatrix}                                                                                       |
     |                        |                                                                                                         |
     |                        | then ``transpose(A)`` returns                                                                           |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     \begin{pmatrix}                                                                                     |
     |                        |     1 & 3 \\                                                                                            |
@@ -266,7 +276,8 @@ Here, we cover some useful functions for doing math.
     |                        |     \end{pmatrix}                                                                                       |
     |                        |                                                                                                         |
     |                        | If ``A`` contains complex numbers                                                                       |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     A = \begin{pmatrix}                                                                                 |
     |                        |     1-1i & 2+1i \\                                                                                      |
@@ -274,7 +285,8 @@ Here, we cover some useful functions for doing math.
     |                        |     \end{pmatrix}                                                                                       |
     |                        |                                                                                                         |
     |                        | then ``transpose(A)`` returns                                                                           |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     \begin{pmatrix}                                                                                     |
     |                        |     1-1i & 3-2i \\                                                                                      |
@@ -286,7 +298,8 @@ Here, we cover some useful functions for doing math.
     | .. code-block:: julia  | This syntax returns the **adjoint** of the matrix ``A``.                                                |
     |                        |                                                                                                         |
     |    A'                  | For example if ``A`` is a real matrix                                                                   |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     A = \begin{pmatrix}                                                                                 |
     |                        |     1 & 2 \\                                                                                            |
@@ -294,7 +307,8 @@ Here, we cover some useful functions for doing math.
     |                        |     \end{pmatrix}                                                                                       |
     |                        |                                                                                                         |
     |                        | then ``A'`` returns                                                                                     |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     \begin{pmatrix}                                                                                     |
     |                        |     1 & 3 \\                                                                                            |
@@ -304,7 +318,8 @@ Here, we cover some useful functions for doing math.
     |                        | which is exactly the transpose.                                                                         |
     |                        |                                                                                                         |
     |                        | If ``A`` contains complex numbers                                                                       |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     A = \begin{pmatrix}                                                                                 |
     |                        |     1-1i & 2+1i \\                                                                                      |
@@ -312,7 +327,8 @@ Here, we cover some useful functions for doing math.
     |                        |     \end{pmatrix}                                                                                       |
     |                        |                                                                                                         |
     |                        | then ``A'`` returns                                                                                     |
-    |                        |  .. math::                                                                                              |
+    |                        |                                                                                                         |
+    |                        | .. math::                                                                                               |
     |                        |                                                                                                         |
     |                        |     \begin{pmatrix}                                                                                     |
     |                        |     1+1i & 3+2i \\                                                                                      |
@@ -329,7 +345,8 @@ Here, we cover some useful functions for doing math.
     |                        |                                                                                                         |
     +------------------------+---------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia  | This function returns the **inverse** of the matrix ``A``. Alternatively, we can do:                    |
-    |                        |   .. code-block:: julia                                                                                 |
+    |                        |                                                                                                         |
+    |                        | .. code-block:: julia                                                                                   |
     |    inv(A)              |                                                                                                         |
     |                        |     A ^ (-1)                                                                                            |
     +------------------------+---------------------------------------------------------------------------------------------------------+
@@ -344,7 +361,7 @@ Here, we cover some useful functions for doing math.
     | .. code-block:: julia  | Returns the Euclidean **norm** of matrix or vector ``A``. We can also provide an argument ``p``, like   |
     |                        | so:                                                                                                     |
     |    norm(A)             |                                                                                                         |
-    |                        |   .. code-block:: julia                                                                                 |
+    |                        | .. code-block:: julia                                                                                   |
     |                        |                                                                                                         |
     |                        |     norm(A, p)                                                                                          |
     |                        |                                                                                                         |
@@ -380,7 +397,7 @@ The following are useful basics for Julia programming.
     |                           | such as an array. For example, the following for loop fills the vector ``l`` with the squares of the    |
     |    for i in iterable      | integers from 1 to 3:                                                                                   |
     |       # do something      |                                                                                                         |
-    |                           |   .. code-block:: julia                                                                                 |
+    |                           | .. code-block:: julia                                                                                   |
     |    end                    |                                                                                                         |
     |                           |     N = 3                                                                                               |
     |                           |     l = zeros(N, 1)                                                                                     |
@@ -391,7 +408,7 @@ The following are useful basics for Julia programming.
     | .. code-block:: julia     | A **while loop** performs a sequence of commands as long as some condition is true. For example, the    |
     |                           | following while loop achieves the same result as the for loop above                                     |
     |    while i <= N           |                                                                                                         |
-    |       # do something      |   .. code-block:: julia                                                                                 |
+    |       # do something      | .. code-block:: julia                                                                                   |
     |    end                    |                                                                                                         |
     |                           |     N = 3                                                                                               |
     |                           |     l = zeros(N, 1)                                                                                     |
@@ -404,7 +421,7 @@ The following are useful basics for Julia programming.
     | .. code-block:: julia     | An **if/else statement** performs commands if a condition is met. For example, the following squares    |
     |                           | ``x`` if ``x`` is 5, and cubes it otherwise:                                                            |
     |    if i <= N              |                                                                                                         |
-    |       # do something      |   .. code-block:: julia                                                                                 |
+    |       # do something      | .. code-block:: julia                                                                                   |
     |    else                   |                                                                                                         |
     |       # do something else |     if x == 5                                                                                           |
     |    end                    |         x = x ^ 2                                                                                       |
@@ -415,7 +432,7 @@ The following are useful basics for Julia programming.
     |                           | We can also just have an if statement on its own, in which case it would square ``x`` if ``x`` is 5,    |
     |                           | and do nothing otherwise.                                                                               |
     |                           |                                                                                                         |
-    |                           |   .. code-block:: julia                                                                                 |
+    |                           | .. code-block:: julia                                                                                   |
     |                           |                                                                                                         |
     |                           |     if x == 5                                                                                           |
     |                           |         x = x ^ 2                                                                                       |
@@ -435,9 +452,11 @@ The following are useful basics for Julia programming.
     |                           |                                                                                                         |
     |     foo = x -> x + 3      |                                                                                                         |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
-    | .. code-block:: julia     |  How to **print** to screen. We can also print the values of variables to screen:                       |
+    | .. code-block:: julia     | **Print** to screen.                                                                                    |
     |                           |                                                                                                         |
-    |    println("Hello world") |   .. code-block:: julia                                                                                 |
+    |                           | We can also print the values of variables to screen:                                                    |
+    |                           |                                                                                                         |
+    |    println("Hello world") | .. code-block:: julia                                                                                   |
     |                           |                                                                                                         |
     |                           |     println("The value of x is $(x).")                                                                  |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
