@@ -101,9 +101,9 @@ Creating Matrices
     +------------------------+--------------------------------+-----------------------------------------------------+-------------------------------+
     |                        | .. code-block:: matlab         | .. code-block:: python                              | .. code-block:: julia         |
     |                        |                                |                                                     |                               |
-    | Sparse Matrices        |     A = sparse(2,2)            |   import scipy.sparse as sp                         |     using SparseArrays        |
-    |                        |     A(1,2) = 4                 |                                                     |     A = spzeros(2, 2)         |
-    |                        |     A(2,2) = 1                 |                                                     |     A[1, 2] = 4               |
+    | Sparse Matrices        |     A = sparse(2, 2)           |   import scipy.sparse as sp                         |     using SparseArrays        |
+    |                        |     A(1, 2) = 4                |                                                     |     A = spzeros(2, 2)         |
+    |                        |     A(2, 2) = 1                |                                                     |     A[1, 2] = 4               |
     |                        |                                |                                                     |     A[2, 2] = 1               |
     +------------------------+--------------------------------+-----------------------------------------------------+-------------------------------+
     |                        | .. code-block:: matlab         | .. code-block:: python                              | .. code-block:: julia         |
@@ -119,81 +119,82 @@ Manipulating Vectors and Matrices
 
 .. container:: multilang-table
 
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |           Operation            |                MATLAB                |            Python            |           Julia            |
-    +================================+======================================+==============================+============================+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Transpose                      |     A.'                              |   A.T                        |     transpose(A)           |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    | Complex conjugate transpose    |                                      |                              |                            |
-    | (Adjoint)                      |     A'                               |   A.conj()                   |     A'                     |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Concatenate horizontally       |     A = [[1 2] [1 2]]                |    B = np.array([1, 2])      |     A = [[1 2] [1 2]]      |
-    |                                |                                      |    A = np.hstack((B, B))     |                            |
-    |                                | or                                   |                              | or                         |
-    |                                |                                      |                              |                            |
-    |                                | .. code-block:: matlab               |                              | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    |                                |     A = horzcat([1 2], [1 2])        |                              |    A = hcat([1 2], [1 2])  |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Concatenate vertically         |     A = [[1 2]; [1 2]]               |    B = np.array([1, 2])      |     A = [[1 2]; [1 2]]     |
-    |                                |                                      |    A = np.vstack((B, B))     |                            |
-    |                                | or                                   |                              | or                         |
-    |                                |                                      |                              |                            |
-    |                                | .. code-block:: matlab               |                              | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    |                                |     A = vertcat([1 2], [1 2])        |                              |    A = vcat([1 2], [1 2])  |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Reshape (to 5 rows, 2 columns) |    A = reshape(1:10, 5, 2)           |    A = A.reshape(5, 2)       |    A = reshape(1:10, 5, 2) |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Convert matrix to vector       |    A(:)                              |    A = A.flatten()           |    A[:]                    |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Flip left/right                |    fliplr(A)                         |    np.fliplr(A)              |    reverse(A, dims = 2)    |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Flip up/down                   |    flipud(A)                         |    np.flipud(A)              |    reverse(A, dims = 1)    |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | .. code-block:: matlab               | .. code-block:: python       | .. code-block:: julia      |
-    |                                |                                      |                              |                            |
-    | Repeat matrix (3 times in the  |    repmat(A, 3, 4)                   |    np.tile(A, (4, 3))        |    repeat(A, 3, 4)         |
-    | row dimension, 4 times in the  |                                      |                              |                            |
-    | column dimension)              |                                      |                              |                            |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                |                                      | .. code-block:: python       | .. code-block:: julia      |
-    |                                | N/A similar type                     |                              |                            |
-    | Preallocating/Similar          |                                      |    x = np.random.rand(3, 3)  |                            |
-    |                                | .. code-block:: matlab               |    y = np.empty_like(x)      |     x = rand(3, 3)         |
-    |                                |                                      |                              |     y = similar(x)         |
-    |                                |      x = rand(10)                    |    # new dims                |     # new dims             |
-    |                                |      y = zeros(size(x,1), size(x,2)) |    y = np.empty((2,3))       |     y = similar(x, 2, 2)   |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                |                                      |                              |                            |
-    |                                | .. code-block:: matlab               | .. code-block:: python       |                            |
-    |                                |                                      |                              |                            |
-    | Broadcast a function over a    |                                      |    def f(x):                 | .. code-block:: julia      |
-    | collection/matrix/vector       |                                      |        return x**2           |                            |
-    |                                |      f = @(x) x.^2                   |    def g(x,y):               |     f(x) = x^2             |
-    |                                |      g = @(x, y) x + 2 + y.^2        |        return x + 2 + y**2   |     g(x, y) = x + 2 + y^2  |
-    |                                |      x = 1:10                        |    x = np.arange(1, 10, 1)   |     x = 1:10               |
-    |                                |      y = 2:11                        |    y = np.arange(2, 11, 1)   |     y = 2:11               |
-    |                                |      f(x)                            |    f(x)                      |     f.(x)                  |
-    |                                |      g(x, y)                         |    g(x,y)                    |     g.(x,y)                |
-    |                                |                                      |                              |                            |
-    |                                | Functions broadcast directly         | Functions broadcast directly |                            |
-    +--------------------------------+--------------------------------------+------------------------------+----------------------------+
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |           Operation            |                 MATLAB                |            Python            |           Julia            |
+    +================================+=======================================+==============================+============================+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Transpose                      |     A.'                               |   A.T                        |     transpose(A)           |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    | Complex conjugate transpose    |                                       |                              |                            |
+    | (Adjoint)                      |     A'                                |   A.conj()                   |     A'                     |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Concatenate horizontally       |     A = [[1 2] [1 2]]                 |    B = np.array([1, 2])      |     A = [[1 2] [1 2]]      |
+    |                                |                                       |    A = np.hstack((B, B))     |                            |
+    |                                | or                                    |                              | or                         |
+    |                                |                                       |                              |                            |
+    |                                | .. code-block:: matlab                |                              | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    |                                |     A = horzcat([1 2], [1 2])         |                              |    A = hcat([1 2], [1 2])  |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Concatenate vertically         |     A = [[1 2]; [1 2]]                |    B = np.array([1, 2])      |     A = [[1 2]; [1 2]]     |
+    |                                |                                       |    A = np.vstack((B, B))     |                            |
+    |                                | or                                    |                              | or                         |
+    |                                |                                       |                              |                            |
+    |                                | .. code-block:: matlab                |                              | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    |                                |     A = vertcat([1 2], [1 2])         |                              |    A = vcat([1 2], [1 2])  |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Reshape (to 5 rows, 2 columns) |    A = reshape(1:10, 5, 2)            |    A = A.reshape(5, 2)       |    A = reshape(1:10, 5, 2) |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Convert matrix to vector       |    A(:)                               |    A = A.flatten()           |    A[:]                    |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Flip left/right                |    fliplr(A)                          |    np.fliplr(A)              |    reverse(A, dims = 2)    |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Flip up/down                   |    flipud(A)                          |    np.flipud(A)              |    reverse(A, dims = 1)    |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Repeat matrix (3 times in the  |    repmat(A, 3, 4)                    |    np.tile(A, (4, 3))        |    repeat(A, 3, 4)         |
+    | row dimension, 4 times in the  |                                       |                              |                            |
+    | column dimension)              |                                       |                              |                            |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                | .. code-block:: matlab                | .. code-block:: python       | .. code-block:: julia      |
+    |                                |                                       |                              |                            |
+    | Preallocating/Similar          |     x = rand(10)                      |    x = np.random.rand(3, 3)  |                            |
+    |                                |     y = zeros(size(x, 1), size(x, 2)) |    y = np.empty_like(x)      |     x = rand(3, 3)         |
+    |                                |                                       |                              |     y = similar(x)         |
+    |                                |                                       |    # new dims                |     # new dims             |
+    |                                |                                       |    y = np.empty((2, 3))      |     y = similar(x, 2, 2)   |
+    |                                | N/A similar type                      |                              |                            |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
+    |                                |                                       |                              |                            |
+    |                                | .. code-block:: matlab                | .. code-block:: python       |                            |
+    |                                |                                       |                              |                            |
+    | Broadcast a function over a    |                                       |    def f(x):                 | .. code-block:: julia      |
+    | collection/matrix/vector       |                                       |        return x**2           |                            |
+    |                                |      f = @(x) x.^2                    |    def g(x, y):              |     f(x) = x^2             |
+    |                                |      g = @(x, y) x + 2 + y.^2         |        return x + 2 + y**2   |     g(x, y) = x + 2 + y^2  |
+    |                                |      x = 1:10                         |    x = np.arange(1, 10, 1)   |     x = 1:10               |
+    |                                |      y = 2:11                         |    y = np.arange(2, 11, 1)   |     y = 2:11               |
+    |                                |      f(x)                             |    f(x)                      |     f.(x)                  |
+    |                                |      g(x, y)                          |    g(x, y)                   |     g.(x, y)               |
+    |                                |                                       |                              |                            |
+    |                                | Functions broadcast directly          | Functions broadcast directly |                            |
+    +--------------------------------+---------------------------------------+------------------------------+----------------------------+
 
 
 Accessing Vector/Matrix Elements
@@ -236,72 +237,72 @@ Mathematical Operations
 
 .. container:: multilang-table
 
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |           Operation            |          MATLAB         |                Python               |         Julia          |
-    +================================+=========================+=====================================+========================+
-    |                                | .. code-block:: matlab  | .. code-block:: python3             | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Dot product                    |     dot(A, B)           |    np.dot(A, B) or A @ B            |     dot(A, B)          |
-    |                                |                         |                                     |                        |
-    |                                |                         |                                     |     A ⋅ B # \cdot<TAB> |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python3             | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Matrix multiplication          |     A * B               |     A @ B                           |     A * B              |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    | Inplace matrix multiplication  | Not possible            | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    |                                |                         |    x = np.array([1,2]).reshape(2,1) |     x = [1, 2]         |
-    |                                |                         |    A = np.array(([1,2], [3,4]))     |     A = [1 2; 3 4]     |
-    |                                |                         |    y = np.empty_like(x)             |     y = similar(x)     |
-    |                                |                         |    np.matmul(A, x, y)               |     mul!(y, A, x)      |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Element-wise multiplication    |     A .* B              |    A * B                            |     A .* B             |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Matrix to a power              |     A^2                 |    np.linalg.matrix_power(A, 2)     |     A^2                |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Matrix to a power, elementwise |     A.^2                |    A**2                             |     A.^2               |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Inverse                        |     inv(A)              |    np.linalg.inv(A)                 |     inv(A)             |
-    |                                |                         |                                     |                        |
-    |                                | or                      |                                     | or                     |
-    |                                |                         |                                     |                        |
-    |                                | .. code-block:: matlab  |                                     | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    |                                |     A^(-1)              |                                     |    A^(-1)              |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Determinant                    |     det(A)              |    np.linalg.det(A)                 |     det(A)             |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A) |    val, vec = np.linalg.eig(A)      |     val, vec = eigen(A |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Euclidean norm                 |     norm(A)             |    np.linalg.norm(A)                |     norm(A)            |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Solve linear system            |     A\b                 |    np.linalg.solve(A, b)            |     A\b                |
-    | :math:`Ax=b` (when :math:`A`   |                         |                                     |                        |
-    | is square)                     |                         |                                     |                        |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
-    |                                | .. code-block:: matlab  | .. code-block:: python              | .. code-block:: julia  |
-    |                                |                         |                                     |                        |
-    | Solve least squares problem    |     A\b                 |    np.linalg.lstsq(A, b)            |     A\b                |
-    | :math:`Ax=b` (when :math:`A`   |                         |                                     |                        |
-    | is rectangular)                |                         |                                     |                        |
-    +--------------------------------+-------------------------+-------------------------------------+------------------------+
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |           Operation            |          MATLAB         |                 Python                |         Julia          |
+    +================================+=========================+=======================================+========================+
+    |                                | .. code-block:: matlab  | .. code-block:: python3               | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Dot product                    |     dot(A, B)           |    np.dot(A, B) or A @ B              |     dot(A, B)          |
+    |                                |                         |                                       |                        |
+    |                                |                         |                                       |     A ⋅ B # \cdot<TAB> |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python3               | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Matrix multiplication          |     A * B               |     A @ B                             |     A * B              |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    | Inplace matrix multiplication  | Not possible            | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    |                                |                         |    x = np.array([1, 2]).reshape(2, 1) |     x = [1, 2]         |
+    |                                |                         |    A = np.array(([1, 2], [3, 4]))     |     A = [1 2; 3 4]     |
+    |                                |                         |    y = np.empty_like(x)               |     y = similar(x)     |
+    |                                |                         |    np.matmul(A, x, y)                 |     mul!(y, A, x)      |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Element-wise multiplication    |     A .* B              |    A * B                              |     A .* B             |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Matrix to a power              |     A^2                 |    np.linalg.matrix_power(A, 2)       |     A^2                |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Matrix to a power, elementwise |     A.^2                |    A**2                               |     A.^2               |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Inverse                        |     inv(A)              |    np.linalg.inv(A)                   |     inv(A)             |
+    |                                |                         |                                       |                        |
+    |                                | or                      |                                       | or                     |
+    |                                |                         |                                       |                        |
+    |                                | .. code-block:: matlab  |                                       | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    |                                |     A^(-1)              |                                       |    A^(-1)              |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Determinant                    |     det(A)              |    np.linalg.det(A)                   |     det(A)             |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A) |    val, vec = np.linalg.eig(A)        |     val, vec = eigen(A |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Euclidean norm                 |     norm(A)             |    np.linalg.norm(A)                  |     norm(A)            |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Solve linear system            |     A\b                 |    np.linalg.solve(A, b)              |     A\b                |
+    | :math:`Ax=b` (when :math:`A`   |                         |                                       |                        |
+    | is square)                     |                         |                                       |                        |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
+    |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
+    |                                |                         |                                       |                        |
+    | Solve least squares problem    |     A\b                 |    np.linalg.lstsq(A, b)              |     A\b                |
+    | :math:`Ax=b` (when :math:`A`   |                         |                                       |                        |
+    | is rectangular)                |                         |                                       |                        |
+    +--------------------------------+-------------------------+---------------------------------------+------------------------+
 
 
 Sum / max / min
@@ -447,5 +448,5 @@ Programming
     |                         |    end                               |        return                         |    end                        |
     |                         |    x = rand(10)                      |                                       |    x = rand(10)               |
     |                         |    y = zeros(length(x), 1)           |    x = np.random.rand(10)             |    y = similar(x)             |
-    |                         |    f(y,x)                            |    f(x)                               |    f!(y, x)                   |
+    |                         |    f(y, x)                           |    f(x)                               |    f!(y, x)                   |
     +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
