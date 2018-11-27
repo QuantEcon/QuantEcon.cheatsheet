@@ -180,10 +180,10 @@ Manipulating Vectors and Matrices
     |                                |      x = rand(10)                    |    # new dims                |     # new dims             |
     |                                |      y = zeros(size(x,1), size(x,2)) |    y = np.empty((2,3))       |     y = similar(x, 2, 2)   |
     +--------------------------------+--------------------------------------+------------------------------+----------------------------+
-    |                                | Functions broadcast directly         | Functions broadcast directly |                            |
-    |                                |                                      | .. code-block:: python       |                            |
     |                                |                                      |                              |                            |
-    | Broadcast a function over a    | .. code-block:: matlab               |    def f(x):                 | .. code-block:: julia      |
+    |                                | .. code-block:: matlab               | .. code-block:: python       |                            |
+    |                                |                                      |                              |                            |
+    | Broadcast a function over a    |                                      |    def f(x):                 | .. code-block:: julia      |
     | collection/matrix/vector       |                                      |        return x**2           |                            |
     |                                |      f = @(x) x.^2                   |    def g(x,y):               |     f(x) = x^2             |
     |                                |      g = @(x, y) x + 2 + y.^2        |        return x + 2 + y**2   |     g(x, y) = x + 2 + y^2  |
@@ -191,6 +191,8 @@ Manipulating Vectors and Matrices
     |                                |      y = 2:11                        |    y = np.arange(2, 11, 1)   |     y = 2:11               |
     |                                |      f(x)                            |    f(x)                      |     f.(x)                  |
     |                                |      g(x, y)                         |    g(x,y)                    |     g.(x,y)                |
+    |                                |                                      |                              |                            |
+    |                                | Functions broadcast directly         | Functions broadcast directly |                            |
     +--------------------------------+--------------------------------------+------------------------------+----------------------------+
 
 
@@ -348,99 +350,102 @@ Programming
 
 .. container:: multilang-table
 
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |        Operation        |            MATLAB           |                 Python                |             Julia             |
-    +=========================+=============================+=======================================+===============================+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Comment one line        |     % This is a comment     |    # This is a comment                |     # This is a comment       |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Comment block           |     %{                      |    # Block                            |     #=                        |
-    |                         |     Comment block           |    # comment                          |     Comment block             |
-    |                         |     %}                      |    # following PEP8                   |     =#                        |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | For loop                |     for i = 1:N             |    for i in range(n):                 |     for i in 1:N              |
-    |                         |        % do something       |        # do something                 |        # do something         |
-    |                         |     end                     |                                       |     end                       |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | While loop              |     while i <= N            |    while i <= N:                      |     while i <= N              |
-    |                         |        % do something       |        # do something                 |        # do something         |
-    |                         |     end                     |                                       |     end                       |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | If                      |     if i <= N               |    if i <= N:                         |     if i <= N                 |
-    |                         |        % do something       |       # do something                  |        # do something         |
-    |                         |     end                     |                                       |     end                       |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | If / else               |     if i <= N               |   if i <= N:                          |    if i <= N                  |
-    |                         |        % do something       |       # do something                  |       # do something          |
-    |                         |     else                    |   else:                               |    else                       |
-    |                         |        % do something else  |       # so something else             |       # do something else     |
-    |                         |     end                     |                                       |    end                        |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Print text and variable |     x = 10                  |   x = 10                              |    x = 10                     |
-    |                         |     fprintf('x = %d \n', x) |   print(f'x = {x}')                   |    println("x = $x")          |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Function: anonymous     |     f = @(x) x^2            |    f = lambda x: x**2                 |     f = x -> x^2              |
-    |                         |                             |                                       |     # can be rebound          |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Function                |     function out  = f(x)    |    def f(x):                          |     function f(x)             |
-    |                         |        out = x^2            |        return x**2                    |        return x^2             |
-    |                         |     end                     |                                       |     end                       |
-    |                         |                             |                                       |                               |
-    |                         |                             |                                       |     f(x) = x^2 # not anon!    |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | Can use cells               |                                       |                               |
-    |                         | But watch performance       |                                       |                               |
-    | Tuples                  |                             | .. code-block:: python                | .. code-block:: julia         |
-    |                         |  .. code-block:: matlab     |                                       |                               |
-    |                         |                             |    t = (1, 2.0, "test")               |    t = (1, 2.0, "test")       |
-    |                         |     t = {1 2.0 "test"}      |    t[0]                               |    t[1]                       |
-    |                         |     t{1}                    |                                       |                               |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         |                             |                                       |                               |
-    |                         |                             |                                       |                               |
-    | Named Tuples/           |                             | .. code-block:: python                | .. code-block:: julia         |
-    | Anonymous Structures    |                             |                                       |                               |
-    |                         | .. code-block:: matlab      |    from collections import namedtuple |    # vanilla                  |
-    |                         |                             |                                       |    m = (x = 1, y = 2)         |
-    |                         |                             |    mdef = namedtuple('m', 'x y')      |    m.x                        |
-    |                         |      m.x = 1                |    m = mdef(1, 2)                     |                               |
-    |                         |      m.y = 2                |                                       |    # constructor              |
-    |                         |                             |    m.x                                |    using Parameters           |
-    |                         |      m.x                    |                                       |    mdef = @with_kw (x=1, y=2) |
-    |                         |                             |                                       |    m = mdef() # same as above |
-    |                         |                             |                                       |    m = mdef(x = 3)            |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         |                             |                                       |                               |
-    |                         |                             | .. code-block:: julia                 |                               |
-    | Closures                |  .. code-block:: matlab     |                                       | .. code-block:: julia         |
-    |                         |                             |    a = 2.0                            |                               |
-    |                         |     a = 2.0                 |    def f(x):                          |        a = 2.0                |
-    |                         |     f = @(x) a + x          |        return a + x                   |        f(x) = a + x           |
-    |                         |     f(1.0)                  |    f(1.0)                             |        f(1.0)                 |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab      | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                             |                                       |                               |
-    | Inplace Modification    |    function f(out, x)       |    def f(x):                          |    function f!(out, x)        |
-    |                         |         out = x.^2          |        x **=2                         |        out .= x.^2            |
-    |                         |    end                      |        return                         |    end                        |
-    |                         |    x = rand(10)             |                                       |    x = rand(10)               |
-    |                         |    y = zeros(length(x), 1)  |    x = np.random.rand(10)             |    y = similar(x)             |
-    |                         |    f(y,x)                   |    f(x)                               |    f!(y, x)                   |
-    +-------------------------+-----------------------------+---------------------------------------+-------------------------------+
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |        Operation        |                MATLAB                |                 Python                |             Julia             |
+    +=========================+======================================+=======================================+===============================+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Comment one line        |     % This is a comment              |    # This is a comment                |     # This is a comment       |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Comment block           |     %{                               |    # Block                            |     #=                        |
+    |                         |     Comment block                    |    # comment                          |     Comment block             |
+    |                         |     %}                               |    # following PEP8                   |     =#                        |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | For loop                |     for i = 1:N                      |    for i in range(n):                 |     for i in 1:N              |
+    |                         |        % do something                |        # do something                 |        # do something         |
+    |                         |     end                              |                                       |     end                       |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | While loop              |     while i <= N                     |    while i <= N:                      |     while i <= N              |
+    |                         |        % do something                |        # do something                 |        # do something         |
+    |                         |     end                              |                                       |     end                       |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | If                      |     if i <= N                        |    if i <= N:                         |     if i <= N                 |
+    |                         |        % do something                |       # do something                  |        # do something         |
+    |                         |     end                              |                                       |     end                       |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | If / else               |     if i <= N                        |   if i <= N:                          |    if i <= N                  |
+    |                         |        % do something                |       # do something                  |       # do something          |
+    |                         |     else                             |   else:                               |    else                       |
+    |                         |        % do something else           |       # so something else             |       # do something else     |
+    |                         |     end                              |                                       |    end                        |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Print text and variable |     x = 10                           |   x = 10                              |    x = 10                     |
+    |                         |     fprintf('x = %d \n', x)          |   print(f'x = {x}')                   |    println("x = $x")          |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Function: anonymous     |     f = @(x) x^2                     |    f = lambda x: x**2                 |     f = x -> x^2              |
+    |                         |                                      |                                       |     # can be rebound          |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Function                |     function out  = f(x)             |    def f(x):                          |     function f(x)             |
+    |                         |        out = x^2                     |        return x**2                    |        return x^2             |
+    |                         |     end                              |                                       |     end                       |
+    |                         |                                      |                                       |                               |
+    |                         |                                      |                                       |     f(x) = x^2 # not anon!    |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         |                                      |                                       |                               |
+    |                         |                                      |                                       |                               |
+    | Tuples                  |                                      | .. code-block:: python                | .. code-block:: julia         |
+    |                         |  .. code-block:: matlab              |                                       |                               |
+    |                         |                                      |    t = (1, 2.0, "test")               |    t = (1, 2.0, "test")       |
+    |                         |     t = {1 2.0 "test"}               |    t[0]                               |    t[1]                       |
+    |                         |     t{1}                             |                                       |                               |
+    |                         |                                      |                                       |                               |
+    |                         |  Can use cells but watch performance |                                       |                               |
+    |                         |                                      |                                       |                               |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         |                                      |                                       |                               |
+    |                         |                                      |                                       |                               |
+    | Named Tuples/           |                                      | .. code-block:: python                | .. code-block:: julia         |
+    | Anonymous Structures    |                                      |                                       |                               |
+    |                         | .. code-block:: matlab               |    from collections import namedtuple |    # vanilla                  |
+    |                         |                                      |                                       |    m = (x = 1, y = 2)         |
+    |                         |                                      |    mdef = namedtuple('m', 'x y')      |    m.x                        |
+    |                         |      m.x = 1                         |    m = mdef(1, 2)                     |                               |
+    |                         |      m.y = 2                         |                                       |    # constructor              |
+    |                         |                                      |    m.x                                |    using Parameters           |
+    |                         |      m.x                             |                                       |    mdef = @with_kw (x=1, y=2) |
+    |                         |                                      |                                       |    m = mdef() # same as above |
+    |                         |                                      |                                       |    m = mdef(x = 3)            |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         |                                      |                                       |                               |
+    |                         |                                      | .. code-block:: julia                 |                               |
+    | Closures                |  .. code-block:: matlab              |                                       | .. code-block:: julia         |
+    |                         |                                      |    a = 2.0                            |                               |
+    |                         |     a = 2.0                          |    def f(x):                          |        a = 2.0                |
+    |                         |     f = @(x) a + x                   |        return a + x                   |        f(x) = a + x           |
+    |                         |     f(1.0)                           |    f(1.0)                             |        f(1.0)                 |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
+    |                         |                                      |                                       |                               |
+    | Inplace Modification    |    function f(out, x)                |    def f(x):                          |    function f!(out, x)        |
+    |                         |         out = x.^2                   |        x **=2                         |        out .= x.^2            |
+    |                         |    end                               |        return                         |    end                        |
+    |                         |    x = rand(10)                      |                                       |    x = rand(10)               |
+    |                         |    y = zeros(length(x), 1)           |    x = np.random.rand(10)             |    y = similar(x)             |
+    |                         |    f(y,x)                            |    f(x)                               |    f!(y, x)                   |
+    +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
