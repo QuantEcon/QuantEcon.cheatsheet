@@ -286,7 +286,7 @@ Mathematical Operations
     +--------------------------------+-------------------------+---------------------------------------+------------------------+
     |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
     |                                |                         |                                       |                        |
-    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A) |    val, vec = np.linalg.eig(A)        |     val, vec = eigen(A |
+    | Eigenvalues and eigenvectors   |     [vec, val] = eig(A) |    val, vec = np.linalg.eig(A)        |     val, vec = eigen(A)|
     +--------------------------------+-------------------------+---------------------------------------+------------------------+
     |                                | .. code-block:: matlab  | .. code-block:: python                | .. code-block:: julia  |
     |                                |                         |                                       |                        |
@@ -322,9 +322,9 @@ Sum / max / min
     +-----------------------------+------------------------+--------------------------------+--------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
     |                             |                        |                                |                          |
-    | Sum / max / min of each row |     sum(A, 2)          |    sum(A, 1)                   |     sum(A, 2)            |
-    |                             |     max(A, [], 2)      |    np.amax(A, 1)               |     maximum(A, 2)        |
-    |                             |     min(A, [], 2)      |    np.amin(A, 1)               |     minimum(A, 2)        |
+    | Sum / max / min of each row |     sum(A, 2)          |    sum(A, 1)                   |     sum(A, dims = 2)     |
+    |                             |     max(A, [], 2)      |    np.amax(A, 1)               |     maximum(A, dims = 2) |
+    |                             |     min(A, [], 2)      |    np.amin(A, 1)               |     minimum(A, dims = 2) |
     +-----------------------------+------------------------+--------------------------------+--------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
     |                             |                        |                                |                          |
@@ -334,15 +334,15 @@ Sum / max / min
     +-----------------------------+------------------------+--------------------------------+--------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
     |                             |                        |                                |                          |
-    | Cumulative sum / max / min  |     cumsum(A, 1)       |    np.cumsum(A, 0)             |     cumsum(A, 1)         |
-    | by row                      |     cummax(A, 1)       |    np.maximum.accumulate(A, 0) |     cummax(A, 1)         |
-    |                             |     cummin(A, 1)       |    np.minimum.accumulate(A, 0) |     cummin(A, 1)         |
+    | Cumulative sum / max / min  |     cumsum(A, 1)       |    np.cumsum(A, 0)             |     cumsum(A, dims = 1)  |
+    | by row                      |     cummax(A, 1)       |    np.maximum.accumulate(A, 0) |     cummax(A, dims = 1)  |
+    |                             |     cummin(A, 1)       |    np.minimum.accumulate(A, 0) |     cummin(A, dims = 1)  |
     +-----------------------------+------------------------+--------------------------------+--------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
     |                             |                        |                                |                          |
-    | Cumulative sum / max / min  |     cumsum(A, 2)       |    np.cumsum(A, 1)             |     cumsum(A, 2)         |
-    | by column                   |     cummax(A, 2)       |    np.maximum.accumulate(A, 1) |     cummax(A, 2)         |
-    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     cummin(A, 2)         |
+    | Cumulative sum / max / min  |     cumsum(A, 2)       |    np.cumsum(A, 1)             |     cumsum(A, dims = 2)  |
+    | by column                   |     cummax(A, 2)       |    np.maximum.accumulate(A, 1) |     cummax(A, dims = 2)  |
+    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     cummin(A, dims = 2)  |
     +-----------------------------+------------------------+--------------------------------+--------------------------+
 
 
