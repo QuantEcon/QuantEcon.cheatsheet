@@ -10,7 +10,11 @@ Julia cheatsheet
 Version and Dependencies 
 ----------------------------
 
-This assumes Julia v1.0. We assume :code:`using LinearAlgebra, Statistics, Compat` has already been run.
+This assumes
+
+* Julia v1.0 or above
+* :code:`using LinearAlgebra, Statistics, Compat` has been run
+* The ``while`` and ``for`` are assumed to be within a Jupyter Notebook or within a function.  Otherwise, Julia 1.0 has different scoping rules for global variables, which will be made more consistent in a future release
 
 Variables
 ---------
