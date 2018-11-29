@@ -342,7 +342,7 @@ Sum / max / min
     |                             |                        |                                |                                   |
     | Cumulative sum / max / min  |     cumsum(A, 2)       |    np.cumsum(A, 1)             |     cumsum(A, dims = 2)           |
     | by column                   |     cummax(A, 2)       |    np.maximum.accumulate(A, 1) |     accumulate(max, A, dims = 2)  |
-    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     accumulate(max, A, dims = 2)  |
+    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     accumulate(min, A, dims = 2)  |
     +-----------------------------+------------------------+--------------------------------+-----------------------------------+
 
 

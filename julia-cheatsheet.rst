@@ -338,8 +338,8 @@ Here, we cover some useful functions for doing math.
     +------------------------+---------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia  | These functions compute the **sum, maximum, and minimum** elements, respectively, in matrix or vector   |
     |                        | ``A``. We can also add an additional argument for the dimension to compute the sum/maximum/minumum      |
-    |    sum(A)              | across. For example ``sum(A, 2)`` will compute the row sums of ``A`` and ``maximum(A, 1)`` will compute |
-    |    maximum(A)          | the maxima of eachcolumn of ``A``.                                                                      |
+    |    sum(A)              | across. For example ``sum(A, dims = 2)`` will compute the row sums of ``A`` and                         |
+    |    maximum(A)          | ``maximum(A, dims =1)`` will compute the maxima of eachcolumn of ``A``.                                 |
     |    minimum(A)          |                                                                                                         |
     |                        |                                                                                                         |
     |                        |                                                                                                         |
