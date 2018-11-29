@@ -311,39 +311,39 @@ Sum / max / min
 
 .. container:: multilang-table
 
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
-    |          Operation          |         MATLAB         |             Python             |          Julia           |
-    +=============================+========================+================================+==========================+
-    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
-    |                             |                        |                                |                          |
-    | Sum / max / min of          |     sum(A, 1)          |    sum(A, 0)                   |     sum(A, dims = 1)     |
-    | each column                 |     max(A, [], 1)      |    np.amax(A, 0)               |     maximum(A, dims = 1) |
-    |                             |     min(A, [], 1)      |    np.amin(A, 0)               |     minimum(A, dims = 1) |
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
-    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
-    |                             |                        |                                |                          |
-    | Sum / max / min of each row |     sum(A, 2)          |    sum(A, 1)                   |     sum(A, dims = 2)     |
-    |                             |     max(A, [], 2)      |    np.amax(A, 1)               |     maximum(A, dims = 2) |
-    |                             |     min(A, [], 2)      |    np.amin(A, 1)               |     minimum(A, dims = 2) |
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
-    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
-    |                             |                        |                                |                          |
-    | Sum / max / min of          |     sum(A(:))          |    np.sum(A)                   |     sum(A)               |
-    | entire matrix               |     max(A(:))          |    np.amax(A)                  |     maximum(A)           |
-    |                             |     min(A(:))          |    np.amin(A)                  |     minimum(A)           |
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
-    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
-    |                             |                        |                                |                          |
-    | Cumulative sum / max / min  |     cumsum(A, 1)       |    np.cumsum(A, 0)             |     cumsum(A, dims = 1)  |
-    | by row                      |     cummax(A, 1)       |    np.maximum.accumulate(A, 0) |     cummax(A, dims = 1)  |
-    |                             |     cummin(A, 1)       |    np.minimum.accumulate(A, 0) |     cummin(A, dims = 1)  |
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
-    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia    |
-    |                             |                        |                                |                          |
-    | Cumulative sum / max / min  |     cumsum(A, 2)       |    np.cumsum(A, 1)             |     cumsum(A, dims = 2)  |
-    | by column                   |     cummax(A, 2)       |    np.maximum.accumulate(A, 1) |     cummax(A, dims = 2)  |
-    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     cummin(A, dims = 2)  |
-    +-----------------------------+------------------------+--------------------------------+--------------------------+
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
+    |          Operation          |         MATLAB         |             Python             |          Julia                    |
+    +=============================+========================+================================+===================================+
+    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
+    |                             |                        |                                |                                   |
+    | Sum / max / min of          |     sum(A, 1)          |    sum(A, 0)                   |     sum(A, dims = 1)              |
+    | each column                 |     max(A, [], 1)      |    np.amax(A, 0)               |     maximum(A, dims = 1)          |
+    |                             |     min(A, [], 1)      |    np.amin(A, 0)               |     minimum(A, dims = 1)          |
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
+    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
+    |                             |                        |                                |                                   |
+    | Sum / max / min of each row |     sum(A, 2)          |    sum(A, 1)                   |     sum(A, dims = 2)              |
+    |                             |     max(A, [], 2)      |    np.amax(A, 1)               |     maximum(A, dims = 2)          |
+    |                             |     min(A, [], 2)      |    np.amin(A, 1)               |     minimum(A, dims = 2)          |
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
+    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
+    |                             |                        |                                |                                   |
+    | Sum / max / min of          |     sum(A(:))          |    np.sum(A)                   |     sum(A)                        |
+    | entire matrix               |     max(A(:))          |    np.amax(A)                  |     maximum(A)                    |
+    |                             |     min(A(:))          |    np.amin(A)                  |     minimum(A)                    |
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
+    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
+    |                             |                        |                                |                                   |
+    | Cumulative sum / max / min  |     cumsum(A, 1)       |    np.cumsum(A, 0)             |     cumsum(A, dims = 1)           |
+    | by row                      |     cummax(A, 1)       |    np.maximum.accumulate(A, 0) |     accumulate(max, A, dims = 1)  |
+    |                             |     cummin(A, 1)       |    np.minimum.accumulate(A, 0) |     accumulate(min, A, dims = 1)  |
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
+    |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
+    |                             |                        |                                |                                   |
+    | Cumulative sum / max / min  |     cumsum(A, 2)       |    np.cumsum(A, 1)             |     cumsum(A, dims = 2)           |
+    | by column                   |     cummax(A, 2)       |    np.maximum.accumulate(A, 1) |     accumulate(max, A, dims = 2)  |
+    |                             |     cummin(A, 2)       |    np.minimum.accumulate(A, 1) |     accumulate(max, A, dims = 2)  |
+    +-----------------------------+------------------------+--------------------------------+-----------------------------------+
 
 
 
