@@ -411,7 +411,7 @@ The following are useful basics for Julia programming.
     |       # do something      | .. code-block:: julia                                                                                   |
     |    end                    |                                                                                                         |
     |                           |     l = [0]                                                                                             |
-    |                           |     while norm(l) <  5                                                                                  |
+    |                           |     while norm(l) < 5                                                                                   |
     |                           |         push!(l, 2)                                                                                     |
     |                           |     end                                                                                                 |
     |                           |                                                                                                         |
