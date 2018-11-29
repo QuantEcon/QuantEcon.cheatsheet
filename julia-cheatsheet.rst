@@ -410,13 +410,13 @@ The following are useful basics for Julia programming.
     |    while i <= N           |                                                                                                         |
     |       # do something      | .. code-block:: julia                                                                                   |
     |    end                    |                                                                                                         |
-    |                           |     N = 3                                                                                               |
-    |                           |     l = zeros(N, 1)                                                                                     |
-    |                           |     i = 1                                                                                               |
-    |                           |     while i <= N                                                                                        |
-    |                           |        l[i] = i ^ 2                                                                                     |
-    |                           |        i = i + 1                                                                                        |
+    |                           |     l = [0]                                                                                             |
+    |                           |     while norm(l) <  5                                                                                  |
+    |                           |         push!(l, 2)                                                                                     |
     |                           |     end                                                                                                 |
+    |                           |                                                                                                         |
+    |                           |                                                                                                         |
+    |                           |                                                                                                         |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | An **if/else statement** performs commands if a condition is met. For example, the following squares    |
     |                           | ``x`` if ``x`` is 5, and cubes it otherwise:                                                            |
