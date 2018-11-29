@@ -399,7 +399,7 @@ The following are useful basics for Julia programming.
     |                           |     i = 1                                                                                               |
     |                           |     while i <= N                                                                                        |
     |                           |        l[i] = i ^ 2                                                                                     |
-    |                           |        i = i + 1                                                                                        |
+    |                           |        global i = i + 1 # currently necessary, but probably won't be soon                               |
     |                           |     end                                                                                                 |
     +---------------------------+---------------------------------------------------------------------------------------------------------+
     | .. code-block:: julia     | An **if/else statement** performs commands if a condition is met. For example, the following squares    |
