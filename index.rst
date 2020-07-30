@@ -442,7 +442,7 @@ Programming
     |                         |     f = @(x) a + x                   |        return a + x                   |        f(x) = a + x           |
     |                         |     f(1.0)                           |    f(1.0)                             |        f(1.0)                 |
     +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
-    |                         |  No simple syntax to achieve this    | .. code-block:: python                | .. code-block:: julia         |
+    |                         |  Not Available                       | .. code-block:: python                | .. code-block:: julia         |
     |                         |                                      |                                       |                               |
     | Inplace Modification    |                                      |    def f(x):                          |    function f!(out, x)        |
     |                         |                                      |        x **=2                         |        out .= x.^2            |
