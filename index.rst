@@ -442,12 +442,15 @@ Programming
     |                         |     f = @(x) a + x                   |        return a + x                   |        f(x) = a + x           |
     |                         |     f(1.0)                           |    f(1.0)                             |        f(1.0)                 |
     +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
-    |                         | .. code-block:: matlab               | .. code-block:: python                | .. code-block:: julia         |
-    |                         |                                      |                                       |                               |
-    | Inplace Modification    |    function f(out, x)                |    def f(x):                          |    function f!(out, x)        |
-    |                         |         out = x.^2                   |        x **=2                         |        out .= x.^2            |
-    |                         |    end                               |        return                         |    end                        |
-    |                         |    x = rand(10)                      |                                       |    x = rand(10)               |
-    |                         |    y = zeros(length(x), 1)           |    x = np.random.rand(10)             |    y = similar(x)             |
-    |                         |    f(y, x)                           |    f(x)                               |    f!(y, x)                   |
+    |                         |  No consistent or simple syntax      | .. code-block:: python                | .. code-block:: julia         |
+    |                         |  to achieve |inplace-matlab|_        |                                       |                               |
+    | Inplace Modification    |                                      |    def f(x):                          |    function f!(out, x)        |
+    |                         |                                      |        x **=2                         |        out .= x.^2            |
+    |                         |                                      |        return                         |    end                        |
+    |                         |                                      |                                       |    x = rand(10)               |
+    |                         |                                      |    x = np.random.rand(10)             |    y = similar(x)             |
+    |                         |                                      |    f(x)                               |    f!(y, x)                   |
     +-------------------------+--------------------------------------+---------------------------------------+-------------------------------+
+
+.. |inplace-matlab| replace:: this
+.. _inplace-matlab: https://blogs.mathworks.com/loren/2007/03/22/in-place-operations-on-data/
