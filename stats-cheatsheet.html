@@ -1,0 +1,720 @@
+<!doctype html>
+
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics cheatsheet &mdash; Cheatsheets by QuantEcon  documentation</title>
+
+    <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/_static/underscore.js"></script>
+<!--     <script type="text/javascript" src="_static/doctools.js"></script> -->
+    <script type="text/javascript" src="/_static/js/cheatsheet.js"></script>
+    
+	<link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
+    
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-54984338-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
+  </head>
+  <body>
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
+	
+	<div class="top-bar">
+		<div class="row columns">
+	
+			<div class="top-bar-title site-logo">
+				<a href="/" title="Home">
+					<img src="/_static/img/cheatsheets-logo.png" alt="Cheatsheets logo">
+					<p class="site-title">Cheatsheets <small>by Quant<span>Econ</span></small></p>
+				</a>
+			</div>
+			<div class="top-bar-right">
+				<div class="menu-centered">
+				  <ul class="menu">
+				    <li class="comparison-on"><a href="index.html">Numerical</a></li>
+				    <li class="python-on"><a href="python-cheatsheet.html">Python</a></li>
+				    <li class="julia-on"><a href="julia-cheatsheet.html">Julia</a></li>
+				    <li class="statistics-on"><a href="stats-cheatsheet.html">Statistics</a></li>
+				  </ul>
+				</div>
+			</div>			
+			
+		</div>
+	</div>
+
+      <div class="row">
+	
+		<main class="main-content" role="main" tabindex="0">
+
+			<p class="github-logo">
+				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="/_static/img/github-logo.png" alt="GitHub logo"></a>
+			</p>
+
+			<div class="contents">
+							
+				<div class="toc-menu">
+  <!--<h3><a href="index.html">Table Of Contents</a></h3>-->
+  <ul>
+<li><a class="reference internal" href="#">Statistics cheatsheet</a><ul>
+<li><a class="reference internal" href="#basics">Basics</a></li>
+<li><a class="reference internal" href="#filtering-data">Filtering data</a></li>
+<li><a class="reference internal" href="#summarizing-data">Summarizing data</a></li>
+<li><a class="reference internal" href="#reshaping-data">Reshaping data</a></li>
+<li><a class="reference internal" href="#merging-data">Merging data</a></li>
+<li><a class="reference internal" href="#plotting">Plotting</a></li>
+</ul>
+</li>
+</ul>
+
+								
+				</div>
+
+			</div>
+						
+	        
+  <style type="text/css">.menu>li.statistics-on>a {border-color:#444;cursor: default;}</style><div class="section" id="statistics-cheatsheet">
+<h1>Statistics cheatsheet<a class="headerlink" href="#statistics-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<p>In the Python code <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> has been run</p>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Create new dataset from values</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">input</span> a b
+<span class="m">1</span> <span class="m">4</span>
+<span class="m">2</span> <span class="m">5</span>
+<span class="m">3</span> <span class="m">6</span><span class="k"></span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Create new dataset from csv file</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>import delim mydata<span class="m">.</span>csv, delimiters(<span class="s">&quot;,&quot;</span>)
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mydata.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;my_data.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Print observations</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Print observations of variable x</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">x</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Select only variable x</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">keep</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="o">$</span><span class="n">x</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Select only variables x and y</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">keep</span> x y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="nf">[c</span><span class="p">(</span>‘<span class="n">x</span>’<span class="p">,</span> ‘<span class="n">y</span>’<span class="p">)</span><span class="n">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Drop variable x</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">x</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Generate new variable</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">gen</span> z = x <span class="o">+</span> y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">z</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="o">$</span><span class="n">x</span> <span class="o">+</span> <span class="n">df</span><span class="o">$</span><span class="n">y</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Rename variable</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">rename</span> x y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="s1">&#39;y&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="nf">[names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> ‘<span class="n">x</span>’<span class="n">]</span> <span class="o">&lt;-</span> ‘<span class="n">y</span>’
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Sort by variable</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">sort</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="nf">[order</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">),</span> <span class="n">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="filtering-data">
+<h2>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 18%" />
+<col style="width: 26%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Conditionally print observations</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list if</span> x <span class="o">&gt;</span> <span class="m">1</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Conditionally print observations with ‘or’ operator</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list if</span> x <span class="o">&gt;</span> <span class="m">1</span> | y <span class="o">&lt;</span> <span class="m">0</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">==</span> <span class="m">1</span> <span class="o">|</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Conditionally print observations with ‘and’ operator</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list if</span> x <span class="o">&lt;</span> <span class="m">1</span> <span class="o">&amp;</span> y <span class="o">&gt;</span> <span class="m">5</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">==</span> <span class="m">1</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Print subset of observations based on location</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list in</span> <span class="m">1</span><span class="o">/</span><span class="m">3</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Print observations with missing values in x</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list if</span> <span class="nf">missing</span>(x)
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="summarizing-data">
+<h2>Summarizing data<a class="headerlink" href="#summarizing-data" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 21%" />
+<col style="width: 24%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Print summary statistics</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">summarize</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Print information about variables and data types</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">describe</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Print aggregation of variable</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">mean</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Group data by variable and summarize</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">bysort</span> x:<span class="k"> summarize</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">aggregate</span><span class="p">(</span><span class="n">. </span><span class="o">~</span> <span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Print frequency table</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">tab</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Print cross-tabulation</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">tab</span> x y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Create bins based
+on values in x in new column ‘bins’</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">egen</span> bins = cut x, <span class="nf">group</span>(<span class="m">3</span>)
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">bins</span> <span class="o">&lt;-</span> <span class="nf">cut</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="reshaping-data">
+<h2>Reshaping data<a class="headerlink" href="#reshaping-data" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reshape data from wide to long panel</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">reshape</span> long x, i(i) j(j)
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="s1">&#39;j&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">reshape</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s">&#39;long&#39;</span><span class="p">,</span> <span class="n">varying</span><span class="o">=</span><span class="nf">grep</span><span class="p">(</span><span class="s">&#39;j&#39;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Reshape data from long to wide panel</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">reshape</span> wide
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+
+<span class="c1"># returns hierarchical columns</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">reshape</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">timevar</span><span class="o">=</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">idvar</span><span class="o">=</span><span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s">&#39;wide&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="merging-data">
+<h2>Merging data<a class="headerlink" href="#merging-data" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 16%" />
+<col style="width: 26%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Vertically concatenate datasets</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">append</span> using y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rbind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># note that columns must be the same for each dataset</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Merge datasets on key</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">merge</span> <span class="m">1</span>:<span class="m">1</span> key using y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">merge</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;key&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<div class="multilang-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 26%" />
+<col style="width: 35%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>STATA</p></th>
+<th class="head"><p>Pandas</p></th>
+<th class="head"><p>Base R</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scatter plot</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">plot</span> x y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Line plot</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">line</span> x y
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lines</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Histogram</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">hist</span> x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">hist</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Boxplot</p></td>
+<td><div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">graph</span> box x
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">boxplot</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+			  
+					  
+		</main>
+		
+      </div>
+		    <div class="footer">
+			    <div class="row">
+
+					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
+					
+					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+					    
+					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
+		    
+					</p>	
+					
+		    	</div>
+		    </div>
+
+
+  </body>
+</html>

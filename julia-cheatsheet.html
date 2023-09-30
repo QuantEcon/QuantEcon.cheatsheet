@@ -1,0 +1,748 @@
+<!doctype html>
+
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia cheatsheet &mdash; Cheatsheets by QuantEcon  documentation</title>
+
+    <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="/_static/underscore.js"></script>
+<!--     <script type="text/javascript" src="_static/doctools.js"></script> -->
+    <script type="text/javascript" src="/_static/js/cheatsheet.js"></script>
+    
+	<link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
+    
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-54984338-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
+  </head>
+  <body>
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
+	
+	<div class="top-bar">
+		<div class="row columns">
+	
+			<div class="top-bar-title site-logo">
+				<a href="/" title="Home">
+					<img src="/_static/img/cheatsheets-logo.png" alt="Cheatsheets logo">
+					<p class="site-title">Cheatsheets <small>by Quant<span>Econ</span></small></p>
+				</a>
+			</div>
+			<div class="top-bar-right">
+				<div class="menu-centered">
+				  <ul class="menu">
+				    <li class="comparison-on"><a href="index.html">Numerical</a></li>
+				    <li class="python-on"><a href="python-cheatsheet.html">Python</a></li>
+				    <li class="julia-on"><a href="julia-cheatsheet.html">Julia</a></li>
+				    <li class="statistics-on"><a href="stats-cheatsheet.html">Statistics</a></li>
+				  </ul>
+				</div>
+			</div>			
+			
+		</div>
+	</div>
+
+      <div class="row">
+	
+		<main class="main-content" role="main" tabindex="0">
+
+			<p class="github-logo">
+				<a href="https://github.com/QuantEcon/QuantEcon.cheatsheet" title="QuantEcon at GitHub"><img src="/_static/img/github-logo.png" alt="GitHub logo"></a>
+			</p>
+
+			<div class="contents">
+							
+				<div class="toc-menu">
+  <!--<h3><a href="index.html">Table Of Contents</a></h3>-->
+  <ul>
+<li><a class="reference internal" href="#">Julia cheatsheet</a><ul>
+<li><a class="reference internal" href="#version-and-dependencies">Version and Dependencies</a></li>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+<li><a class="reference internal" href="#vectors-and-matrices">Vectors and Matrices</a></li>
+<li><a class="reference internal" href="#mathematical-functions">Mathematical Functions</a></li>
+<li><a class="reference internal" href="#programming">Programming</a></li>
+</ul>
+</li>
+</ul>
+
+								
+				</div>
+
+			</div>
+						
+	        
+  <style type="text/css">.menu>li.julia-on>a {border-color:#444;cursor: default;}</style><div class="section" id="julia-cheatsheet">
+<span id="id1"></span><h1>Julia cheatsheet<a class="headerlink" href="#julia-cheatsheet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-and-dependencies">
+<h2>Version and Dependencies<a class="headerlink" href="#version-and-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>This assumes</p>
+<ul class="simple">
+<li><p>Julia v1.0 or above</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">LinearAlgebra,</span> <span class="pre">Statistics,</span> <span class="pre">Compat</span></code> has been run</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> are assumed to be within a Jupyter Notebook or within a function.  Otherwise, Julia 1.0 has different scoping rules for global variables, which will be made more consistent in a future release</p></li>
+</ul>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Here are a few examples of basic kinds of variables we might be interested in creating.</p>
+<div class="singlelang-table julia-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mf">4.1</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span> <span class="mf">2.2</span> <span class="mf">3.3</span><span class="p">]</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span><span class="o">&#39;</span>
+<span class="n">E</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><p>How to <strong>create a scalar, a vector, or a matrix</strong>. Here, each example will result in a slightly different form
+of output. <code class="docutils literal notranslate"><span class="pre">A</span></code> is a scalar, <code class="docutils literal notranslate"><span class="pre">B</span></code> is a flat array with 3 elements, <code class="docutils literal notranslate"><span class="pre">C</span></code> is a 1 by 3 vector, <code class="docutils literal notranslate"><span class="pre">D</span></code> is a 3 by
+1 vector, and <code class="docutils literal notranslate"><span class="pre">E</span></code> is a 2 by 2 matrix.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;This is a string&quot;</span>
+</pre></div>
+</div>
+</td>
+<td><p>A <strong>string</strong> variable</p></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">true</span>
+</pre></div>
+</div>
+</td>
+<td><p>A <strong>Boolean</strong> variable</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="vectors-and-matrices">
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+<p>These are a few kinds of special vectors/matrices we can create and some things we can do with them.</p>
+<div class="singlelang-table julia-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates a <strong>matrix of all zeros</strong> of size <code class="docutils literal notranslate"><span class="pre">m</span></code> by <code class="docutils literal notranslate"><span class="pre">n</span></code>. We can also do the following:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which will create a matrix of all zeros with the same dimensions as matrix or vector <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates a <strong>matrix of all ones</strong> of size <code class="docutils literal notranslate"><span class="pre">m</span></code> by <code class="docutils literal notranslate"><span class="pre">n</span></code>. We can also do the following:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which will create a matrix of all ones with the same dimensions as matrix or vector <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nb">I</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates a <code class="docutils literal notranslate"><span class="pre">UniformScaling</span></code> object which conforms to the dimensions required (e.g., in <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">+</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">zeros(2,</span> <span class="pre">2)</span></code>, the <code class="docutils literal notranslate"><span class="pre">I</span></code> will act like <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span> <span class="pre">2</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">j</span><span class="o">:</span><span class="n">k</span><span class="o">:</span><span class="n">n</span>
+</pre></div>
+</div>
+</td>
+<td><p>This will create a <strong>sequence</strong> starting at <code class="docutils literal notranslate"><span class="pre">j</span></code>, ending at <code class="docutils literal notranslate"><span class="pre">n</span></code>, with difference
+<code class="docutils literal notranslate"><span class="pre">k</span></code> between points. For example, <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">2:4:10</span></code> will create the sequence <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">10</span></code>
+To convert the output to an array, use <code class="docutils literal notranslate"><span class="pre">collect(A)</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span>
+<span class="n">length</span> <span class="o">=</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates a <code class="docutils literal notranslate"><span class="pre">StepRangeLen</span></code> iterable starting at <code class="docutils literal notranslate"><span class="pre">start</span></code> and ending at <code class="docutils literal notranslate"><span class="pre">stop</span></code>. Can be specified
+using either the length or step size (will not overshoot).</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="kt">Diagonal</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><dl class="simple">
+<dt>Creates a <code class="docutils literal notranslate"><span class="pre">Diagonal</span> <span class="pre">&lt;:</span> <span class="pre">Matrix</span></code> using the elements in <code class="docutils literal notranslate"><span class="pre">x</span></code>.  For example if <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>,</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Diagonal(x)</span></code> will return</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; \cdot &amp; \cdot\\
+\cdot &amp; 2 &amp; \cdot \\
+\cdot &amp; \cdot &amp; 3
+\end{pmatrix}\end{split}\]</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates an <code class="docutils literal notranslate"><span class="pre">m</span></code> by <code class="docutils literal notranslate"><span class="pre">n</span></code> <strong>matrix of random numbers</strong> drawn from a <strong>uniform distribution</strong> on
+<span class="math notranslate nohighlight">\([0, 1]\)</span>. Alternatively, <code class="docutils literal notranslate"><span class="pre">rand</span></code> can be used to draw random elements from a set <code class="docutils literal notranslate"><span class="pre">X</span></code>. For
+example, if <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, <code class="docutils literal notranslate"><span class="pre">rand(X)</span></code> will return either <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, or <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Creates an <code class="docutils literal notranslate"><span class="pre">m</span></code> by <code class="docutils literal notranslate"><span class="pre">n</span></code> <strong>matrix of random numbers</strong> drawn from a <strong>standard normal distribution</strong>.</p></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><p>This is the general syntax for <strong>accessing elements</strong> of an array or matrix, where <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code> are
+integers. The example here returns the element in the second row and third column.</p>
+<ul class="simple">
+<li><p>We can also use ranges (like <code class="docutils literal notranslate"><span class="pre">1:3</span></code>) in place of single numbers to extract multiple rows or columns</p></li>
+<li><p>A colon, <code class="docutils literal notranslate"><span class="pre">:</span></code>, by itself indicates all rows or columns</p></li>
+<li><p>The word <code class="docutils literal notranslate"><span class="pre">end</span></code> can also be used to indicate the last row or column</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Returns the number of rows and columns</strong> in a matrix. Alternatively, we can do</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">nrow</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">ncol</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>This function returns a vector of the <strong>diagonal elements</strong> of <code class="docutils literal notranslate"><span class="pre">A</span></code>
+(i.e., <code class="docutils literal notranslate"><span class="pre">A[1,</span> <span class="pre">1],</span> <span class="pre">A[2,</span> <span class="pre">2]</span></code>, etc…).</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">hcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Horizontally concatenates</strong> two matrices or vectors. The example here would return</p>
+<div class="math notranslate nohighlight">
+\[\begin{pmatrix}
+1 &amp; 2 &amp; 3 &amp; 4
+\end{pmatrix}\]</div>
+<p>An alternative syntax is:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>For either of these commands to work, both matrices or vectors must have the same number of rows.</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">vcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Vertically concatenates</strong> two matrices or vectors. The example here would return</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+<p>An alternative syntax is:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>For either of these commands to work, both matrices or vectors must have the same number of columns.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Reshapes</strong> matrix or vector <code class="docutils literal notranslate"><span class="pre">a</span></code> into a new matrix or vector, <code class="docutils literal notranslate"><span class="pre">A</span></code> with <code class="docutils literal notranslate"><span class="pre">m</span></code> rows
+and <code class="docutils literal notranslate"><span class="pre">n</span></code> columns. For example <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">reshape(1:10,</span> <span class="pre">5,</span> <span class="pre">2)</span></code> would return</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 6 \\
+2 &amp; 7 \\
+3 &amp; 8 \\
+4 &amp; 9 \\
+5 &amp; 10
+\end{pmatrix}\end{split}\]</div>
+<p>For this to work, the number  of elements in <code class="docutils literal notranslate"><span class="pre">a</span></code> (number of rows times number of columns) must
+equal <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">n</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="o">:</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Converts matrix A to a vector.</strong> For example, if <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2;</span> <span class="pre">3</span> <span class="pre">4]</span></code>, then <code class="docutils literal notranslate"><span class="pre">A[:]</span></code> will return</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 \\
+2 \\
+3 \\
+4
+\end{pmatrix}\end{split}\]</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">reverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><dl class="simple">
+<dt><strong>Reverses</strong> the vector or matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> along dimension <code class="docutils literal notranslate"><span class="pre">d</span></code>. For example, if <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2</span> <span class="pre">3;</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6]</span></code>,</dt><dd><p><code class="docutils literal notranslate"><span class="pre">reverse(A,</span> <span class="pre">dims</span> <span class="pre">=</span> <span class="pre">1)}</span></code>, will reverse the rows of <code class="docutils literal notranslate"><span class="pre">A</span></code> and return</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+4 &amp; 5 &amp; 6 \\
+1 &amp; 2 &amp; 3
+\end{pmatrix}\end{split}\]</div>
+<p><code class="docutils literal notranslate"><span class="pre">reverse(A,</span> <span class="pre">dims</span> <span class="pre">=</span> <span class="pre">2)</span></code> will reverse the columns of <code class="docutils literal notranslate"><span class="pre">A</span></code> and return</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+3 &amp; 2 &amp; 1 \\
+6 &amp; 5 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">repeat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Repeats matrix</strong> <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code> times in the row direction and <code class="docutils literal notranslate"><span class="pre">n</span></code> in the column direction.
+For example, if <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">[1</span> <span class="pre">2;</span> <span class="pre">3</span> <span class="pre">4]</span></code>, <code class="docutils literal notranslate"><span class="pre">repeat(A,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> will return</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 2 &amp; 1 &amp; 2 &amp; 1 &amp; 2 \\
+3 &amp; 4 &amp; 3 &amp; 4 &amp; 3 &amp; 4 \\
+1 &amp; 2 &amp; 1 &amp; 2 &amp; 1 &amp; 2 \\
+3 &amp; 4 &amp; 3 &amp; 4 &amp; 3 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mathematical-functions">
+<h2>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this headline">¶</a></h2>
+<p>Here, we cover some useful functions for doing math.</p>
+<div class="singlelang-table julia-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="mi">5</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Scalar arithmetic operations</strong>: addition, subtraction, multiplication, division, power, remainder.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">.+</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">.-</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">.*</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">./</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">.^</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">.%</span> <span class="n">B</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Element-by-element operations</strong> on matrices. This syntax applies the operation element-wise to
+corresponding elements of the matrices.</p>
+<p>More generally, the <code class="docutils literal notranslate"><span class="pre">.</span></code> notation is used for <strong>broadcasting</strong>, which iterates a function over a
+collection.</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+</pre></div>
+</div>
+</td>
+<td><p>When <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are matrices, <code class="docutils literal notranslate"><span class="pre">*</span></code> will perform <strong>matrix multiplication</strong>, as long as the number
+of columns in <code class="docutils literal notranslate"><span class="pre">A</span></code> is the same as the number of columns in <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">⋅</span> <span class="n">B</span>
+</pre></div>
+</div>
+</td>
+<td><p>This function returns the <strong>dot product/inner product</strong> of the two vectors <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>. The two
+vectors need to be dimensionless or column vectors.</p>
+<p>Can also be called with the unicode ⋅ (<code class="docutils literal notranslate"><span class="pre">\cdot&lt;TAB&gt;</span></code>)</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">transpose</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>This syntax returns the <strong>transpose</strong> of the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> (i.e., reverses the dimensions of <code class="docutils literal notranslate"><span class="pre">A</span></code>).</p>
+<p>For example if</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">transpose(A)</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 3 \\
+2 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> contains complex numbers</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1-1i &amp; 2+1i \\
+3-2i &amp; 4+2i
+\end{pmatrix}\end{split}\]</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">transpose(A)</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1-1i &amp; 3-2i \\
+2+1i &amp; 4+2i
+\end{pmatrix}\end{split}\]</div>
+<p>The function is recursive, so it will also transpose all elements if possible.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+</td>
+<td><p>This syntax returns the <strong>adjoint</strong> of the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<p>For example if <code class="docutils literal notranslate"><span class="pre">A</span></code> is a real matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">A'</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 3 \\
+2 &amp; 4
+\end{pmatrix}\end{split}\]</div>
+<p>which is exactly the transpose.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> contains complex numbers</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{pmatrix}
+1-1i &amp; 2+1i \\
+3-2i &amp; 4+2i
+\end{pmatrix}\end{split}\]</div>
+<p>then <code class="docutils literal notranslate"><span class="pre">A'</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1+1i &amp; 3+2i \\
+2-1i &amp; 4-2i
+\end{pmatrix}\end{split}\]</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">maximum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">minimum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>These functions compute the <strong>sum, maximum, and minimum</strong> elements, respectively, in matrix or vector
+<code class="docutils literal notranslate"><span class="pre">A</span></code>. We can also add an additional argument for the dimension to compute the sum/maximum/minumum
+across. For example <code class="docutils literal notranslate"><span class="pre">sum(A,</span> <span class="pre">dims</span> <span class="pre">=</span> <span class="pre">2)</span></code> will compute the row sums of <code class="docutils literal notranslate"><span class="pre">A</span></code> and
+<code class="docutils literal notranslate"><span class="pre">maximum(A,</span> <span class="pre">dims</span> <span class="pre">=1)</span></code> will compute the maxima of eachcolumn of <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>This function returns the <strong>inverse</strong> of the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>. Alternatively, we can do:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">^</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>This function returns the <strong>determinant</strong> of the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span> <span class="n">vec</span> <span class="o">=</span> <span class="n">eigen</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Returns the <strong>eigenvalues</strong> (<code class="docutils literal notranslate"><span class="pre">val</span></code>) and <strong>eigenvectors</strong> (<code class="docutils literal notranslate"><span class="pre">vec</span></code>) of matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>. In the output,
+<code class="docutils literal notranslate"><span class="pre">val[i]</span></code> is the eigenvalue corresponding to eigenvector <code class="docutils literal notranslate"><span class="pre">val[:,</span> <span class="pre">i]</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Returns the Euclidean <strong>norm</strong> of matrix or vector <code class="docutils literal notranslate"><span class="pre">A</span></code>. We can also provide an argument <code class="docutils literal notranslate"><span class="pre">p</span></code>, like
+so:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which will compute the <code class="docutils literal notranslate"><span class="pre">p</span></code>-norm (the default <code class="docutils literal notranslate"><span class="pre">p</span></code> is 2). If <code class="docutils literal notranslate"><span class="pre">A</span></code> is a matrix, valid values of <code class="docutils literal notranslate"><span class="pre">p</span></code>
+are <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Inf</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">\</span> <span class="n">b</span>
+</pre></div>
+</div>
+</td>
+<td><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> is square, this syntax <strong>solves the linear system</strong> <span class="math notranslate nohighlight">\(Ax = b\)</span>. Therefore, it returns
+<code class="docutils literal notranslate"><span class="pre">x</span></code> such that <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">b</span></code>. If <code class="docutils literal notranslate"><span class="pre">A</span></code> is rectangular, it <strong>solves for the least-squares solution</strong>
+to the problem.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
+<p>The following are useful basics for Julia programming.</p>
+<div class="singlelang-table julia-table docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># One line comment</span>
+
+<span class="cm">#=</span>
+<span class="cm">Comment block</span>
+<span class="cm">=#</span>
+</pre></div>
+</div>
+</td>
+<td><p>Two ways to make <strong>comments</strong>. Comments are useful for annotating code and explaining what it does.
+The first example limits your comment to one line and the second example allows the comments to span
+multiple lines between the <code class="docutils literal notranslate"><span class="pre">#=</span></code> and <code class="docutils literal notranslate"><span class="pre">=#</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="n">iterable</span>
+   <span class="c"># do something</span>
+
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><p>A <strong>for loop</strong> is used to perform a sequence of commands for each element in an iterable object,
+such as an array. For example, the following for loop fills the vector <code class="docutils literal notranslate"><span class="pre">l</span></code> with the squares of the
+integers from 1 to 3:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">N</span>
+   <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><p>A <strong>while loop</strong> performs a sequence of commands as long as some condition is true. For example, the
+following while loop achieves the same result as the for loop above</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">while</span> <span class="n">norm</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span>
+    <span class="n">push!</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span>
+   <span class="c"># do something</span>
+<span class="k">else</span>
+   <span class="c"># do something else</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><p>An <strong>if/else statement</strong> performs commands if a condition is met. For example, the following squares
+<code class="docutils literal notranslate"><span class="pre">x</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is 5, and cubes it otherwise:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="k">else</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="mi">3</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>We can also just have an if statement on its own, in which case it would square <code class="docutils literal notranslate"><span class="pre">x</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is 5,
+and do nothing otherwise.</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="mi">2</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">function</span> <span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+   <span class="n">ret</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">x</span>
+   <span class="k">return</span> <span class="n">ret</span> <span class="o">+</span> <span class="n">y</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</td>
+<td><p>These are two ways to define <strong>functions</strong>. Both examples here define equivalent functions.</p>
+<p>The first method is for defining a function on one line. The name of the function is <code class="docutils literal notranslate"><span class="pre">fun</span></code> and it
+takes two inputs, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, which are specified between the parentheses. The code after the
+equals sign tells Julia what the output of the function is.</p>
+<p>The second method is used to create functions of more than one line. The name of the function, <code class="docutils literal notranslate"><span class="pre">fun</span></code>,
+is specified right after <code class="docutils literal notranslate"><span class="pre">function</span></code>, and like the one-line version, has its arguments in
+parentheses. The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement specifies the output of the function.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</td>
+<td><p>Defines an <strong>anonymous function</strong> and binds it to the name <code class="docutils literal notranslate"><span class="pre">foo</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Print</strong> to screen.</p>
+<p>We can also print the values of variables to screen:</p>
+<div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is </span><span class="si">$</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="s">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+			  
+					  
+		</main>
+		
+      </div>
+		    <div class="footer">
+			    <div class="row">
+
+					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
+					
+					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+					    
+					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
+		    
+					</p>	
+					
+		    	</div>
+		    </div>
+
+
+  </body>
+</html>

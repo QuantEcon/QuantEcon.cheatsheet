@@ -1,26 +1,12 @@
-{%- block doctype -%}
 <!doctype html>
-{%- endblock %}
-{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
-{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
-{%- set url_root = pathto('', 1) %}
-{# XXX necessary? #}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
-{%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
-{%- else %}
-  {%- set titlesuffix = "" %}
-{%- endif %}
+
 
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {%- block htmltitle %}
-    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-    {%- endblock %}
+    <title>Search &mdash; Cheatsheets by QuantEcon  documentation</title>
 
     <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
     <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
@@ -30,7 +16,7 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="/_static/underscore.js"></script>
-<!--     <script type="text/javascript" src="{{ pathto('_static/doctools.js', 1) }}"></script> -->
+<!--     <script type="text/javascript" src="_static/doctools.js"></script> -->
     <script type="text/javascript" src="/_static/js/cheatsheet.js"></script>
     
 	<link href="https://fonts.googleapis.com/css?family=Exo:200,400|Roboto:400,700" rel="stylesheet">
@@ -86,10 +72,6 @@
     </ul>
 
   </div>
-
-{%- block content %}
-
-	{%- block document %}
 	
 	<div class="top-bar">
 		<div class="row columns">
@@ -125,36 +107,48 @@
 			<div class="contents">
 							
 				<div class="toc-menu">
-				              
-				    {%- block sidebartoc %}
-				    {%- include "localtoc.html" %}
-				    {%- endblock %}
 								
 				</div>
 
 			</div>
 						
-	        {% block body %}
-			
+	        
+  <h1 id="search-documentation">Search</h1>
+  <div id="fallback" class="admonition warning">
+  <script type="text/javascript">$('#fallback').hide();</script>
+  <p>
+    Please activate JavaScript to enable the search
+    functionality.
+  </p>
+  </div>
+  <p>
+    From here you can search these documents. Enter your search
+    words into the box below and click "search". Note that the search
+    function will automatically search for all of the words. Pages
+    containing fewer words won't appear in the result list.
+  </p>
+  <form action="" method="get">
+    <input type="text" name="q" value="" />
+    <input type="submit" value="search" />
+    <span id="search-progress" style="padding-left: 10px"></span>
+  </form>
+  
+  <div id="search-results">
+  
+  </div>
 
-	         {% endblock %}
 			  
 					  
 		</main>
 		
       </div>
-
-		{%- block footer %}
 		    <div class="footer">
 			    <div class="row">
 
 					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
 					
 					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
-		    
-					    {%- if show_sphinx %}
-					      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
-					    {%- endif %}
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
 					    
 					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
 		    
@@ -162,11 +156,6 @@
 					
 		    	</div>
 		    </div>
-		{%- endblock %}
-
-	{%- endblock %}
-
-{%- endblock %}
 
 
   </body>
