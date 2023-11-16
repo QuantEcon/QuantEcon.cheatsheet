@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
     <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -33,6 +34,44 @@
 	
   </head>
   <body>
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
 	
 	<div class="top-bar">
 		<div class="row columns">
@@ -91,10 +130,10 @@
 			</div>
 						
 	        
-  <style type="text/css">.menu>li.python-on>a {border-color:#444;cursor: default;}</style><div class="section" id="python-cheatsheet">
-<span id="id1"></span><h1>Python cheatsheet<a class="headerlink" href="#python-cheatsheet" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="operators">
-<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+  <style type="text/css">.menu>li.python-on>a {border-color:#444;cursor: default;}</style><section id="id1">
+<h1>Python cheatsheet<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -107,13 +146,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="operator"><span class="pre">*</span></span></code></p></td>
-<td><p>multiplication operation: <code class="code python docutils literal notranslate"><span class="literal number integer"><span class="pre">2</span></span><span class="operator"><span class="pre">*</span></span><span class="literal number integer"><span class="pre">3</span></span></code> returns <code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="o">*</span></code></p></td>
+<td><p>multiplication operation: <code class="code highlight python docutils literal highlight-python"><span class="mi">2</span><span class="o">*</span><span class="mi">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="operator"><span class="pre">**</span></span></code></p></td>
-<td><p>power operation: <code class="code python docutils literal notranslate"><span class="literal number integer"><span class="pre">2</span></span><span class="operator"><span class="pre">**</span></span><span class="literal number integer"><span class="pre">3</span></span></code> returns <code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="o">**</span></code></p></td>
+<td><p>power operation: <code class="code highlight python docutils literal highlight-python"><span class="mi">2</span><span class="o">**</span><span class="mi">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="error"><span class="pre">&#64;</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="o">@</span></code></p></td>
 <td><p>matrix multiplication:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
@@ -130,9 +169,9 @@
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="data-types">
-<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -145,19 +184,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">l</span></span> <span class="operator"><span class="pre">=</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">a1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">a2</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">an</span></span><span class="punctuation"><span class="pre">]</span></span></code></p></td>
-<td><p>Constructs a list containing the objects <span class="math notranslate nohighlight">\(a1, a2,..., an\)</span>.  You can append to the list using <code class="code python docutils literal notranslate"><span class="name"><span class="pre">l</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">append</span></span><span class="punctuation"><span class="pre">()</span></span></code>.
-The <span class="math notranslate nohighlight">\(ith\)</span> element of <span class="math notranslate nohighlight">\(l\)</span> can be accessed using <code class="code python docutils literal notranslate"><span class="name"><span class="pre">l</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">i</span></span><span class="punctuation"><span class="pre">]</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">an</span><span class="p">]</span></code></p></td>
+<td><p>Constructs a list containing the objects <span class="math notranslate nohighlight">\(a1, a2,..., an\)</span>.  You can append to the list using <code class="code highlight python docutils literal highlight-python"><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">()</span></code>.
+The <span class="math notranslate nohighlight">\(ith\)</span> element of <span class="math notranslate nohighlight">\(l\)</span> can be accessed using <code class="code highlight python docutils literal highlight-python"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">t</span></span> <span class="operator"><span class="pre">=</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">a2</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">an</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Constructs a tuple containing the objects <span class="math notranslate nohighlight">\(a1, a2,..., an\)</span>.  The <span class="math notranslate nohighlight">\(ith\)</span> element of <span class="math notranslate nohighlight">\(t\)</span> can be accessed using <code class="code python docutils literal notranslate"><span class="name"><span class="pre">t</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">i</span></span><span class="punctuation"><span class="pre">]</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">t</span> <span class="o">=</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">an</span><span class="p">)</span></code></p></td>
+<td><p>Constructs a tuple containing the objects <span class="math notranslate nohighlight">\(a1, a2,..., an\)</span>.  The <span class="math notranslate nohighlight">\(ith\)</span> element of <span class="math notranslate nohighlight">\(t\)</span> can be accessed using <code class="code highlight python docutils literal highlight-python"><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="built-in-functions">
-<h2>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="built-in-functions">
+<h2>Built-In Functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -170,16 +209,16 @@ The <span class="math notranslate nohighlight">\(ith\)</span> element of <span c
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">len</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">iterable</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p><code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">len</span></span></code> is a function that takes an iterable, such as a list, tuple or numpy array and returns the number of items in that object.
-For a numpy array, <code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">len</span></span></code> returns the length of the outermost dimension</p>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="nb">len</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span></code></p></td>
+<td><p><code class="code highlight python docutils literal highlight-python"><span class="nb">len</span></code> is a function that takes an iterable, such as a list, tuple or numpy array and returns the number of items in that object.
+For a numpy array, <code class="code highlight python docutils literal highlight-python"><span class="nb">len</span></code> returns the length of the outermost dimension</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)))</span>
 </pre></div>
 </div>
 <p>returns <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name builtin"><span class="pre">zip</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="nb">zip</span></code></p></td>
 <td><p>Make an iterator that aggregates elements from each of the iterables.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
@@ -187,15 +226,15 @@ For a numpy array, <code class="code python docutils literal notranslate"><span 
 <span class="nb">list</span><span class="p">(</span><span class="n">zipped</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>returns <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[(</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">),</span></span> <span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">),</span></span> <span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">6</span></span><span class="punctuation"><span class="pre">)]</span></span></code></p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span></code></p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="iterating">
-<h2>Iterating<a class="headerlink" href="#iterating" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="iterating">
+<h2>Iterating<a class="headerlink" href="#iterating" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -208,24 +247,24 @@ For a numpy array, <code class="code python docutils literal notranslate"><span 
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span> <span class="name"><span class="pre">a</span></span> <span class="operator word"><span class="pre">in</span></span> <span class="name"><span class="pre">iterable</span></span><span class="punctuation"><span class="pre">:</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span></code></p></td>
 <td><p>For loop used to perform a sequence of commands (denoted using tabs) for each element in an iterable object such as a list, tuple, or numpy array.
 An example code is</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span>  <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
     <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>prints <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">9</span></span><span class="punctuation"><span class="pre">]</span></span></code></p>
+<p>prints <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span></code></p>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="comparisons-and-logical-operators">
-<h2>Comparisons and Logical Operators<a class="headerlink" href="#comparisons-and-logical-operators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="comparisons-and-logical-operators">
+<h2>Comparisons and Logical Operators<a class="headerlink" href="#comparisons-and-logical-operators" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -238,7 +277,7 @@ An example code is</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">if</span></span> <span class="name"><span class="pre">condition</span></span><span class="punctuation"><span class="pre">:</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="k">if</span> <span class="n">condition</span><span class="p">:</span></code></p></td>
 <td><p>Performs code if a condition is met (using tabs). For example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
@@ -252,9 +291,9 @@ An example code is</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="user-defined-functions">
-<h2>User-Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-defined-functions">
+<h2>User-Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -267,7 +306,7 @@ An example code is</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">lambda</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="k">lambda</span></code></p></td>
 <td><p>Used for create anonymous one line functions of the form:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
 </pre></div>
@@ -275,7 +314,7 @@ An example code is</p>
 <p>The code after the lambda but before variables specifies the parameters. The code after the colon tells python what object to return.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">def</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="k">def</span></code></p></td>
 <td><p>The def command is used to create functions of more than one line:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -285,7 +324,7 @@ An example code is</p>
     <span class="k">return</span> <span class="n">ret</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
-<p>The code immediately following <code class="code python docutils literal notranslate"><span class="keyword"><span class="pre">def</span></span></code> names the function, in this example <code class="docutils literal notranslate"><span class="pre">g</span></code> .
+<p>The code immediately following <code class="code highlight python docutils literal highlight-python"><span class="k">def</span></code> names the function, in this example <code class="docutils literal notranslate"><span class="pre">g</span></code> .
 The variables in the parenthesis are the parameters of the function.  The remaining lines of the function are denoted by tab indents.
 The return statement specifies the object to be returned.</p>
 </td>
@@ -293,9 +332,9 @@ The return statement specifies the object to be returned.</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="numpy">
-<h2>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numpy">
+<h2>Numpy<a class="headerlink" href="#numpy" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -308,10 +347,10 @@ The return statement specifies the object to be returned.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">object</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">dtype</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">array</span></span></code> constructs a numpy array from an object, such as a list or a list of lists.
-<code class="code python docutils literal notranslate"><span class="name"><span class="pre">dtype</span></span></code> allows you to specify the type of object the array is holding.
-You will generally note need to specify the <code class="code python docutils literal notranslate"><span class="name"><span class="pre">dtype</span></span></code>.
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code></p></td>
+<td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">array</span></code> constructs a numpy array from an object, such as a list or a list of lists.
+<code class="code highlight python docutils literal highlight-python"><span class="n">dtype</span></code> allows you to specify the type of object the array is holding.
+You will generally note need to specify the <code class="code highlight python docutils literal highlight-python"><span class="n">dtype</span></code>.
 Examples:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1">#creates 1 dim array of ints</span>
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span> <span class="p">)</span><span class="c1">#creates 1 dim array of floats</span>
@@ -320,31 +359,31 @@ Examples:</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">i1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">i2</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="operator word"><span class="pre">in</span></span><span class="punctuation"><span class="pre">]</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">A</span><span class="p">[</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="ow">in</span><span class="p">]</span></code></p></td>
 <td><p>Access a the element in numpy array A in with index i1 in dimension 1, i2 in dimension 2, etc.
 Can use <code class="docutils literal notranslate"><span class="pre">:</span></code> to access a range of indices, where <code class="docutils literal notranslate"><span class="pre">imin:imax</span></code> represents all <span class="math notranslate nohighlight">\(i\)</span> such that <span class="math notranslate nohighlight">\(imin \leq i &lt; imax\)</span>.
 Always returns an object of minimal dimension.
 For example,</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">[:,</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">]</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">A</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span></code></p>
 <p>returns the 2nd column (counting from 0) of A as a 1 dimensional array and</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">:</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="punctuation"><span class="pre">:]</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span></code></p>
 <p>returns the 0th and 1st rows in a 2 dimensional array.</p>
 </td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">zeros</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">shape</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></code></p></td>
 <td><p>Constructs numpy array of shape shape.  Here shape is an integer of sequence of integers.  Such as 3, (1, 2), (2, 1), or (5, 5).  Thus</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">zeros</span></span><span class="punctuation"><span class="pre">((</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">))</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span></code></p>
 <p>Constructs an <span class="math notranslate nohighlight">\(5\times 5\)</span> array while</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">zeros</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></p>
 <p>will throw an error.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">ones</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">shape</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Same as <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">zeros</span></span></code> but produces an array of ones</p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></code></p></td>
+<td><p>Same as <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></code> but produces an array of ones</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linspace</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">b</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">n</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span></code></p></td>
 <td><p>Returns a numpy array with <span class="math notranslate nohighlight">\(n\)</span> linearly spaced points between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  For example</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linspace</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">10</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></code></p>
 <p>returns</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">1.11111111</span><span class="p">,</span> <span class="mf">1.22222222</span><span class="p">,</span> <span class="mf">1.33333333</span><span class="p">,</span>
 <span class="mf">1.44444444</span><span class="p">,</span> <span class="mf">1.55555556</span><span class="p">,</span> <span class="mf">1.66666667</span><span class="p">,</span> <span class="mf">1.77777778</span><span class="p">,</span>
@@ -353,52 +392,52 @@ For example,</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">eye</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">N</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">)</span></code></p></td>
 <td><p>Constructs the identity matrix of size <span class="math notranslate nohighlight">\(N\)</span>.  For example</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">eye</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code></p>
 <p>returns the <span class="math notranslate nohighlight">\(3\times 3\)</span> identity matrix:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(\begin{matrix}1&amp;0&amp;0\\0&amp;1&amp;0\\ 0&amp;0&amp;1\end{matrix}\right)\end{split}\]</div>
 </td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span></code> has 2 uses.  First if <code class="code python docutils literal notranslate"><span class="name"><span class="pre">a</span></span></code> is a 2 dimensional array then <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span></code> returns the principle diagonal of the matrix.
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></code></p></td>
+<td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span></code> has 2 uses.  First if <code class="code highlight python docutils literal highlight-python"><span class="n">a</span></code> is a 2 dimensional array then <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span></code> returns the principle diagonal of the matrix.
 Thus</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span><span class="punctuation"><span class="pre">(</span></span> <span class="punctuation"><span class="pre">[</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">],</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">5</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">6</span></span><span class="punctuation"><span class="pre">]</span></span> <span class="punctuation"><span class="pre">])</span></span></code></p>
-<p>returns <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">6</span></span><span class="punctuation"><span class="pre">]</span></span></code>.</p>
-<p>If <span class="math notranslate nohighlight">\(a\)</span> is a 1 dimensional array then <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span></code> constructs an array with $a$ as the principle diagonal.  Thus,</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">diag</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">])</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="p">])</span></code></p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span></code>.</p>
+<p>If <span class="math notranslate nohighlight">\(a\)</span> is a 1 dimensional array then <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span></code> constructs an array with $a$ as the principle diagonal.  Thus,</p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span></code></p>
 <p>returns</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(\begin{matrix}1&amp;0\\0&amp;2\end{matrix}\right)\end{split}\]</div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">random</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">rand</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">d0</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">d1</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">dn</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Constructs a numpy array of shape <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">d0</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">d1</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">dn</span></span><span class="punctuation"><span class="pre">)</span></span></code> filled with random numbers drawn from a uniform distribution between :math`(0, 1)`.
-For example, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">random</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">rand</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">)</span></span></code> returns</p>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">dn</span><span class="p">)</span></code></p></td>
+<td><p>Constructs a numpy array of shape <code class="code highlight python docutils literal highlight-python"><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">dn</span><span class="p">)</span></code> filled with random numbers drawn from a uniform distribution between :math`(0, 1)`.
+For example, <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code> returns</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span> <span class="mf">0.69060674</span><span class="p">,</span> <span class="mf">0.38943021</span><span class="p">,</span> <span class="mf">0.19128955</span><span class="p">],</span>
 <span class="p">[</span> <span class="mf">0.5419038</span> <span class="p">,</span> <span class="mf">0.66963507</span><span class="p">,</span> <span class="mf">0.78687237</span><span class="p">]])</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">random</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">randn</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">d0</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">d1</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">dn</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Same as <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">random</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">rand</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">d0</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">d1</span></span><span class="punctuation"><span class="pre">,</span></span><span class="operator"><span class="pre">…</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">dn</span></span><span class="punctuation"><span class="pre">)</span></span></code> except that it draws from the standard normal distribution <span class="math notranslate nohighlight">\(\mathcal N(0, 1)\)</span>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">dn</span><span class="p">)</span></code></p></td>
+<td><p>Same as <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">dn</span><span class="p">)</span></code> except that it draws from the standard normal distribution <span class="math notranslate nohighlight">\(\mathcal N(0, 1)\)</span>
 rather than the uniform distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">A</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">T</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">A</span><span class="o">.</span><span class="n">T</span></code></p></td>
 <td><p>Reverses the dimensions of an array (transpose).
 For example,
-if <span class="math notranslate nohighlight">\(x = \left(\begin{matrix} 1&amp; 2\\3&amp;4\end{matrix}\right)\)</span> then <code class="code python docutils literal notranslate"><span class="name"><span class="pre">x</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">T</span></span></code> returns <span class="math notranslate nohighlight">\(\left(\begin{matrix} 1&amp; 3\\2&amp;4\end{matrix}\right)\)</span></p></td>
+if <span class="math notranslate nohighlight">\(x = \left(\begin{matrix} 1&amp; 2\\3&amp;4\end{matrix}\right)\)</span> then <code class="code highlight python docutils literal highlight-python"><span class="n">x</span><span class="o">.</span><span class="n">T</span></code> returns <span class="math notranslate nohighlight">\(\left(\begin{matrix} 1&amp; 3\\2&amp;4\end{matrix}\right)\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">hstack</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">tuple</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span></code></p></td>
 <td><p>Take a sequence of arrays and stack them horizontally to make a single array.  For example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>returns <code class="code python docutils literal notranslate"><span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">]</span></span></code> while</p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></code> while</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]</span> <span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]]</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
@@ -407,8 +446,8 @@ if <span class="math notranslate nohighlight">\(x = \left(\begin{matrix} 1&amp; 
 <p>returns <span class="math notranslate nohighlight">\(\left( \begin{matrix} 1&amp;2\\2&amp;3\\ 3&amp;4 \end{matrix}\right)\)</span></p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">vstack</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">tuple</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Like <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">hstack</span></span></code>.  Takes a sequence of arrays and stack them vertically to make a single array.  For example</p>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span></code></p></td>
+<td><p>Like <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">hstack</span></code>.  Takes a sequence of arrays and stack them vertically to make a single array.  For example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">)</span>
@@ -421,50 +460,50 @@ if <span class="math notranslate nohighlight">\(x = \left(\begin{matrix} 1&amp; 
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amax</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>By default <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amax</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">)</span></span></code> finds the maximum of all elements in the array <span class="math notranslate nohighlight">\(a\)</span>.
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code></p></td>
+<td><p>By default <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></code> finds the maximum of all elements in the array <span class="math notranslate nohighlight">\(a\)</span>.
 Can specify maximization along a particular dimension with axis.
 If</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">a</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">(</span></span> <span class="punctuation"><span class="pre">[</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">],</span></span> <span class="punctuation"><span class="pre">[</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">]</span></span> <span class="punctuation"><span class="pre">])</span></span> <span class="comment single"><span class="pre">#creates</span> <span class="pre">a</span> <span class="pre">2</span> <span class="pre">dim</span> <span class="pre">array</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">])</span> <span class="c1">#creates a 2 dim array</span></code></p>
 <p>then</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amax</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span> <span class="comment single"><span class="pre">#maximization</span> <span class="pre">along</span> <span class="pre">row</span> <span class="pre">(dim</span> <span class="pre">0)</span></span></code></p>
-<p>returns <code class="code python docutils literal notranslate"><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">3</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">])</span></span></code>  and</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amax</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">)</span></span> <span class="comment single"><span class="pre">#maximization</span> <span class="pre">along</span> <span class="pre">column</span> <span class="pre">(dim</span> <span class="pre">1)</span></span></code></p>
-<p>returns <code class="code python docutils literal notranslate"><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">2</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">4</span></span><span class="punctuation"><span class="pre">])</span></span></code></p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#maximization along row (dim 0)</span></code></p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span></code>  and</p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#maximization along column (dim 1)</span></code></p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span></code></p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amin</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Same as <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">amax</span></span></code> except returns minimum element.</p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code></p></td>
+<td><p>Same as <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">amax</span></code> except returns minimum element.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">argmax</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code></p></td>
 <td><p>Performs similar function to np.amax except returns index of maximal element.
 By default gives index of flattened array, otherwise can use axis to specify dimension.
 From the example for np.amax</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#maximization along row (dim 0)</span>
 </pre></div>
 </div>
-<p>returns <code class="code python docutils literal notranslate"><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">])</span></span></code> and</p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span></code> and</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#maximization along column (dim 1)</span>
 </pre></div>
 </div>
-<p>returns <code class="code python docutils literal notranslate"><span class="name"><span class="pre">array</span></span><span class="punctuation"><span class="pre">([</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="literal number integer"><span class="pre">1</span></span><span class="punctuation"><span class="pre">])</span></span></code></p>
+<p>returns <code class="code highlight python docutils literal highlight-python"><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span></code></p>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">argmin</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">axis</span></span> <span class="operator"><span class="pre">=</span></span><span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Same as <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">argmax</span></span></code> except finds minimal index.</p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span><span class="kc">None</span><span class="p">)</span></code></p></td>
+<td><p>Same as <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">argmax</span></code> except finds minimal index.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">dot</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">b</span></span><span class="punctuation"><span class="pre">)</span></span></code> or <code class="code python docutils literal notranslate"><span class="name"><span class="pre">a</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">dot</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">b</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code> or <code class="code highlight python docutils literal highlight-python"><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span></code></p></td>
 <td><p>Returns an array equal to the dot product of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.
 For this operation to work the innermost dimension of <span class="math notranslate nohighlight">\(a\)</span> must be equal to the outermost dimension of <span class="math notranslate nohighlight">\(b\)</span>.
-If <span class="math notranslate nohighlight">\(a\)</span> is a <span class="math notranslate nohighlight">\((3, 2)\)</span> array and <span class="math notranslate nohighlight">\(b\)</span> is a <span class="math notranslate nohighlight">\((2)\)</span> array then <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">dot</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">a</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">b</span></span><span class="punctuation"><span class="pre">)</span></span></code> is valid.
+If <span class="math notranslate nohighlight">\(a\)</span> is a <span class="math notranslate nohighlight">\((3, 2)\)</span> array and <span class="math notranslate nohighlight">\(b\)</span> is a <span class="math notranslate nohighlight">\((2)\)</span> array then <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code> is valid.
 If <span class="math notranslate nohighlight">\(b\)</span> is a <span class="math notranslate nohighlight">\((1, 2)\)</span> array then the operation will return an error.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="numpy-linalg">
-<h2>numpy.linalg<a class="headerlink" href="#numpy-linalg" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="numpy-linalg">
+<h2>numpy.linalg<a class="headerlink" href="#numpy-linalg" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -477,8 +516,8 @@ If <span class="math notranslate nohighlight">\(b\)</span> is a <span class="mat
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linalg</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">inv</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>For a 2-dimensional array <span class="math notranslate nohighlight">\(A\)</span>. <code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linalg</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">inv</span></span></code> returns the inverse of <span class="math notranslate nohighlight">\(A\)</span>.
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span></code></p></td>
+<td><p>For a 2-dimensional array <span class="math notranslate nohighlight">\(A\)</span>. <code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span></code> returns the inverse of <span class="math notranslate nohighlight">\(A\)</span>.
 For example, for a <span class="math notranslate nohighlight">\((2, 2)\)</span> array <span class="math notranslate nohighlight">\(A\)</span></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
@@ -490,16 +529,16 @@ For example, for a <span class="math notranslate nohighlight">\((2, 2)\)</span> 
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linalg</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">eig</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span></code></p></td>
 <td><p>Returns a 1-dimensional array with all the eigenvalues of $A$ as well as a 2-dimensional array with the eigenvectors as columns.
 For example,</p>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">eigvals</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">eigvecs</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linalg</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">eig</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">)</span></span></code></p>
-<p>returns the eigenvalues in <code class="code python docutils literal notranslate"><span class="name"><span class="pre">eigvals</span></span></code> and the eigenvectors in <code class="code python docutils literal notranslate"><span class="name"><span class="pre">eigvecs</span></span></code>.
-<code class="code python docutils literal notranslate"><span class="name"><span class="pre">eigvecs</span></span><span class="punctuation"><span class="pre">[:,</span></span> <span class="name"><span class="pre">i</span></span><span class="punctuation"><span class="pre">]</span></span></code> is the eigenvector of <span class="math notranslate nohighlight">\(A\)</span>  with eigenvalue of <code class="code python docutils literal notranslate"><span class="name"><span class="pre">eigval</span></span><span class="punctuation"><span class="pre">[</span></span><span class="name"><span class="pre">i</span></span><span class="punctuation"><span class="pre">]</span></span></code>.</p>
+<p><code class="code highlight python docutils literal highlight-python"><span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span></code></p>
+<p>returns the eigenvalues in <code class="code highlight python docutils literal highlight-python"><span class="n">eigvals</span></code> and the eigenvectors in <code class="code highlight python docutils literal highlight-python"><span class="n">eigvecs</span></code>.
+<code class="code highlight python docutils literal highlight-python"><span class="n">eigvecs</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span></code> is the eigenvector of <span class="math notranslate nohighlight">\(A\)</span>  with eigenvalue of <code class="code highlight python docutils literal highlight-python"><span class="n">eigval</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code>.</p>
 </td>
 </tr>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">np</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">linalg</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">solve</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">A</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">b</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>Constructs array <span class="math notranslate nohighlight">\(x\)</span> such that <code class="code python docutils literal notranslate"><span class="name"><span class="pre">A</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">dot</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">x</span></span><span class="punctuation"><span class="pre">)</span></span></code> is equal to <span class="math notranslate nohighlight">\(b\)</span>.  Theoretically should give the same answer as</p>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code></p></td>
+<td><p>Constructs array <span class="math notranslate nohighlight">\(x\)</span> such that <code class="code highlight python docutils literal highlight-python"><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> is equal to <span class="math notranslate nohighlight">\(b\)</span>.  Theoretically should give the same answer as</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Ainv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">Ainv</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -510,14 +549,14 @@ For example,</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="pandas">
-<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 86%" />
+<col style="width: 21%" />
+<col style="width: 79%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Command</p></th>
@@ -525,7 +564,7 @@ For example,</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>pd.Series()</p></td>
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">()</span></code></p></td>
 <td><p>Constructs a Pandas Series Object from some specified data and/or index</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
@@ -533,7 +572,7 @@ For example,</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>pd.DataFrame()</p></td>
+<tr class="row-odd"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span></code></p></td>
 <td><p>Constructs a Pandas DataFrame object from some specified data and/or index, column names etc.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
@@ -550,9 +589,9 @@ For example,</p>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="plotting">
-<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">¶</a></h2>
 <div class="singlelang-table python-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -565,15 +604,15 @@ For example,</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">plt</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">plot</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name"><span class="pre">x</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">y</span></span><span class="punctuation"><span class="pre">,</span></span> <span class="name"><span class="pre">s</span></span> <span class="operator"><span class="pre">=</span></span><span class="name builtin pseudo"><span class="pre">None</span></span><span class="punctuation"><span class="pre">)</span></span></code></p></td>
-<td><p>The plot command is included in <code class="code python docutils literal notranslate"><span class="name"><span class="pre">matplotlib</span></span><span class="operator"><span class="pre">.</span></span><span class="name"><span class="pre">pyplot</span></span></code>.
+<tr class="row-even"><td><p><code class="code highlight python docutils literal highlight-python"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code></p></td>
+<td><p>The plot command is included in <code class="code highlight python docutils literal highlight-python"><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span></code>.
 The plot command is used to plot <span class="math notranslate nohighlight">\(x\)</span> versus <span class="math notranslate nohighlight">\(y\)</span> where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are iterables of the same length.
 By default the plot command draws a line, using the <span class="math notranslate nohighlight">\(s\)</span> argument you can specify type of line and color.
-For example ‘-‘, ‘- -‘, ‘:’, ‘o’, ‘x’, and ‘-o’ reprent line, dashed line, dotted line, circles, x’s, and circle with line through it respectively.
-Color can be changed by appending ‘b’, ‘k’, ‘g’ or ‘r’, to get a blue, black, green or red plot respectively.
+For example '-', '- -', ':', 'o', 'x', and '-o' reprent line, dashed line, dotted line, circles, x's, and circle with line through it respectively.
+Color can be changed by appending 'b', 'k', 'g' or 'r', to get a blue, black, green or red plot respectively.
 For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">N</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">v</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -589,8 +628,8 @@ For example,</p>
 </tbody>
 </table>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 			  
@@ -604,7 +643,7 @@ For example,</p>
 					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
 					
 					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
-					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 5.0.2.
 					    
 					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
 		    

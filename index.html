@@ -6,11 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATLAB–Python–Julia cheatsheet &mdash; Cheatsheets by QuantEcon  documentation</title>
+    <title>MATLAB--Python--Julia cheatsheet &mdash; Cheatsheets by QuantEcon  documentation</title>
 
     <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
     <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -33,6 +34,44 @@
 	
   </head>
   <body>
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
 	
 	<div class="top-bar">
 		<div class="row columns">
@@ -70,7 +109,7 @@
 				<div class="toc-menu">
   <!--<h3><a href="#">Table Of Contents</a></h3>-->
   <ul>
-<li><a class="reference internal" href="#">MATLAB–Python–Julia cheatsheet</a><ul>
+<li><a class="reference internal" href="#">MATLAB--Python--Julia cheatsheet</a><ul>
 <li><a class="reference internal" href="#dependencies-and-setup">Dependencies and Setup</a></li>
 <li><a class="reference internal" href="#creating-vectors">Creating Vectors</a></li>
 <li><a class="reference internal" href="#creating-matrices">Creating Matrices</a></li>
@@ -91,15 +130,15 @@
 	        
   <style type="text/css">.menu>li.comparison-on>a {border-color:#444;cursor: default;}</style><div class="toctree-wrapper compound">
 </div>
-<div class="section" id="matlab-python-julia-cheatsheet">
-<h1>MATLAB–Python–Julia cheatsheet<a class="headerlink" href="#matlab-python-julia-cheatsheet" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="dependencies-and-setup">
-<h2>Dependencies and Setup<a class="headerlink" href="#dependencies-and-setup" title="Permalink to this headline">¶</a></h2>
+<section id="matlab-python-julia-cheatsheet">
+<h1>MATLAB--Python--Julia cheatsheet<a class="headerlink" href="#matlab-python-julia-cheatsheet" title="Permalink to this heading">¶</a></h1>
+<section id="dependencies-and-setup">
+<h2>Dependencies and Setup<a class="headerlink" href="#dependencies-and-setup" title="Permalink to this heading">¶</a></h2>
 <p>In the Python code we assume that you have already run <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></p>
 <p>In the Julia, we assume you are using <strong>v1.0.2 or later</strong> with Compat <strong>v1.3.0 or later</strong> and have run <code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">LinearAlgebra,</span> <span class="pre">Statistics,</span> <span class="pre">Compat</span></code></p>
-</div>
-<div class="section" id="creating-vectors">
-<h2>Creating Vectors<a class="headerlink" href="#creating-vectors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-vectors">
+<h2>Creating Vectors<a class="headerlink" href="#creating-vectors" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -117,7 +156,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Row vector: size (1, n)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -131,7 +170,7 @@
 </td>
 </tr>
 <tr class="row-odd"><td><p>Column vector: size (n, 1)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">]</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -161,7 +200,7 @@
 </tr>
 <tr class="row-odd"><td><p>Integers from j to n with
 step size k</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">j</span><span class="p">:</span><span class="n">k</span><span class="p">:</span><span class="n">n</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">j</span><span class="p">:</span><span class="n">k</span><span class="p">:</span><span class="n">n</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -169,14 +208,14 @@ step size k</p></td>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">j</span><span class="o">:</span><span class="n">k</span><span class="o">:</span><span class="n">n</span>
+<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">j</span><span class="o">:</span><span class="n">k</span><span class="ss">:n</span>
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><p>Linearly spaced vector
 of k points</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -193,9 +232,9 @@ of k points</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="creating-matrices">
-<h2>Creating Matrices<a class="headerlink" href="#creating-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-matrices">
+<h2>Creating Matrices<a class="headerlink" href="#creating-matrices" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -213,7 +252,7 @@ of k points</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Create a matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">4]</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -227,7 +266,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>2 x 2 matrix of zeros</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -241,7 +280,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>2 x 2 matrix of ones</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -255,7 +294,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>2 x 2 identity matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -263,7 +302,7 @@ of k points</p></td>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nb">I</span> <span class="c"># will adopt</span>
+<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">I</span> <span class="c"># will adopt</span>
 <span class="c"># 2x2 dims if demanded by</span>
 <span class="c"># neighboring matrices</span>
 </pre></div>
@@ -271,7 +310,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Diagonal matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">])</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">diag</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -279,14 +318,14 @@ of k points</p></td>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="kt">Diagonal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Diagonal</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
     <span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Uniform random numbers</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -300,7 +339,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Normal random numbers</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -314,9 +353,9 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Sparse Matrices</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">sparse</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="mi">4</span>
-<span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sparse</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -337,14 +376,14 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Tridiagonal Matrices</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="n">NaN</span><span class="p">;</span>
-     <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span><span class="p">;</span>
-     <span class="n">NaN</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">spdiags</span><span class="p">(</span><span class="n">A</span><span class="o">&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">NaN</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6</span><span class="w"> </span><span class="s">7</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="n">NaN</span><span class="w"> </span><span class="s">8</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">0]</span><span class="w"></span>
+<span class="nb">spdiags</span><span class="p">(</span><span class="n">A</span><span class="o">&#39;</span><span class="p">,[</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sp.sparse</span> <span class="kn">as</span> <span class="nn">sp</span>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sp.sparse</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="n">diagonals</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
 <span class="n">sp</span><span class="o">.</span><span class="n">diags</span><span class="p">(</span><span class="n">diagonals</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
@@ -353,7 +392,7 @@ of k points</p></td>
 <td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-<span class="kt">Tridiagonal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">Tridiagonal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -361,9 +400,9 @@ of k points</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="manipulating-vectors-and-matrices">
-<h2>Manipulating Vectors and Matrices<a class="headerlink" href="#manipulating-vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="manipulating-vectors-and-matrices">
+<h2>Manipulating Vectors and Matrices<a class="headerlink" href="#manipulating-vectors-and-matrices" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -381,7 +420,7 @@ of k points</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Transpose</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span><span class="o">&#39;</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">.</span><span class="o">&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -396,7 +435,7 @@ of k points</p></td>
 </tr>
 <tr class="row-odd"><td><p>Complex conjugate transpose
 (Adjoint)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">&#39;</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -410,11 +449,11 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Concatenate horizontally</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">horzcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">horzcat</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -433,11 +472,11 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Concatenate vertically</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">];</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]]</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="n">vertcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">])</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">vertcat</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -456,7 +495,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Reshape (to 5 rows, 2 columns)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -470,7 +509,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Convert matrix to vector</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -484,7 +523,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Flip left/right</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fliplr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">fliplr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -498,7 +537,7 @@ of k points</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Flip up/down</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">flipud</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">flipud</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -514,7 +553,7 @@ of k points</p></td>
 <tr class="row-even"><td><p>Repeat matrix (3 times in the
 row dimension, 4 times in the
 column dimension)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">repmat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">repmat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -528,8 +567,8 @@ column dimension)</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Preallocating/Similar</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">y</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 <p>N/A similar type</p>
@@ -552,12 +591,12 @@ column dimension)</p></td>
 </tr>
 <tr class="row-even"><td><p>Broadcast a function over a
 collection/matrix/vector</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span><span class="o">.^</span><span class="mi">2</span>
-<span class="n">g</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">.^</span><span class="mi">2</span>
-<span class="n">x</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-<span class="n">y</span> <span class="p">=</span> <span class="mi">2</span><span class="p">:</span><span class="mi">11</span>
-<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="w"></span>
+<span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">.^</span><span class="mi">2</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span><span class="w"></span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Functions broadcast directly</p>
@@ -587,9 +626,9 @@ collection/matrix/vector</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="accessing-vector-matrix-elements">
-<h2>Accessing Vector/Matrix Elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-vector-matrix-elements">
+<h2>Accessing Vector/Matrix Elements<a class="headerlink" href="#accessing-vector-matrix-elements" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -607,7 +646,7 @@ collection/matrix/vector</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Access one element</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -621,7 +660,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Access specific rows</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="p">:)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="p">:)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -635,7 +674,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Access specific columns</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(:,</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -649,7 +688,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Remove a row</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span><span class="p">],</span> <span class="p">:)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="p">:)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -663,7 +702,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Diagonals of matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -677,7 +716,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Get dimensions of matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nrow</span> <span class="n">ncol</span><span class="p">]</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nrow</span><span class="w"> </span><span class="n">ncol</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -693,9 +732,9 @@ collection/matrix/vector</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="mathematical-operations">
-<h2>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mathematical-operations">
+<h2>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -713,7 +752,7 @@ collection/matrix/vector</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Dot product</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -729,7 +768,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Matrix multiplication</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -760,7 +799,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Element-wise multiplication</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">.*</span> <span class="n">B</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -774,7 +813,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Matrix to a power</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="mi">2</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="mi">2</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -788,7 +827,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Matrix to a power, elementwise</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.^</span><span class="mi">2</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.^</span><span class="mi">2</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -802,11 +841,11 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Inverse</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -824,7 +863,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Determinant</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -838,7 +877,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Eigenvalues and eigenvectors</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">vec</span><span class="p">,</span> <span class="n">val</span><span class="p">]</span> <span class="p">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -852,7 +891,7 @@ collection/matrix/vector</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Euclidean norm</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">norm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -868,7 +907,7 @@ collection/matrix/vector</p></td>
 <tr class="row-even"><td><p>Solve linear system
 <span class="math notranslate nohighlight">\(Ax=b\)</span> (when <span class="math notranslate nohighlight">\(A\)</span>
 is square)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">\</span><span class="n">b</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">\</span><span class="n">b</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -884,7 +923,7 @@ is square)</p></td>
 <tr class="row-odd"><td><p>Solve least squares problem
 <span class="math notranslate nohighlight">\(Ax=b\)</span> (when <span class="math notranslate nohighlight">\(A\)</span>
 is rectangular)</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">\</span><span class="n">b</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">\</span><span class="n">b</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -900,9 +939,9 @@ is rectangular)</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="sum-max-min">
-<h2>Sum / max / min<a class="headerlink" href="#sum-max-min" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sum-max-min">
+<h2>Sum / max / min<a class="headerlink" href="#sum-max-min" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -921,15 +960,15 @@ is rectangular)</p></td>
 <tbody>
 <tr class="row-even"><td><p>Sum / max / min of
 each column</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -941,15 +980,15 @@ each column</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Sum / max / min of each row</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -962,9 +1001,9 @@ each column</p></td>
 </tr>
 <tr class="row-even"><td><p>Sum / max / min of
 entire matrix</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
-<span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
-<span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span><span class="w"></span>
+<span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span><span class="w"></span>
+<span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">(:))</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -983,9 +1022,9 @@ entire matrix</p></td>
 </tr>
 <tr class="row-odd"><td><p>Cumulative sum / max / min
 by row</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="nb">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="nb">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1004,9 +1043,9 @@ by row</p></td>
 </tr>
 <tr class="row-even"><td><p>Cumulative sum / max / min
 by column</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">cumsum</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="nb">cummax</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="nb">cummin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1026,9 +1065,9 @@ by column</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="programming">
-<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this heading">¶</a></h2>
 <div class="multilang-table docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -1046,7 +1085,7 @@ by column</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Comment one line</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is a comment</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is a comment</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1062,7 +1101,7 @@ by column</p></td>
 <tr class="row-odd"><td><p>Comment block</p></td>
 <td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="cm">%{</span>
 <span class="cm">Comment block</span>
-<span class="cm">%}</span>
+<span class="cm">%}</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1080,9 +1119,9 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>For loop</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
-   <span class="c">% do something</span>
-<span class="k">end</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="w"></span>
+<span class="w">   </span><span class="c">% do something</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1091,7 +1130,7 @@ by column</p></td>
 </pre></div>
 </div>
 </td>
-<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">N</span>
+<td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="n">N</span>
    <span class="c"># do something</span>
 <span class="k">end</span>
 </pre></div>
@@ -1099,9 +1138,9 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>While loop</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
-   <span class="c">% do something</span>
-<span class="k">end</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="w"></span>
+<span class="w">   </span><span class="c">% do something</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1118,9 +1157,9 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>If</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
-   <span class="c">% do something</span>
-<span class="k">end</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="w"></span>
+<span class="w">   </span><span class="c">% do something</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1137,11 +1176,11 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>If / else</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">i</span> <span class="o">&lt;</span><span class="p">=</span> <span class="n">N</span>
-   <span class="c">% do something</span>
-<span class="k">else</span>
-   <span class="c">% do something else</span>
-<span class="k">end</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">N</span><span class="w"></span>
+<span class="w">   </span><span class="c">% do something</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="w">   </span><span class="c">% do something else</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1162,13 +1201,13 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Print text and variable</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">10</span>
-<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;x = %d \n&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;x = %d \n&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
 <td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;x = {x}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -1179,7 +1218,7 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Function: anonymous</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="n">x</span>^<span class="mi">2</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>^<span class="mi">2</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1194,9 +1233,9 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-even"><td><p>Function</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>out  <span class="p">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
-<span class="w">   </span><span class="n">out</span> <span class="p">=</span> <span class="n">x</span>^<span class="mi">2</span>
-<span class="k">end</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>out<span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span>x<span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="n">out</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span>^<span class="mi">2</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1215,8 +1254,8 @@ by column</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Tuples</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">{</span><span class="mi">1</span> <span class="mf">2.0</span> &quot;<span class="n">test</span>&quot;<span class="p">}</span>
-<span class="n">t</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="n">t</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Can use cells but watch performance</p>
@@ -1234,10 +1273,10 @@ by column</p></td>
 </tr>
 <tr class="row-even"><td><p>Named Tuples/
 Anonymous Structures</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">.</span><span class="n">x</span> <span class="p">=</span> <span class="mi">1</span>
-<span class="n">m</span><span class="p">.</span><span class="n">y</span> <span class="p">=</span> <span class="mi">2</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">m</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
 
-<span class="n">m</span><span class="p">.</span><span class="n">x</span>
+<span class="n">m</span><span class="p">.</span><span class="n">x</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1264,9 +1303,9 @@ Anonymous Structures</p></td>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Closures</p></td>
-<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="p">=</span> <span class="mf">2.0</span>
-<span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="n">a</span> <span class="o">+</span> <span class="n">x</span>
-<span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<td><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.0</span><span class="w"></span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="n">f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </td>
@@ -1309,8 +1348,8 @@ to achieve <a class="reference external" href="https://blogs.mathworks.com/loren
 </tbody>
 </table>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 			  
@@ -1324,7 +1363,7 @@ to achieve <a class="reference external" href="https://blogs.mathworks.com/loren
 					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
 					
 					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
-					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 5.0.2.
 					    
 					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
 		    

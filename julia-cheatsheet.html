@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/_static/css/cheatsheet.css" type="text/css" />
     <link rel="stylesheet" href="/_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="/_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://assets.quantecon.org/css/qemb.css">
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -33,6 +34,44 @@
 	
   </head>
   <body>
+
+  <div class="qemb"> <!-- QuantEcon menubar -->
+
+    <p class="qemb-logo"><a href="https://quantecon.org/" title="quantecon.org"><span class="show-for-sr">QuantEcon</span></a></p>
+
+    <ul class="qemb-nav">
+      <li class="qemb-dropdown"><a>Lectures</a>
+        <ul>
+          <li><a href="https://lectures.quantecon.org/" title="Lectures"><span>Lectures in Quantitative Economics</span></a></li>
+          <li><a href="https://datascience.quantecon.org/" title="DataScience"><span>QuantEcon DataScience</span></a></li>
+          <li><a href="http://cheatsheets.quantecon.org/" title="Cheatsheets"><span>Cheatsheets</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Code</a>
+        <ul>
+          <li><a href="https://quantecon.org/quantecon-py" title="QuantEcon.py"><span>QuantEcon.py</span></a></li>
+          <li><a href="https://quantecon.org/quantecon-jl" title="QuantEcon.jl"><span>QuantEcon.jl</span></a></li>
+          <li><a href="https://jupinx.quantecon.org/">Jupinx</a></li>
+      </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Notebooks</a>
+        <ul>
+          <li><a href="https://quantecon.org/notebooks" title="QuantEcon Notebook Library"><span>NB Library</span></a></li>
+          <li><a href="http://notes.quantecon.org/" title="QE Notes"><span>QE Notes</span></a></li>
+        </ul>
+      </li>
+      <li class="qemb-dropdown"><a>Community</a>
+        <ul>
+          <li><a href="http://blog.quantecon.org/" title="Blog"><span>Blog</span></a></li>
+          <li><a href="http://discourse.quantecon.org/" title="Forum"><span>Forum</span></a></li>
+        </ul>
+      </li>
+      <li><a href="http://store.quantecon.org/" title="Store"><span class="show-for-sr">Store</span></a></li>
+      <li><a href="https://github.com/QuantEcon/" title="Repository"><span class="show-for-sr">Repository</span></a></li>
+      <li><a href="https://twitter.com/quantecon" title="Twitter"><span class="show-for-sr">Twitter</span></a></li>
+    </ul>
+
+  </div>
 	
 	<div class="top-bar">
 		<div class="row columns">
@@ -86,19 +125,19 @@
 			</div>
 						
 	        
-  <style type="text/css">.menu>li.julia-on>a {border-color:#444;cursor: default;}</style><div class="section" id="julia-cheatsheet">
-<span id="id1"></span><h1>Julia cheatsheet<a class="headerlink" href="#julia-cheatsheet" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-and-dependencies">
-<h2>Version and Dependencies<a class="headerlink" href="#version-and-dependencies" title="Permalink to this headline">¶</a></h2>
+  <style type="text/css">.menu>li.julia-on>a {border-color:#444;cursor: default;}</style><section id="julia-cheatsheet">
+<span id="id1"></span><h1>Julia cheatsheet<a class="headerlink" href="#julia-cheatsheet" title="Permalink to this heading">¶</a></h1>
+<section id="version-and-dependencies">
+<h2>Version and Dependencies<a class="headerlink" href="#version-and-dependencies" title="Permalink to this heading">¶</a></h2>
 <p>This assumes</p>
 <ul class="simple">
 <li><p>Julia v1.0 or above</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">LinearAlgebra,</span> <span class="pre">Statistics,</span> <span class="pre">Compat</span></code> has been run</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> are assumed to be within a Jupyter Notebook or within a function.  Otherwise, Julia 1.0 has different scoping rules for global variables, which will be made more consistent in a future release</p></li>
 </ul>
-</div>
-<div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h2>
 <p>Here are a few examples of basic kinds of variables we might be interested in creating.</p>
 <div class="singlelang-table julia-table docutils container">
 <table class="docutils align-default">
@@ -130,7 +169,7 @@ of output. <code class="docutils literal notranslate"><span class="pre">A</span>
 </td>
 <td><p>A <strong>string</strong> variable</p></td>
 </tr>
-<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">true</span>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">true</span>
 </pre></div>
 </div>
 </td>
@@ -139,9 +178,9 @@ of output. <code class="docutils literal notranslate"><span class="pre">A</span>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="vectors-and-matrices">
-<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="vectors-and-matrices">
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this heading">¶</a></h2>
 <p>These are a few kinds of special vectors/matrices we can create and some things we can do with them.</p>
 <div class="singlelang-table julia-table docutils container">
 <table class="docutils align-default">
@@ -177,7 +216,7 @@ of output. <code class="docutils literal notranslate"><span class="pre">A</span>
 <p>which will create a matrix of all ones with the same dimensions as matrix or vector <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
 </td>
 </tr>
-<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nb">I</span>
+<tr class="row-even"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">I</span>
 </pre></div>
 </div>
 </td>
@@ -185,7 +224,7 @@ of output. <code class="docutils literal notranslate"><span class="pre">A</span>
 <p><code class="docutils literal notranslate"><span class="pre">zeros(2,</span> <span class="pre">2)</span></code>, the <code class="docutils literal notranslate"><span class="pre">I</span></code> will act like <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span> <span class="pre">2</span></code>.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">j</span><span class="o">:</span><span class="n">k</span><span class="o">:</span><span class="n">n</span>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">j</span><span class="o">:</span><span class="n">k</span><span class="ss">:n</span>
 </pre></div>
 </div>
 </td>
@@ -204,7 +243,7 @@ To convert the output to an array, use <code class="docutils literal notranslate
 <td><p>Creates a <code class="docutils literal notranslate"><span class="pre">StepRangeLen</span></code> iterable starting at <code class="docutils literal notranslate"><span class="pre">start</span></code> and ending at <code class="docutils literal notranslate"><span class="pre">stop</span></code>. Can be specified
 using either the length or step size (will not overshoot).</p></td>
 </tr>
-<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="kt">Diagonal</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Diagonal</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
@@ -266,7 +305,7 @@ integers. The example here returns the element in the second row and third colum
 </div>
 </td>
 <td><p>This function returns a vector of the <strong>diagonal elements</strong> of <code class="docutils literal notranslate"><span class="pre">A</span></code>
-(i.e., <code class="docutils literal notranslate"><span class="pre">A[1,</span> <span class="pre">1],</span> <span class="pre">A[2,</span> <span class="pre">2]</span></code>, etc…).</p></td>
+(i.e., <code class="docutils literal notranslate"><span class="pre">A[1,</span> <span class="pre">1],</span> <span class="pre">A[2,</span> <span class="pre">2]</span></code>, etc...).</p></td>
 </tr>
 <tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">hcat</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">])</span>
 </pre></div>
@@ -372,9 +411,9 @@ For example, if <code class="docutils literal notranslate"><span class="pre">A</
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="mathematical-functions">
-<h2>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="mathematical-functions">
+<h2>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this heading">¶</a></h2>
 <p>Here, we cover some useful functions for doing math.</p>
 <div class="singlelang-table julia-table docutils container">
 <table class="docutils align-default">
@@ -553,9 +592,9 @@ to the problem.</p></td>
 </tbody>
 </table>
 </div>
-</div>
-<div class="section" id="programming">
-<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="programming">
+<h2>Programming<a class="headerlink" href="#programming" title="Permalink to this heading">¶</a></h2>
 <p>The following are useful basics for Julia programming.</p>
 <div class="singlelang-table julia-table docutils container">
 <table class="docutils align-default">
@@ -581,7 +620,7 @@ to the problem.</p></td>
 The first example limits your comment to one line and the second example allows the comments to span
 multiple lines between the <code class="docutils literal notranslate"><span class="pre">#=</span></code> and <code class="docutils literal notranslate"><span class="pre">=#</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="n">iterable</span>
+<tr class="row-odd"><td><div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">iterable</span>
    <span class="c"># do something</span>
 
 <span class="k">end</span>
@@ -680,8 +719,8 @@ parentheses. The <code class="docutils literal notranslate"><span class="pre">re
 </tbody>
 </table>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 			  
@@ -695,7 +734,7 @@ parentheses. The <code class="docutils literal notranslate"><span class="pre">re
 					<p class="credits"><span>Credits</span> This cheat sheet was created by <a href="https://github.com/vgregory757">Victoria Gregory</a>, <a href="http://drdrij.com/">Andrij Stachurski</a>, <a href="https://github.com/natashawatkins">Natasha Watkins</a> and other collaborators on behalf of <a href="http://quantecon.org/">QuantEcon</a>.</p>
 					
 					<p class="copyright"><span><strong>&copy; Copyright 2017</strong> <a href="https://quantecon.org">QuantEcon</a></span>
-					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+					      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 5.0.2.
 					    
 					    Hosted with <a href="https://aws.amazon.com">AWS</a>.
 		    

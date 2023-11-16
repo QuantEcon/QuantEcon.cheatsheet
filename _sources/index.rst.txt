@@ -316,15 +316,15 @@ Sum / max / min
     +=============================+========================+================================+===================================+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
     |                             |                        |                                |                                   |
-    | Sum / max / min of          |     sum(A, 1)          |    sum(A, 0)                   |     sum(A, dims = 1)              |
-    | each column                 |     max(A, [], 1)      |    np.amax(A, 0)               |     maximum(A, dims = 1)          |
-    |                             |     min(A, [], 1)      |    np.amin(A, 0)               |     minimum(A, dims = 1)          |
+    | Sum / max / min of          |     sum(A, 1)          |    np.sum(A, 0)                |     sum(A, dims = 1)              |
+    | each column                 |     max(A, [], 1)      |    np.max(A, 0)                |     maximum(A, dims = 1)          |
+    |                             |     min(A, [], 1)      |    np.min(A, 0)                |     minimum(A, dims = 1)          |
     +-----------------------------+------------------------+--------------------------------+-----------------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
     |                             |                        |                                |                                   |
-    | Sum / max / min of each row |     sum(A, 2)          |    sum(A, 1)                   |     sum(A, dims = 2)              |
-    |                             |     max(A, [], 2)      |    np.amax(A, 1)               |     maximum(A, dims = 2)          |
-    |                             |     min(A, [], 2)      |    np.amin(A, 1)               |     minimum(A, dims = 2)          |
+    | Sum / max / min of each row |     sum(A, 2)          |    np.sum(A, 1)                |     sum(A, dims = 2)              |
+    |                             |     max(A, [], 2)      |    np.max(A, 1)                |     maximum(A, dims = 2)          |
+    |                             |     min(A, [], 2)      |    np.min(A, 1)                |     minimum(A, dims = 2)          |
     +-----------------------------+------------------------+--------------------------------+-----------------------------------+
     |                             | .. code-block:: matlab | .. code-block:: python         | .. code-block:: julia             |
     |                             |                        |                                |                                   |
